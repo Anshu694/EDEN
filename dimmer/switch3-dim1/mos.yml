@@ -1,0 +1,153 @@
+author: Suman Kumar <suman@edensmarthomes.com>
+name: EDEN_4
+description: A Mongoose OS app for wifi switch dimmer
+
+version: 1.0.0
+
+libs_version: ${mos_version}
+modules_version: ${mos_version}
+mongoose_os_version: ${mos_version}
+manifest_version: 2017-09-29
+
+# List of files / directories with C sources. No slashes at the end of dir names.
+sources:
+  - src
+
+# List of dirs. Files from these dirs will be copied to the device filesystem
+filesystem:
+  - fs
+
+#  LL_NONE = -1,
+#  LL_ERROR = 0,
+#  LL_WARN = 1,
+#  LL_INFO = 2,
+#  LL_DEBUG = 3,
+#  LL_VERBOSE_DEBUG = 4,
+#
+#  _LL_MIN = -2,
+#  _LL_MAX = 5,
+
+config_schema:
+  # Debug Settings
+  - ["debug.level", "i", 1, {title: "Debug Level"}]
+
+  # Enable File logger
+  - ["file_logger.enable", "b", true, {"title": "Enable"}]
+
+  # WiFi AP Config
+  - ["wifi.ap", "o", {title: "WiFi Access Point Config"}]
+  - ["wifi.ap.enable", "b", true, {title: "Enable"}]
+  - ["wifi.ap.ssid", "s", "Eden_4_??????", {title: "SSID"}]
+  - ["wifi.ap.pass", "s", "eden1234", {title: "Password", type: "password"}]
+  - ["wifi.ap.hidden", "b", false, {title: "Hide SSID"}]
+  - ["wifi.ap.channel", "i", 6, {title: "Channel"}]
+  - ["wifi.ap.max_connections", "i", 10, {title: "Max connections"}]
+  - ["wifi.ap.ip", "s", "192.168.4.1", {title: "IP address"}]
+  - ["wifi.ap.netmask", "s", "255.255.255.0", {title: "Network Mask"}]
+  - ["wifi.ap.gw", "s", "192.168.4.1", {title: "Default Gateway"}]
+  - ["wifi.ap.dhcp_start", "s", "192.168.4.2", {title: "DHCP Start Address"}]
+  - ["wifi.ap.dhcp_end", "s", "192.168.4.100", {title: "DHCP End Address"}]
+  - ["wifi.ap.trigger_on_gpio", "i", -1, {title: "Trigger AP on low GPIO"}]
+  - ["wifi.ap.disable_after", "i", 0, {title: "If > 0, will disable itself after the specified number of seconds"}]
+  - ["wifi.ap.hostname", "s", "", {title: "If not empty, DNS server will resolve given host name to the IP address of AP"}]
+
+
+  # Don't change device id
+  - ["device.id", "??????"]
+
+
+  # Device id is used
+  - ["aws.thing_name", "s", "", {title: "Set thing name. If not specified, device.id is used"}]
+
+
+  # MQTT Settings
+  - ["mqtt", "o", {title: "MQTT settings"}]
+  - ["mqtt.enable", "b", true, {title: "Enable MQTT"}]
+  - ["mqtt.server", "s", "a6ffpc9686vd8-ats.iot.us-west-2.amazonaws.com:8883", {title: "MQTT server"}]
+  - ["mqtt.client_id", "s", "", {title: "ClientID t send to the broker. Defaults to device.id."}]
+  - ["mqtt.ssl_cert", "s", "aws-??????.crt.pem", {title: "Client certificate to present to the server"}]
+  - ["mqtt.ssl_key", "s", "aws-??????.key.pem", {title: "Private key corresponding to the certificate"}]
+  - ["mqtt.ssl_ca_cert", "s", "ca.pem", {title: "Verify server certificate using this CA bundle"}]
+  - ["mqtt.clean_session", "b", true, {title: "Clean Session"}]
+  - ["mqtt.keep_alive", "i", 60, {title: "Keep alive interval"}]
+  - ["mqtt.max_queue_length", "i", 6, {title: "Maximum queue length for buffering QoS 1+ messages. 0 to disable queue."}]
+  - ["mqtt.pub", "s", "??????/response", {title: "Publish topic"}]
+  - ["mqtt.sub", "s", "??????/request", {title: "Subscribe topic"}]
+  - ["mqtt.pub_update", "s", "??????/response/update", {title: "Publish topic for extra keys"}]
+  - ["mqtt.sub_update", "s", "??????/request/update", {title: "Subscribe topic for extra keys"}]
+
+
+  # Dash Config
+  - ["dash.enable", "b", false, {"title": "Enable"}]
+  - ["dash.send_logs", "b", false, {"title": "Send logs"}]
+
+
+  # WiFi Station Config 1
+  - ["wifi.sta1.ssid", "s", "eden", {title: "SSID"}]
+  - ["wifi.sta1.pass", "s", "eden1234", {title: "Password", type: "password"}]
+
+
+  # Additional config
+  - ["additional", "o", {title: "additional variable current value"}]
+  - ["additional.alert", "o", {title: "additional variable alert"}]
+  - ["additional.timer", "o", {title: "additional variable timer"}]
+  - ["additional.future", "o", {title: "additional variable future"}]
+
+  - ["additional.alert.out_1", "i", 0, {title: "alert for output pin 1"}]
+  - ["additional.alert.out_2", "i", 0, {title: "alert for output pin 2"}]
+  - ["additional.alert.out_3", "i", 0, {title: "alert for output pin 3"}]
+  - ["additional.alert.out_4", "i", 0, {title: "alert for output pin 4"}]
+
+  - ["additional.timer.out_1", "i", 0, {title: "timer for output pin 1"}]
+  - ["additional.timer.out_2", "i", 0, {title: "timer for output pin 2"}]
+  - ["additional.timer.out_3", "i", 0, {title: "timer for output pin 3"}]
+  - ["additional.timer.out_4", "i", 0, {title: "timer for output pin 4"}]
+  
+  - ["additional.future.out_1", "i", 0, {title: "future value for output pin 1"}]
+  - ["additional.future.out_2", "i", 0, {title: "future value for output pin 2"}]
+  - ["additional.future.out_3", "i", 0, {title: "future value for output pin 3"}]
+  - ["additional.future.out_4", "i", 0, {title: "future value for output pin 4"}]
+  
+  - ["outputPins", "o", {title: "Output pins config"}]
+  - ["outputPins.state_1", "i", 0, {title: "state of pin 1"}]
+  - ["outputPins.state_2", "i", 0, {title: "state of pin 2"}]
+  - ["outputPins.state_3", "i", 0, {title: "state of pin 3"}]
+  - ["outputPins.state_4", "i", 0, {title: "state of pin 4"}]
+
+  - ["outputPins.dim_1", "i", 0, {title: "dim of pin 1"}]
+  - ["outputPins.dim_2", "i", 0, {title: "dim of pin 2"}]
+  - ["outputPins.dim_3", "i", 0, {title: "dim of pin 3"}]
+  - ["outputPins.dim_4", "i", 50, {title: "dim of pin 4"}]
+
+  - ["inputPins", "o", {title: "Input pins current value"}]
+  - ["inputPins.state_1", "i", 0, {title: "state of pin 1"}]
+  - ["inputPins.state_2", "i", 0, {title: "state of pin 2"}]
+  - ["inputPins.state_3", "i", 0, {title: "state of pin 3"}]
+  - ["inputPins.state_4", "i", 0, {title: "state of pin 4"}]
+
+
+
+libs: 
+  - origin: https://github.com/mongoose-os-libs/file-logger
+  - origin: https://github.com/mongoose-os-libs/dash
+  - origin: https://github.com/mongoose-os-libs/ca-bundle
+  - origin: https://github.com/mongoose-os-libs/http-server
+  - origin: https://github.com/mongoose-os-libs/ota-http-server
+  - origin: https://github.com/mongoose-os-libs/rpc-loopback
+  - origin: https://github.com/mongoose-os-libs/rpc-mqtt
+  - origin: https://github.com/mongoose-os-libs/rpc-service-config
+  - origin: https://github.com/mongoose-os-libs/rpc-service-fs
+  - origin: https://github.com/mongoose-os-libs/rpc-service-gpio
+  - origin: https://github.com/mongoose-os-libs/rpc-service-i2c
+  - origin: https://github.com/mongoose-os-libs/rpc-service-ota
+  - origin: https://github.com/mongoose-os-libs/rpc-uart
+  - origin: https://github.com/mongoose-os-libs/spi
+  - origin: https://github.com/mongoose-os-libs/vfs-dev-spi-flash
+  - origin: https://github.com/mongoose-os-libs/wifi
+  - origin: https://github.com/mongoose-os-libs/aws
+  - origin: https://github.com/mongoose-os-libs/mqtt
+  - origin: https://github.com/mongoose-os-libs/shadow
+  - origin: https://github.com/mongoose-os-libs/sntp
+  #- origin: https://github.com/mongoose-os-libs/adc
+  #For custom RPC
+  - origin: https://github.com/mongoose-os-libs/rpc-ws

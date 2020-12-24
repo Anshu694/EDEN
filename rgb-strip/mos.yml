@@ -1,0 +1,136 @@
+author: Suman Kumar <suman@edensmarthomes.com>
+name: EDEN_RGB
+description: A Mongoose OS app for RGB LED strip
+
+version: 1.0.2
+
+libs_version: ${mos_version}
+modules_version: ${mos_version}
+mongoose_os_version: ${mos_version}
+manifest_version: 2017-09-29
+
+# List of files / directories with C sources. No slashes at the end of dir names.
+sources:
+  - src
+
+# List of dirs. Files from these dirs will be copied to the device filesystem
+filesystem:
+  - fs
+
+#  LL_NONE = -1,
+#  LL_ERROR = 0,
+#  LL_WARN = 1,
+#  LL_INFO = 2,
+#  LL_DEBUG = 3,
+#  LL_VERBOSE_DEBUG = 4,
+#
+#  _LL_MIN = -2,
+#  _LL_MAX = 5,
+
+config_schema:
+  # Debug Settings
+  - ["debug.level", "i", 1, {title: "Debug Level"}]
+
+  # Enable File logger
+  - ["file_logger.enable", "b", true, {"title": "Enable"}]
+
+  # WiFi AP Config
+  - ["wifi.ap", "o", {title: "WiFi Access Point Config"}]
+  - ["wifi.ap.enable", "b", true, {title: "Enable"}]
+  - ["wifi.ap.ssid", "s", "EDEN_RGB_??????", {title: "SSID"}]
+  - ["wifi.ap.pass", "s", "eden1234", {title: "Password", type: "password"}]
+  - ["wifi.ap.hidden", "b", false, {title: "Hide SSID"}]
+  - ["wifi.ap.channel", "i", 6, {title: "Channel"}]
+  - ["wifi.ap.max_connections", "i", 10, {title: "Max connections"}]
+  - ["wifi.ap.ip", "s", "192.168.4.1", {title: "IP address"}]
+  - ["wifi.ap.netmask", "s", "255.255.255.0", {title: "Network Mask"}]
+  - ["wifi.ap.gw", "s", "192.168.4.1", {title: "Default Gateway"}]
+  - ["wifi.ap.dhcp_start", "s", "192.168.4.2", {title: "DHCP Start Address"}]
+  - ["wifi.ap.dhcp_end", "s", "192.168.4.100", {title: "DHCP End Address"}]
+  - ["wifi.ap.trigger_on_gpio", "i", -1, {title: "Trigger AP on low GPIO"}]
+  - ["wifi.ap.disable_after", "i", 300, {title: "If > 0, will disable itself after the specified number of seconds"}]
+  - ["wifi.ap.hostname", "s", "", {title: "If not empty, DNS server will resolve given host name to the IP address of AP"}]
+
+
+  # Don't change device id
+  - ["device.id", "??????"]
+
+
+  # Device id is used
+  - ["aws.thing_name", "s", "", {title: "Set thing name. If not specified, device.id is used"}]
+
+
+  # MQTT Settings
+  - ["mqtt", "o", {title: "MQTT settings"}]
+  - ["mqtt.enable", "b", true, {title: "Enable MQTT"}]
+  - ["mqtt.server", "s", "a6ffpc9686vd8-ats.iot.us-west-2.amazonaws.com:8883", {title: "MQTT server"}]
+  - ["mqtt.client_id", "s", "", {title: "ClientID t send to the broker. Defaults to device.id."}]
+  - ["mqtt.ssl_cert", "s", "aws-??????.crt.pem", {title: "Client certificate to present to the server"}]
+  - ["mqtt.ssl_key", "s", "aws-??????.key.pem", {title: "Private key corresponding to the certificate"}]
+  - ["mqtt.ssl_ca_cert", "s", "ca.pem", {title: "Verify server certificate using this CA bundle"}]
+  - ["mqtt.clean_session", "b", true, {title: "Clean Session"}]
+  - ["mqtt.keep_alive", "i", 60, {title: "Keep alive interval"}]
+  - ["mqtt.max_queue_length", "i", 6, {title: "Maximum queue length for buffering QoS 1+ messages. 0 to disable queue."}]
+  - ["mqtt.pub", "s", "??????/response", {title: "Publish topic"}]
+  - ["mqtt.sub", "s", "??????/request", {title: "Subscribe topic"}]
+  - ["mqtt.pub_update", "s", "??????/response/update", {title: "Publish topic for extra keys"}]
+  - ["mqtt.sub_update", "s", "??????/request/update", {title: "Subscribe topic for extra keys"}]
+
+
+  # Dash Config
+  - ["dash.enable", "b", false, {"title": "Enable"}]
+  - ["dash.send_logs", "b", false, {"title": "Send logs"}]
+
+
+  # WiFi Station Config 1
+  - ["wifi.sta1.ssid", "s", "eden", {title: "SSID"}]
+  - ["wifi.sta1.pass", "s", "eden1234", {title: "Password", type: "password"}]
+
+  
+  - ["rgb", "o", {title: "RGB Configuration"}]
+  - ["rgb.r", "i", 0, {title: "red value 0 - 255"}]
+  - ["rgb.g", "i", 255, {title: "green value 0 - 255"}]
+  - ["rgb.b", "i", 0, {title: "blue value 0 - 255"}]
+  - ["rgb.fade", "i", 1000, {title: "fade time in mSec"}]
+
+  - ["rgb.i", "i", 11, {title: "animation no"}]
+  - ["rgb.t1", "i", 0, {title: "transition time mSec"}]
+  - ["rgb.t2", "i", 1000, {title: "persistant time mSec"}]
+  - ["rgb.no", "i", 5, {title: "No of colors"}]
+
+  - ["rgb.c1", "s", "ff00ff", {title: "rgb color"}]
+  - ["rgb.c2", "s", "ffff00", {title: "rgb color"}]
+  - ["rgb.c3", "s", "00ff00", {title: "rgb color"}]
+  - ["rgb.c4", "s", "00ffff", {title: "rgb color"}]
+  - ["rgb.c5", "s", "0000ff", {title: "rgb color"}]
+  - ["rgb.id", "s", "c9b2b278-5850-4cc6-b346-eef7a798a806", {title: "rgb id"}]
+
+
+  - ["eden", "o", {title: "Eden related config"}]
+  - ["eden.button", "i", 5, {title: "Button for AP configuration"}]
+
+libs:
+  - origin: https://github.com/mongoose-os-libs/file-logger
+  - origin: https://github.com/mongoose-os-libs/dash
+  - origin: https://github.com/mongoose-os-libs/ca-bundle
+  - origin: https://github.com/mongoose-os-libs/http-server
+  - origin: https://github.com/mongoose-os-libs/ota-http-server
+  - origin: https://github.com/mongoose-os-libs/rpc-loopback
+  - origin: https://github.com/mongoose-os-libs/rpc-mqtt
+  - origin: https://github.com/mongoose-os-libs/rpc-service-config
+  - origin: https://github.com/mongoose-os-libs/rpc-service-fs
+  - origin: https://github.com/mongoose-os-libs/rpc-service-gpio
+  - origin: https://github.com/mongoose-os-libs/rpc-service-i2c
+  - origin: https://github.com/mongoose-os-libs/rpc-service-ota
+  - origin: https://github.com/mongoose-os-libs/rpc-uart
+  - origin: https://github.com/mongoose-os-libs/spi
+  - origin: https://github.com/mongoose-os-libs/vfs-dev-spi-flash
+  - origin: https://github.com/mongoose-os-libs/wifi
+  - origin: https://github.com/mongoose-os-libs/aws
+  - origin: https://github.com/mongoose-os-libs/mqtt
+  - origin: https://github.com/mongoose-os-libs/shadow
+  - origin: https://github.com/mongoose-os-libs/sntp
+  # For RGB led support
+  - name: rgb
+  #For custom RPC
+  - origin: https://github.com/mongoose-os-libs/rpc-ws
