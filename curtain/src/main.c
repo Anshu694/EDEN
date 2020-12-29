@@ -94,10 +94,9 @@ static void set_device_param(void) {
   send the gpio state to aws
 */
 static void report_to_aws() {
-  mgos_aws_shadow_updatef(0, "{gpio:[{pin: %d, state: %d}, {pin: %d, state: %d}, {time: %d}]}",
-  	OUTPUT_PIN_1, mgos_gpio_read_out(OUTPUT_PIN_1), 
-  	OUTPUT_PIN_2, mgos_gpio_read_out(OUTPUT_PIN_2),
-	mgos_sys_config_get_outputPins_time());
+  mgos_aws_shadow_updatef(0, "{gpio:[{pin: %d, state: %d, time: %d}, {pin: %d, state: %d, time: %d}]}",
+  	OUTPUT_PIN_1, mgos_gpio_read_out(OUTPUT_PIN_1), mgos_sys_config_get_outputPins_time(), 
+  	OUTPUT_PIN_2, mgos_gpio_read_out(OUTPUT_PIN_2),	mgos_sys_config_get_outputPins_time());
 }
 
 /*
