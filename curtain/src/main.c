@@ -26,13 +26,13 @@
 
 
 /* For CURTAIN */
-#define INPUT_PIN_1 12
-#define OUTPUT_PIN_1 5
+#define INPUT_PIN_1 12	//D6
+#define OUTPUT_PIN_1 5	//D1
 
-#define INPUT_PIN_2 14
-#define OUTPUT_PIN_2 4
+#define INPUT_PIN_2 14	//D5
+#define OUTPUT_PIN_2 4	//D2
 
-#define OUTPUT_LED_PIN 2
+#define OUTPUT_LED_PIN 2	//LED
 int pvs_val1 = 0;
 int pvs_val2 = 0;
 
@@ -391,6 +391,7 @@ static void mqtt_ev_handler(struct mg_connection * c, int ev, void * p, void * u
                 }
                 if (time > 0) {
                     curtain_pin = pin;
+                    mgos_sys_config_set_outputPins_time(time);
                     curtain_timer_id = mgos_set_timer(time, true, curtain_timer_cb, NULL);
                 }
 
