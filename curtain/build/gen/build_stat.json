@@ -2,5 +2,5 @@
   "arch": "esp8266",
   "platform": "esp8266",
   "app_name": "EDEN_CURTAIN",
-  "build_time_ms": 45831
+  "build_time_ms": 53387
 }

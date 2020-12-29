@@ -391,6 +391,7 @@ static void mqtt_ev_handler(struct mg_connection * c, int ev, void * p, void * u
                 }
                 if (time > 0) {
                     curtain_pin = pin;
+                    mgos_sys_config_set_outputPins_time(time);
                     curtain_timer_id = mgos_set_timer(time, true, curtain_timer_cb, NULL);
                 }
 
