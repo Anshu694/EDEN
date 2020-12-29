@@ -1,5 +1,5 @@
 author: Suman Kumar <suman@edensmarthomes.com>
-name: EDEN_C
+name: EDEN_CURTAIN
 description: A Mongoose OS app for wifi Curtain controller
 
 version: 1.0.0
@@ -37,7 +37,7 @@ config_schema:
   # WiFi AP Config
   - ["wifi.ap", "o", {title: "WiFi Access Point Config"}]
   - ["wifi.ap.enable", "b", true, {title: "Enable"}]
-  - ["wifi.ap.ssid", "s", "Eden_C_??????", {title: "SSID"}]
+  - ["wifi.ap.ssid", "s", "EDEN_CURTAIN_??????", {title: "SSID"}]
   - ["wifi.ap.pass", "s", "eden1234", {title: "Password", type: "password"}]
   - ["wifi.ap.hidden", "b", false, {title: "Hide SSID"}]
   - ["wifi.ap.channel", "i", 6, {title: "Channel"}]
