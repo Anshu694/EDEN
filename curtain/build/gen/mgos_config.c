@@ -1,7 +1,7 @@
 /* clang-format off */
 /*
  * Generated file - do not edit.
- * Command: /mongoose-os/tools/mgos_gen_config.py --c_name=mgos_config --c_global_name=mgos_sys_config --dest_dir=/data/fwbuild-volumes/2.18.0/apps/EDEN_C/esp8266/build_contexts/build_ctx_553177935/build/gen/ /mongoose-os/src/mgos_debug_udp_config.yaml /data/fwbuild-volumes/2.18.0/apps/EDEN_C/esp8266/build_contexts/build_ctx_553177935/build/gen/mos_conf_schema.yml
+ * Command: /mongoose-os/tools/mgos_gen_config.py --c_name=mgos_config --c_global_name=mgos_sys_config --dest_dir=/data/fwbuild-volumes/2.18.0/apps/EDEN_CURTAIN/esp8266/build_contexts/build_ctx_924195373/build/gen/ /mongoose-os/src/mgos_debug_udp_config.yaml /data/fwbuild-volumes/2.18.0/apps/EDEN_CURTAIN/esp8266/build_contexts/build_ctx_924195373/build/gen/mos_conf_schema.yml
  */
 
 #include "mgos_config.h"
@@ -473,7 +473,7 @@ const struct mgos_config mgos_config_defaults = {
   .spi.cs1_gpio = -1,
   .spi.cs2_gpio = -1,
   .wifi.ap.enable = 1,
-  .wifi.ap.ssid = "Eden_C_??????",
+  .wifi.ap.ssid = "EDEN_CURTAIN_??????",
   .wifi.ap.pass = "eden1234",
   .wifi.ap.hidden = 0,
   .wifi.ap.channel = 6,
