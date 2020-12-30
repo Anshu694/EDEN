@@ -1,7 +1,7 @@
 /* clang-format off */
 /*
  * Generated file - do not edit.
- * Command: /mongoose-os/tools/mgos_gen_config.py --c_name=mgos_config --c_global_name=mgos_sys_config --dest_dir=/data/fwbuild-volumes/2.18.0/apps/EDEN_4/esp8266/build_contexts/build_ctx_900255791/build/gen/ /mongoose-os/src/mgos_debug_udp_config.yaml /data/fwbuild-volumes/2.18.0/apps/EDEN_4/esp8266/build_contexts/build_ctx_900255791/build/gen/mos_conf_schema.yml
+ * Command: /mongoose-os/tools/mgos_gen_config.py --c_name=mgos_config --c_global_name=mgos_sys_config --dest_dir=/data/fwbuild-volumes/2.18.0/apps/EDEN_4/esp32/build_contexts/build_ctx_198444860/build/gen/ /mongoose-os/src/mgos_debug_udp_config.yaml /mongoose-os/platforms/esp32/src/esp32_sys_config.yaml /data/fwbuild-volumes/2.18.0/apps/EDEN_4/esp32/build_contexts/build_ctx_198444860/build/gen/mos_conf_schema.yml
  */
 
 #include "mgos_config.h"
@@ -10,8 +10,8 @@
 
 #include "mgos_config_util.h"
 
-const struct mgos_conf_entry mgos_config_schema_[285] = {
-  {.type = CONF_TYPE_OBJECT, .key = "", .offset = 0, .num_desc = 284},
+const struct mgos_conf_entry mgos_config_schema_[298] = {
+  {.type = CONF_TYPE_OBJECT, .key = "", .offset = 0, .num_desc = 297},
   {.type = CONF_TYPE_OBJECT, .key = "debug", .offset = offsetof(struct mgos_config, debug), .num_desc = 12},
   {.type = CONF_TYPE_STRING, .key = "udp_log_addr", .offset = offsetof(struct mgos_config, debug.udp_log_addr)},
   {.type = CONF_TYPE_INT, .key = "udp_log_level", .offset = offsetof(struct mgos_config, debug.udp_log_level)},
@@ -25,13 +25,15 @@ const struct mgos_conf_entry mgos_config_schema_[285] = {
   {.type = CONF_TYPE_STRING, .key = "mg_mgr_hexdump_file", .offset = offsetof(struct mgos_config, debug.mg_mgr_hexdump_file)},
   {.type = CONF_TYPE_STRING, .key = "stdout_topic", .offset = offsetof(struct mgos_config, debug.stdout_topic)},
   {.type = CONF_TYPE_STRING, .key = "stderr_topic", .offset = offsetof(struct mgos_config, debug.stderr_topic)},
-  {.type = CONF_TYPE_OBJECT, .key = "i2c", .offset = offsetof(struct mgos_config, i2c), .num_desc = 5},
+  {.type = CONF_TYPE_OBJECT, .key = "i2c", .offset = offsetof(struct mgos_config, i2c), .num_desc = 6},
+  {.type = CONF_TYPE_INT, .key = "unit_no", .offset = offsetof(struct mgos_config, i2c.unit_no)},
   {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, i2c.enable)},
   {.type = CONF_TYPE_INT, .key = "freq", .offset = offsetof(struct mgos_config, i2c.freq)},
   {.type = CONF_TYPE_BOOL, .key = "debug", .offset = offsetof(struct mgos_config, i2c.debug)},
   {.type = CONF_TYPE_INT, .key = "sda_gpio", .offset = offsetof(struct mgos_config, i2c.sda_gpio)},
   {.type = CONF_TYPE_INT, .key = "scl_gpio", .offset = offsetof(struct mgos_config, i2c.scl_gpio)},
-  {.type = CONF_TYPE_OBJECT, .key = "i2c1", .offset = offsetof(struct mgos_config, i2c1), .num_desc = 5},
+  {.type = CONF_TYPE_OBJECT, .key = "i2c1", .offset = offsetof(struct mgos_config, i2c1), .num_desc = 6},
+  {.type = CONF_TYPE_INT, .key = "unit_no", .offset = offsetof(struct mgos_config, i2c1.unit_no)},
   {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, i2c1.enable)},
   {.type = CONF_TYPE_INT, .key = "freq", .offset = offsetof(struct mgos_config, i2c1.freq)},
   {.type = CONF_TYPE_BOOL, .key = "debug", .offset = offsetof(struct mgos_config, i2c1.debug)},
@@ -200,17 +202,18 @@ const struct mgos_conf_entry mgos_config_schema_[285] = {
   {.type = CONF_TYPE_INT, .key = "retry_min", .offset = offsetof(struct mgos_config, sntp.retry_min)},
   {.type = CONF_TYPE_INT, .key = "retry_max", .offset = offsetof(struct mgos_config, sntp.retry_max)},
   {.type = CONF_TYPE_INT, .key = "update_interval", .offset = offsetof(struct mgos_config, sntp.update_interval)},
-  {.type = CONF_TYPE_OBJECT, .key = "spi", .offset = offsetof(struct mgos_config, spi), .num_desc = 8},
+  {.type = CONF_TYPE_OBJECT, .key = "spi", .offset = offsetof(struct mgos_config, spi), .num_desc = 9},
   {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, spi.enable)},
   {.type = CONF_TYPE_BOOL, .key = "debug", .offset = offsetof(struct mgos_config, spi.debug)},
+  {.type = CONF_TYPE_INT, .key = "unit_no", .offset = offsetof(struct mgos_config, spi.unit_no)},
   {.type = CONF_TYPE_INT, .key = "miso_gpio", .offset = offsetof(struct mgos_config, spi.miso_gpio)},
   {.type = CONF_TYPE_INT, .key = "mosi_gpio", .offset = offsetof(struct mgos_config, spi.mosi_gpio)},
   {.type = CONF_TYPE_INT, .key = "sclk_gpio", .offset = offsetof(struct mgos_config, spi.sclk_gpio)},
   {.type = CONF_TYPE_INT, .key = "cs0_gpio", .offset = offsetof(struct mgos_config, spi.cs0_gpio)},
   {.type = CONF_TYPE_INT, .key = "cs1_gpio", .offset = offsetof(struct mgos_config, spi.cs1_gpio)},
   {.type = CONF_TYPE_INT, .key = "cs2_gpio", .offset = offsetof(struct mgos_config, spi.cs2_gpio)},
-  {.type = CONF_TYPE_OBJECT, .key = "wifi", .offset = offsetof(struct mgos_config, wifi), .num_desc = 60},
-  {.type = CONF_TYPE_OBJECT, .key = "ap", .offset = offsetof(struct mgos_config, wifi.ap), .num_desc = 15},
+  {.type = CONF_TYPE_OBJECT, .key = "wifi", .offset = offsetof(struct mgos_config, wifi), .num_desc = 70},
+  {.type = CONF_TYPE_OBJECT, .key = "ap", .offset = offsetof(struct mgos_config, wifi.ap), .num_desc = 17},
   {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, wifi.ap.enable)},
   {.type = CONF_TYPE_STRING, .key = "ssid", .offset = offsetof(struct mgos_config, wifi.ap.ssid)},
   {.type = CONF_TYPE_STRING, .key = "pass", .offset = offsetof(struct mgos_config, wifi.ap.pass)},
@@ -226,7 +229,9 @@ const struct mgos_conf_entry mgos_config_schema_[285] = {
   {.type = CONF_TYPE_INT, .key = "disable_after", .offset = offsetof(struct mgos_config, wifi.ap.disable_after)},
   {.type = CONF_TYPE_STRING, .key = "hostname", .offset = offsetof(struct mgos_config, wifi.ap.hostname)},
   {.type = CONF_TYPE_BOOL, .key = "keep_enabled", .offset = offsetof(struct mgos_config, wifi.ap.keep_enabled)},
-  {.type = CONF_TYPE_OBJECT, .key = "sta", .offset = offsetof(struct mgos_config, wifi.sta), .num_desc = 13},
+  {.type = CONF_TYPE_BOOL, .key = "bandwidth_20mhz", .offset = offsetof(struct mgos_config, wifi.ap.bandwidth_20mhz)},
+  {.type = CONF_TYPE_STRING, .key = "protocol", .offset = offsetof(struct mgos_config, wifi.ap.protocol)},
+  {.type = CONF_TYPE_OBJECT, .key = "sta", .offset = offsetof(struct mgos_config, wifi.sta), .num_desc = 15},
   {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, wifi.sta.enable)},
   {.type = CONF_TYPE_STRING, .key = "ssid", .offset = offsetof(struct mgos_config, wifi.sta.ssid)},
   {.type = CONF_TYPE_STRING, .key = "pass", .offset = offsetof(struct mgos_config, wifi.sta.pass)},
@@ -240,7 +245,9 @@ const struct mgos_conf_entry mgos_config_schema_[285] = {
   {.type = CONF_TYPE_STRING, .key = "gw", .offset = offsetof(struct mgos_config, wifi.sta.gw)},
   {.type = CONF_TYPE_STRING, .key = "nameserver", .offset = offsetof(struct mgos_config, wifi.sta.nameserver)},
   {.type = CONF_TYPE_STRING, .key = "dhcp_hostname", .offset = offsetof(struct mgos_config, wifi.sta.dhcp_hostname)},
-  {.type = CONF_TYPE_OBJECT, .key = "sta1", .offset = offsetof(struct mgos_config, wifi.sta1), .num_desc = 13},
+  {.type = CONF_TYPE_STRING, .key = "protocol", .offset = offsetof(struct mgos_config, wifi.sta.protocol)},
+  {.type = CONF_TYPE_INT, .key = "listen_interval_ms", .offset = offsetof(struct mgos_config, wifi.sta.listen_interval_ms)},
+  {.type = CONF_TYPE_OBJECT, .key = "sta1", .offset = offsetof(struct mgos_config, wifi.sta1), .num_desc = 15},
   {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, wifi.sta1.enable)},
   {.type = CONF_TYPE_STRING, .key = "ssid", .offset = offsetof(struct mgos_config, wifi.sta1.ssid)},
   {.type = CONF_TYPE_STRING, .key = "pass", .offset = offsetof(struct mgos_config, wifi.sta1.pass)},
@@ -254,7 +261,9 @@ const struct mgos_conf_entry mgos_config_schema_[285] = {
   {.type = CONF_TYPE_STRING, .key = "gw", .offset = offsetof(struct mgos_config, wifi.sta1.gw)},
   {.type = CONF_TYPE_STRING, .key = "nameserver", .offset = offsetof(struct mgos_config, wifi.sta1.nameserver)},
   {.type = CONF_TYPE_STRING, .key = "dhcp_hostname", .offset = offsetof(struct mgos_config, wifi.sta1.dhcp_hostname)},
-  {.type = CONF_TYPE_OBJECT, .key = "sta2", .offset = offsetof(struct mgos_config, wifi.sta2), .num_desc = 13},
+  {.type = CONF_TYPE_STRING, .key = "protocol", .offset = offsetof(struct mgos_config, wifi.sta1.protocol)},
+  {.type = CONF_TYPE_INT, .key = "listen_interval_ms", .offset = offsetof(struct mgos_config, wifi.sta1.listen_interval_ms)},
+  {.type = CONF_TYPE_OBJECT, .key = "sta2", .offset = offsetof(struct mgos_config, wifi.sta2), .num_desc = 15},
   {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, wifi.sta2.enable)},
   {.type = CONF_TYPE_STRING, .key = "ssid", .offset = offsetof(struct mgos_config, wifi.sta2.ssid)},
   {.type = CONF_TYPE_STRING, .key = "pass", .offset = offsetof(struct mgos_config, wifi.sta2.pass)},
@@ -268,8 +277,12 @@ const struct mgos_conf_entry mgos_config_schema_[285] = {
   {.type = CONF_TYPE_STRING, .key = "gw", .offset = offsetof(struct mgos_config, wifi.sta2.gw)},
   {.type = CONF_TYPE_STRING, .key = "nameserver", .offset = offsetof(struct mgos_config, wifi.sta2.nameserver)},
   {.type = CONF_TYPE_STRING, .key = "dhcp_hostname", .offset = offsetof(struct mgos_config, wifi.sta2.dhcp_hostname)},
+  {.type = CONF_TYPE_STRING, .key = "protocol", .offset = offsetof(struct mgos_config, wifi.sta2.protocol)},
+  {.type = CONF_TYPE_INT, .key = "listen_interval_ms", .offset = offsetof(struct mgos_config, wifi.sta2.listen_interval_ms)},
   {.type = CONF_TYPE_INT, .key = "sta_cfg_idx", .offset = offsetof(struct mgos_config, wifi.sta_cfg_idx)},
   {.type = CONF_TYPE_INT, .key = "sta_connect_timeout", .offset = offsetof(struct mgos_config, wifi.sta_connect_timeout)},
+  {.type = CONF_TYPE_INT, .key = "sta_ps_mode", .offset = offsetof(struct mgos_config, wifi.sta_ps_mode)},
+  {.type = CONF_TYPE_BOOL, .key = "sta_all_chan_scan", .offset = offsetof(struct mgos_config, wifi.sta_all_chan_scan)},
   {.type = CONF_TYPE_OBJECT, .key = "additional", .offset = offsetof(struct mgos_config, additional), .num_desc = 15},
   {.type = CONF_TYPE_OBJECT, .key = "alert", .offset = offsetof(struct mgos_config, additional.alert), .num_desc = 4},
   {.type = CONF_TYPE_INT, .key = "out_1", .offset = offsetof(struct mgos_config, additional.alert.out_1)},
@@ -308,7 +321,7 @@ const struct mgos_config mgos_config_defaults = {
   .debug.udp_log_addr = NULL,
   .debug.udp_log_level = 3,
   .debug.mbedtls_level = 1,
-  .debug.level = 1,
+  .debug.level = 0,
   .debug.file_level = NULL,
   .debug.event_level = 2,
   .debug.stdout_uart = 0,
@@ -317,16 +330,18 @@ const struct mgos_config mgos_config_defaults = {
   .debug.mg_mgr_hexdump_file = NULL,
   .debug.stdout_topic = NULL,
   .debug.stderr_topic = NULL,
+  .i2c.unit_no = 0,
   .i2c.enable = 0,
   .i2c.freq = 100000,
   .i2c.debug = 0,
-  .i2c.sda_gpio = 12,
-  .i2c.scl_gpio = 14,
+  .i2c.sda_gpio = 32,
+  .i2c.scl_gpio = 33,
+  .i2c1.unit_no = 1,
   .i2c1.enable = 0,
   .i2c1.freq = 100000,
   .i2c1.debug = 0,
-  .i2c1.sda_gpio = 4,
-  .i2c1.scl_gpio = 5,
+  .i2c1.sda_gpio = 22,
+  .i2c1.scl_gpio = 23,
   .sys.atca.enable = 0,
   .sys.atca.i2c_bus = 0,
   .sys.atca.i2c_addr = 96,
@@ -359,7 +374,7 @@ const struct mgos_config mgos_config_defaults = {
   .mqtt.will_message = NULL,
   .mqtt.will_retain = 0,
   .mqtt.max_qos = 2,
-  .mqtt.recv_mbuf_limit = 3072,
+  .mqtt.recv_mbuf_limit = 8192,
   .mqtt.require_time = 0,
   .mqtt.cloud_events = 1,
   .mqtt.max_queue_length = 6,
@@ -386,7 +401,7 @@ const struct mgos_config mgos_config_defaults = {
   .mqtt1.will_message = NULL,
   .mqtt1.will_retain = 0,
   .mqtt1.max_qos = 2,
-  .mqtt1.recv_mbuf_limit = 3072,
+  .mqtt1.recv_mbuf_limit = 8192,
   .mqtt1.require_time = 0,
   .mqtt1.cloud_events = 1,
   .mqtt1.max_queue_length = 6,
@@ -475,10 +490,11 @@ const struct mgos_config mgos_config_defaults = {
   .sntp.update_interval = 7200,
   .spi.enable = 0,
   .spi.debug = 0,
-  .spi.miso_gpio = 12,
-  .spi.mosi_gpio = 13,
-  .spi.sclk_gpio = 14,
-  .spi.cs0_gpio = 15,
+  .spi.unit_no = 3,
+  .spi.miso_gpio = 19,
+  .spi.mosi_gpio = 23,
+  .spi.sclk_gpio = 18,
+  .spi.cs0_gpio = 5,
   .spi.cs1_gpio = -1,
   .spi.cs2_gpio = -1,
   .wifi.ap.enable = 1,
@@ -493,9 +509,11 @@ const struct mgos_config mgos_config_defaults = {
   .wifi.ap.dhcp_start = "192.168.4.2",
   .wifi.ap.dhcp_end = "192.168.4.100",
   .wifi.ap.trigger_on_gpio = -1,
-  .wifi.ap.disable_after = 0,
+  .wifi.ap.disable_after = 300,
   .wifi.ap.hostname = NULL,
   .wifi.ap.keep_enabled = 1,
+  .wifi.ap.bandwidth_20mhz = 0,
+  .wifi.ap.protocol = "BGN",
   .wifi.sta.enable = 0,
   .wifi.sta.ssid = NULL,
   .wifi.sta.pass = NULL,
@@ -509,6 +527,8 @@ const struct mgos_config mgos_config_defaults = {
   .wifi.sta.gw = NULL,
   .wifi.sta.nameserver = NULL,
   .wifi.sta.dhcp_hostname = NULL,
+  .wifi.sta.protocol = "BGN",
+  .wifi.sta.listen_interval_ms = 0,
   .wifi.sta1.enable = 0,
   .wifi.sta1.ssid = NULL,
   .wifi.sta1.pass = NULL,
@@ -522,6 +542,8 @@ const struct mgos_config mgos_config_defaults = {
   .wifi.sta1.gw = NULL,
   .wifi.sta1.nameserver = NULL,
   .wifi.sta1.dhcp_hostname = NULL,
+  .wifi.sta1.protocol = "BGN",
+  .wifi.sta1.listen_interval_ms = 0,
   .wifi.sta2.enable = 0,
   .wifi.sta2.ssid = NULL,
   .wifi.sta2.pass = NULL,
@@ -535,8 +557,12 @@ const struct mgos_config mgos_config_defaults = {
   .wifi.sta2.gw = NULL,
   .wifi.sta2.nameserver = NULL,
   .wifi.sta2.dhcp_hostname = NULL,
+  .wifi.sta2.protocol = "BGN",
+  .wifi.sta2.listen_interval_ms = 0,
   .wifi.sta_cfg_idx = 0,
   .wifi.sta_connect_timeout = 30,
+  .wifi.sta_ps_mode = 0,
+  .wifi.sta_all_chan_scan = 0,
   .additional.alert.out_1 = 0,
   .additional.alert.out_2 = 0,
   .additional.alert.out_3 = 0,
@@ -717,6 +743,16 @@ void mgos_config_free_i2c(struct mgos_config_i2c *cfg) {
   return mgos_conf_free(mgos_config_schema_i2c(), cfg);
 }
 
+/* i2c.unit_no */
+#define MGOS_CONFIG_HAVE_I2C_UNIT_NO
+#define MGOS_SYS_CONFIG_HAVE_I2C_UNIT_NO
+int mgos_config_get_i2c_unit_no(struct mgos_config *cfg) {
+  return cfg->i2c.unit_no;
+}
+void mgos_config_set_i2c_unit_no(struct mgos_config *cfg, int v) {
+  cfg->i2c.unit_no = v;
+}
+
 /* i2c.enable */
 #define MGOS_CONFIG_HAVE_I2C_ENABLE
 #define MGOS_SYS_CONFIG_HAVE_I2C_ENABLE
@@ -772,6 +808,16 @@ void mgos_config_set_i2c_scl_gpio(struct mgos_config *cfg, int v) {
 #define MGOS_SYS_CONFIG_HAVE_I2C1
 const struct mgos_config_i2c * mgos_config_get_i2c1(struct mgos_config *cfg) {
   return &cfg->i2c1;
+}
+
+/* i2c1.unit_no */
+#define MGOS_CONFIG_HAVE_I2C1_UNIT_NO
+#define MGOS_SYS_CONFIG_HAVE_I2C1_UNIT_NO
+int mgos_config_get_i2c1_unit_no(struct mgos_config *cfg) {
+  return cfg->i2c1.unit_no;
+}
+void mgos_config_set_i2c1_unit_no(struct mgos_config *cfg, int v) {
+  cfg->i2c1.unit_no = v;
 }
 
 /* i2c1.enable */
@@ -2634,6 +2680,16 @@ void mgos_config_set_spi_debug(struct mgos_config *cfg, int v) {
   cfg->spi.debug = v;
 }
 
+/* spi.unit_no */
+#define MGOS_CONFIG_HAVE_SPI_UNIT_NO
+#define MGOS_SYS_CONFIG_HAVE_SPI_UNIT_NO
+int mgos_config_get_spi_unit_no(struct mgos_config *cfg) {
+  return cfg->spi.unit_no;
+}
+void mgos_config_set_spi_unit_no(struct mgos_config *cfg, int v) {
+  cfg->spi.unit_no = v;
+}
+
 /* spi.miso_gpio */
 #define MGOS_CONFIG_HAVE_SPI_MISO_GPIO
 #define MGOS_SYS_CONFIG_HAVE_SPI_MISO_GPIO
@@ -2882,6 +2938,26 @@ void mgos_config_set_wifi_ap_keep_enabled(struct mgos_config *cfg, int v) {
   cfg->wifi.ap.keep_enabled = v;
 }
 
+/* wifi.ap.bandwidth_20mhz */
+#define MGOS_CONFIG_HAVE_WIFI_AP_BANDWIDTH_20MHZ
+#define MGOS_SYS_CONFIG_HAVE_WIFI_AP_BANDWIDTH_20MHZ
+int mgos_config_get_wifi_ap_bandwidth_20mhz(struct mgos_config *cfg) {
+  return cfg->wifi.ap.bandwidth_20mhz;
+}
+void mgos_config_set_wifi_ap_bandwidth_20mhz(struct mgos_config *cfg, int v) {
+  cfg->wifi.ap.bandwidth_20mhz = v;
+}
+
+/* wifi.ap.protocol */
+#define MGOS_CONFIG_HAVE_WIFI_AP_PROTOCOL
+#define MGOS_SYS_CONFIG_HAVE_WIFI_AP_PROTOCOL
+const char * mgos_config_get_wifi_ap_protocol(struct mgos_config *cfg) {
+  return cfg->wifi.ap.protocol;
+}
+void mgos_config_set_wifi_ap_protocol(struct mgos_config *cfg, const char * v) {
+  mgos_conf_set_str(&cfg->wifi.ap.protocol, v);
+}
+
 /* wifi.sta */
 #define MGOS_CONFIG_HAVE_WIFI_STA
 #define MGOS_SYS_CONFIG_HAVE_WIFI_STA
@@ -3031,6 +3107,26 @@ void mgos_config_set_wifi_sta_dhcp_hostname(struct mgos_config *cfg, const char 
   mgos_conf_set_str(&cfg->wifi.sta.dhcp_hostname, v);
 }
 
+/* wifi.sta.protocol */
+#define MGOS_CONFIG_HAVE_WIFI_STA_PROTOCOL
+#define MGOS_SYS_CONFIG_HAVE_WIFI_STA_PROTOCOL
+const char * mgos_config_get_wifi_sta_protocol(struct mgos_config *cfg) {
+  return cfg->wifi.sta.protocol;
+}
+void mgos_config_set_wifi_sta_protocol(struct mgos_config *cfg, const char * v) {
+  mgos_conf_set_str(&cfg->wifi.sta.protocol, v);
+}
+
+/* wifi.sta.listen_interval_ms */
+#define MGOS_CONFIG_HAVE_WIFI_STA_LISTEN_INTERVAL_MS
+#define MGOS_SYS_CONFIG_HAVE_WIFI_STA_LISTEN_INTERVAL_MS
+int mgos_config_get_wifi_sta_listen_interval_ms(struct mgos_config *cfg) {
+  return cfg->wifi.sta.listen_interval_ms;
+}
+void mgos_config_set_wifi_sta_listen_interval_ms(struct mgos_config *cfg, int v) {
+  cfg->wifi.sta.listen_interval_ms = v;
+}
+
 /* wifi.sta1 */
 #define MGOS_CONFIG_HAVE_WIFI_STA1
 #define MGOS_SYS_CONFIG_HAVE_WIFI_STA1
@@ -3166,6 +3262,26 @@ const char * mgos_config_get_wifi_sta1_dhcp_hostname(struct mgos_config *cfg) {
 }
 void mgos_config_set_wifi_sta1_dhcp_hostname(struct mgos_config *cfg, const char * v) {
   mgos_conf_set_str(&cfg->wifi.sta1.dhcp_hostname, v);
+}
+
+/* wifi.sta1.protocol */
+#define MGOS_CONFIG_HAVE_WIFI_STA1_PROTOCOL
+#define MGOS_SYS_CONFIG_HAVE_WIFI_STA1_PROTOCOL
+const char * mgos_config_get_wifi_sta1_protocol(struct mgos_config *cfg) {
+  return cfg->wifi.sta1.protocol;
+}
+void mgos_config_set_wifi_sta1_protocol(struct mgos_config *cfg, const char * v) {
+  mgos_conf_set_str(&cfg->wifi.sta1.protocol, v);
+}
+
+/* wifi.sta1.listen_interval_ms */
+#define MGOS_CONFIG_HAVE_WIFI_STA1_LISTEN_INTERVAL_MS
+#define MGOS_SYS_CONFIG_HAVE_WIFI_STA1_LISTEN_INTERVAL_MS
+int mgos_config_get_wifi_sta1_listen_interval_ms(struct mgos_config *cfg) {
+  return cfg->wifi.sta1.listen_interval_ms;
+}
+void mgos_config_set_wifi_sta1_listen_interval_ms(struct mgos_config *cfg, int v) {
+  cfg->wifi.sta1.listen_interval_ms = v;
 }
 
 /* wifi.sta2 */
@@ -3305,6 +3421,26 @@ void mgos_config_set_wifi_sta2_dhcp_hostname(struct mgos_config *cfg, const char
   mgos_conf_set_str(&cfg->wifi.sta2.dhcp_hostname, v);
 }
 
+/* wifi.sta2.protocol */
+#define MGOS_CONFIG_HAVE_WIFI_STA2_PROTOCOL
+#define MGOS_SYS_CONFIG_HAVE_WIFI_STA2_PROTOCOL
+const char * mgos_config_get_wifi_sta2_protocol(struct mgos_config *cfg) {
+  return cfg->wifi.sta2.protocol;
+}
+void mgos_config_set_wifi_sta2_protocol(struct mgos_config *cfg, const char * v) {
+  mgos_conf_set_str(&cfg->wifi.sta2.protocol, v);
+}
+
+/* wifi.sta2.listen_interval_ms */
+#define MGOS_CONFIG_HAVE_WIFI_STA2_LISTEN_INTERVAL_MS
+#define MGOS_SYS_CONFIG_HAVE_WIFI_STA2_LISTEN_INTERVAL_MS
+int mgos_config_get_wifi_sta2_listen_interval_ms(struct mgos_config *cfg) {
+  return cfg->wifi.sta2.listen_interval_ms;
+}
+void mgos_config_set_wifi_sta2_listen_interval_ms(struct mgos_config *cfg, int v) {
+  cfg->wifi.sta2.listen_interval_ms = v;
+}
+
 /* wifi.sta_cfg_idx */
 #define MGOS_CONFIG_HAVE_WIFI_STA_CFG_IDX
 #define MGOS_SYS_CONFIG_HAVE_WIFI_STA_CFG_IDX
@@ -3323,6 +3459,26 @@ int mgos_config_get_wifi_sta_connect_timeout(struct mgos_config *cfg) {
 }
 void mgos_config_set_wifi_sta_connect_timeout(struct mgos_config *cfg, int v) {
   cfg->wifi.sta_connect_timeout = v;
+}
+
+/* wifi.sta_ps_mode */
+#define MGOS_CONFIG_HAVE_WIFI_STA_PS_MODE
+#define MGOS_SYS_CONFIG_HAVE_WIFI_STA_PS_MODE
+int mgos_config_get_wifi_sta_ps_mode(struct mgos_config *cfg) {
+  return cfg->wifi.sta_ps_mode;
+}
+void mgos_config_set_wifi_sta_ps_mode(struct mgos_config *cfg, int v) {
+  cfg->wifi.sta_ps_mode = v;
+}
+
+/* wifi.sta_all_chan_scan */
+#define MGOS_CONFIG_HAVE_WIFI_STA_ALL_CHAN_SCAN
+#define MGOS_SYS_CONFIG_HAVE_WIFI_STA_ALL_CHAN_SCAN
+int mgos_config_get_wifi_sta_all_chan_scan(struct mgos_config *cfg) {
+  return cfg->wifi.sta_all_chan_scan;
+}
+void mgos_config_set_wifi_sta_all_chan_scan(struct mgos_config *cfg, int v) {
+  cfg->wifi.sta_all_chan_scan = v;
 }
 
 /* additional */

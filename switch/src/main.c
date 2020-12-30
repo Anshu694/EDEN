@@ -104,11 +104,9 @@ int pvs_val1 = 0;
 #endif
 
 mgos_timer_id save_timer_id = 0;
-mgos_timer_id sta1_timer_id = 0;
 
 int random_variable = 2;
 static bool save_timer_var = false;
-static bool sta1_timer_var = false;
 static int count = 0;
 static double last_on_off = 0;
 static int on_off_current_pin = -1;
@@ -154,9 +152,8 @@ static void set_device_param(void) {
         free(mqtt_sub_update);
 
         save_cfg( & mgos_sys_config, NULL);
-
-        return;
     }
+    return;
 }
 
 /*
@@ -212,26 +209,9 @@ static void save_timer_cb(void * arg) {
 }
 
 /*
-   sta1 Timer callback
-*/
-static void sta1_timer_cb(void * arg) {
-    if (sta1_timer_var) {
-        mgos_clear_timer(sta1_timer_id);
-        mgos_sys_config_set_wifi_sta1_enable(0);
-        mgos_sys_config_set_wifi_sta_enable(1);
-        sta1_timer_var = false;
-        save_timer_var = true;
-    }
-    (void) arg;
-    return;
-}
-
-/*
    Button callback
 */
 static void button_cb(int pin, void * arg) {
-    mgos_wdt_feed();
-
     int output_pin = -1;
     int * pvs_val = & random_variable;
     int new_val = -1;
@@ -271,7 +251,6 @@ static void button_cb(int pin, void * arg) {
     }
 
     if ( * pvs_val != new_val && output_pin != -1) {
-
         double now = mg_time();
 
         // handle 5 times on off
@@ -283,9 +262,7 @@ static void button_cb(int pin, void * arg) {
 
                 // Enable AP and set timeout
                 mgos_sys_config_set_wifi_ap_enable(true);
-                mgos_sys_config_set_wifi_sta1_enable(1);
-                mgos_sys_config_set_wifi_sta_enable(0);
-                //mgos_sys_config_set_wifi_ap_disable_after(300);
+                mgos_sys_config_set_wifi_ap_disable_after(300);
 
                 // Save config and restart
                 save_cfg( & mgos_sys_config, NULL);
@@ -367,7 +344,6 @@ static void button_cb(int pin, void * arg) {
    WiFi RPC callback
 */
 static void wifi_rpc_cb(struct mg_rpc_request_info * ri, void * cb_arg, struct mg_rpc_frame_info * fi, struct mg_str args) {
-    mgos_wdt_feed();
     struct mbuf fb;
     struct json_out out = JSON_OUT_MBUF( & fb);
     mbuf_init( & fb, 20);
@@ -381,15 +357,8 @@ static void wifi_rpc_cb(struct mg_rpc_request_info * ri, void * cb_arg, struct m
         mgos_sys_config_set_wifi_sta_ssid(ssid);
         mgos_sys_config_set_wifi_sta_pass(pass);
 
-        // Disable AP
-        mgos_sys_config_set_wifi_ap_enable(false);
-        mgos_clear_timer(sta1_timer_id);
-        mgos_sys_config_set_wifi_sta1_enable(0);
-        mgos_sys_config_set_wifi_sta_enable(1);
-        sta1_timer_var = false;
-        save_timer_var = true;
-        // mgos_sys_config_set_eden_ap_timer(false);
-
+        
+        // Send response
         #if defined(_SWITCH_4_)
         json_printf( & out, "{type: %Q, pin :%Q}", "EDEN_4", "14,25,26,27");
 
@@ -407,6 +376,8 @@ static void wifi_rpc_cb(struct mg_rpc_request_info * ri, void * cb_arg, struct m
         ri = NULL;
         mbuf_free( & fb);
 
+        // Disable AP
+        mgos_sys_config_set_wifi_ap_enable(false);
         // Save config and Restart
         save_cfg( & mgos_sys_config, NULL);
         mgos_system_restart_after(500);
@@ -425,7 +396,6 @@ static void wifi_rpc_cb(struct mg_rpc_request_info * ri, void * cb_arg, struct m
    Local GPIO RPC callback
 */
 static void rpc_gpio_write_cb(struct mg_rpc_request_info * ri, void * cb_arg, struct mg_rpc_frame_info * fi, struct mg_str args) {
-    mgos_wdt_feed();
     int pin;
     int state;
 
@@ -481,7 +451,6 @@ static void rpc_gpio_write_cb(struct mg_rpc_request_info * ri, void * cb_arg, st
    Local GPIO Read callback
 */
 static void local_gpio_shadow_cb(struct mg_rpc_request_info * ri, void * cb_arg, struct mg_rpc_frame_info * fi, struct mg_str args) {
-    mgos_wdt_feed();
     struct mbuf fb;
     struct json_out out = JSON_OUT_MBUF( & fb);
     mbuf_init( & fb, 20);
@@ -518,7 +487,6 @@ static void local_gpio_shadow_cb(struct mg_rpc_request_info * ri, void * cb_arg,
    MQTT callback
 */
 static void mqtt_ev_handler(struct mg_connection * c, int ev, void * p, void * user_data) {
-    mgos_wdt_feed();
     struct mg_mqtt_message * msg = (struct mg_mqtt_message * ) p;
 
     // MQTT connection
@@ -547,7 +515,7 @@ static void mqtt_ev_handler(struct mg_connection * c, int ev, void * p, void * u
         struct mg_str * sTopic = & msg -> topic;
         int pin, state;
 
-        // Our subscription is at QoS 1, we must acknowledge messages sent ot us.
+        // Our subscription is at QoS 1, we must acknowledge messages sent to us.
         mg_mqtt_puback(c, msg -> message_id);
 
         //LOG(LL_DEBUG, ("message received: [%.*s]", (int) s->len, s->p));
@@ -661,7 +629,6 @@ static void mqtt_ev_handler(struct mg_connection * c, int ev, void * p, void * u
                 #endif
 
                 mgos_mqtt_pubf(mgos_sys_config_get_mqtt_pub_update(), 1, false, "{pin: %d, type: %Q, value: %d, token: %Q}", pin, varType, value, varToken);
-
                 save_timer_var = true;
             }
         }
@@ -677,30 +644,23 @@ static void led_net_ev_handler(int ev, void * evd, void * arg) {
     switch (ev) {
     case MGOS_NET_EV_DISCONNECTED:
         LOG(LL_WARN, ("MGOS_NET_EV_DISCONNECTED"));
-        mgos_gpio_blink(OUTPUT_LED_PIN, 250, 250);
-        if (!mgos_sys_config_get_wifi_ap_enable()) {
-            mgos_sys_config_set_wifi_ap_enable(true);
-            save_cfg( & mgos_sys_config, NULL);
-            mgos_wifi_setup_ap( & mgos_sys_config.wifi.ap);
-            //mgos_system_restart_after(500);
+        if (mgos_sys_config_get_wifi_ap_enable()) {
+            mgos_gpio_blink(OUTPUT_LED_PIN, 250, 250);
+        } else {
+            mgos_gpio_blink(OUTPUT_LED_PIN, 1000, 1000);
         }
-        break;
-
-    case MGOS_NET_EV_CONNECTING:
-        LOG(LL_INFO, ("MGOS_NET_EV_CONNECTING"));
-        break;
-
-    case MGOS_NET_EV_CONNECTED:
-        LOG(LL_INFO, ("MGOS_NET_EV_CONNECTED"));
         break;
 
     case MGOS_NET_EV_IP_ACQUIRED:
         LOG(LL_WARN, ("MGOS_NET_EV_IP_ACQUIRED"));
         mgos_gpio_blink(OUTPUT_LED_PIN, 1000, 1000);
-        mgos_sys_config_set_wifi_ap_enable(false);
-        save_cfg( & mgos_sys_config, NULL);
-        mgos_wifi_setup_ap( & mgos_sys_config.wifi.ap);
-        LOG(LL_WARN, ("#### AP Disabled ####"));
+        if (mgos_sys_config_get_wifi_ap_enable())
+        {
+            mgos_sys_config_set_wifi_ap_enable(false);
+            save_cfg( & mgos_sys_config, NULL);
+            mgos_wifi_setup_ap( & mgos_sys_config.wifi.ap);
+            LOG(LL_WARN, ("#### AP Disabled ####"));
+        }
         break;
 
     case MGOS_EVENT_CLOUD_DISCONNECTED:
@@ -730,15 +690,6 @@ enum mgos_app_init_result mgos_app_init(void) {
     mgos_gpio_set_mode(OUTPUT_LED_PIN, MGOS_GPIO_MODE_OUTPUT);
     mgos_gpio_write(OUTPUT_LED_PIN, LED_OFF);
 
-    // Enable watchdog
-    mgos_wdt_enable();
-
-    // Set watchdog timeout in Sec
-    mgos_wdt_set_timeout(6);
-
-    // Feed watchdog
-    mgos_wdt_feed();
-
     // Set device parameters
     set_device_param();
 
@@ -749,9 +700,8 @@ enum mgos_app_init_result mgos_app_init(void) {
         mgos_gpio_blink(OUTPUT_LED_PIN, 250, 250);
         LOG(LL_WARN, ("#### AP Started ####"));
     }
-    if (mgos_sys_config_get_wifi_sta1_enable()) {
-        // Enable sta1 timer
-        sta1_timer_id = mgos_set_timer(300000, true, sta1_timer_cb, NULL);
+    else if (mgos_sys_config_get_wifi_sta_enable()) {
+        mgos_gpio_blink(OUTPUT_LED_PIN, 500, 500);        
     }
 
     #if defined(_SWITCH_1_) || defined(_SWITCH_2_) || defined(_SWITCH_3_) || defined(_SWITCH_4_)
@@ -798,9 +748,6 @@ enum mgos_app_init_result mgos_app_init(void) {
     mgos_gpio_enable_int(INPUT_PIN_4);
     #endif
 
-    mgos_wdt_feed();
-    mgos_msleep(10);
-
     // Add RPC handler
     mg_rpc_add_handler(mgos_rpc_get_global(), "wifiSettings", "{ssid:%Q, pass:%Q}", wifi_rpc_cb, NULL);
     mg_rpc_add_handler(mgos_rpc_get_global(), "gpioWriteLocal", "{pin:%Q, state:%Q}", rpc_gpio_write_cb, NULL);
@@ -813,7 +760,6 @@ enum mgos_app_init_result mgos_app_init(void) {
     mgos_event_add_group_handler(MGOS_EVENT_GRP_NET, led_net_ev_handler, NULL);
     mgos_event_add_handler(MGOS_EVENT_CLOUD_CONNECTED, led_net_ev_handler, NULL);
     mgos_event_add_handler(MGOS_EVENT_CLOUD_DISCONNECTED, led_net_ev_handler, NULL);
-    mgos_msleep(10);
 
     // Add MQTT handler
     if (mgos_sys_config_get_mqtt_enable()) {
@@ -821,6 +767,5 @@ enum mgos_app_init_result mgos_app_init(void) {
         mgos_msleep(10);
     }
 
-    mgos_wdt_feed();
     return MGOS_APP_INIT_SUCCESS;
 }

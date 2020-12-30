@@ -1,6 +1,6 @@
 {
-  "arch": "esp8266",
-  "platform": "esp8266",
+  "arch": "esp32",
+  "platform": "esp32",
   "app_name": "EDEN_4",
-  "build_time_ms": 47844
+  "build_time_ms": 54087
 }
