@@ -21,16 +21,12 @@ extern bool mgos_atca_init(void);
 extern bool mgos_mqtt_init(void);
 extern bool mgos_shadow_init(void);
 extern bool mgos_aws_init(void);
-extern bool mgos_ota_http_client_init(void);
-extern bool mgos_ota_shadow_init(void);
 extern bool mgos_wifi_init(void);
 extern bool mgos_http_server_init(void);
-extern bool mgos_rpc_common_init(void);
-extern bool mgos_rpc_ws_init(void);
-extern bool mgos_dash_init(void);
-extern bool mgos_file_logger_init(void);
 extern bool mgos_mbedtls_init(void);
+extern bool mgos_ota_http_client_init(void);
 extern bool mgos_ota_http_server_init(void);
+extern bool mgos_rpc_common_init(void);
 extern bool mgos_rpc_loopback_init(void);
 extern bool mgos_rpc_mqtt_init(void);
 extern bool mgos_rpc_service_config_init(void);
@@ -39,7 +35,7 @@ extern bool mgos_rpc_service_gpio_init(void);
 extern bool mgos_rpc_service_i2c_init(void);
 extern bool mgos_rpc_service_ota_init(void);
 extern bool mgos_rpc_uart_init(void);
-extern bool mgos_sntp_init(void);
+extern bool mgos_rpc_ws_init(void);
 extern bool mgos_spi_init(void);
 
 #ifndef MGOS_LIB_INFO_VERSION
@@ -91,35 +87,23 @@ const struct mgos_lib_info mgos_libs_info[] = {
     // "aws". deps: [ "ca-bundle" "core" "mqtt" "shadow" ]
     {.name = "aws", .version = "1.0", .init = mgos_aws_init},
 
-    // "ota-http-client". deps: [ "core" "ota-common" ]
-    {.name = "ota-http-client", .version = "1.0", .init = mgos_ota_http_client_init},
-
-    // "ota-shadow". deps: [ "core" "ota-common" "ota-http-client" "shadow" ]
-    {.name = "ota-shadow", .version = "1.0", .init = mgos_ota_shadow_init},
-
     // "wifi". deps: [ "core" ]
     {.name = "wifi", .version = "1.0", .init = mgos_wifi_init},
 
     // "http-server". deps: [ "atca" "core" "wifi" ]
     {.name = "http-server", .version = "1.0", .init = mgos_http_server_init},
 
-    // "rpc-common". deps: [ "core" "http-server" "mongoose" ]
-    {.name = "rpc-common", .version = "1.0", .init = mgos_rpc_common_init},
-
-    // "rpc-ws". deps: [ "core" "http-server" "rpc-common" ]
-    {.name = "rpc-ws", .version = "1.0", .init = mgos_rpc_ws_init},
-
-    // "dash". deps: [ "core" "ota-shadow" "rpc-ws" "shadow" ]
-    {.name = "dash", .version = "1.0", .init = mgos_dash_init},
-
-    // "file-logger". deps: [ "core" "rpc-common" ]
-    {.name = "file-logger", .version = "1.0", .init = mgos_file_logger_init},
-
     // "mbedtls". deps: [ ]
     {.name = "mbedtls", .version = "2.16.6-cesanta1", .init = mgos_mbedtls_init},
 
+    // "ota-http-client". deps: [ "core" "ota-common" ]
+    {.name = "ota-http-client", .version = "1.0", .init = mgos_ota_http_client_init},
+
     // "ota-http-server". deps: [ "core" "http-server" "ota-common" "ota-http-client" ]
     {.name = "ota-http-server", .version = "1.0", .init = mgos_ota_http_server_init},
+
+    // "rpc-common". deps: [ "core" "http-server" "mongoose" ]
+    {.name = "rpc-common", .version = "1.0", .init = mgos_rpc_common_init},
 
     // "rpc-loopback". deps: [ "core" "rpc-common" ]
     {.name = "rpc-loopback", .version = "1.0", .init = mgos_rpc_loopback_init},
@@ -145,8 +129,8 @@ const struct mgos_lib_info mgos_libs_info[] = {
     // "rpc-uart". deps: [ "core" "rpc-common" ]
     {.name = "rpc-uart", .version = "1.0", .init = mgos_rpc_uart_init},
 
-    // "sntp". deps: [ "core" ]
-    {.name = "sntp", .version = "1.0", .init = mgos_sntp_init},
+    // "rpc-ws". deps: [ "core" "http-server" "rpc-common" ]
+    {.name = "rpc-ws", .version = "1.0", .init = mgos_rpc_ws_init},
 
     // "spi". deps: [ "core" ]
     {.name = "spi", .version = "1.0", .init = mgos_spi_init},
