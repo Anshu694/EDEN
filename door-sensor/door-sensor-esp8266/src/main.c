@@ -118,6 +118,7 @@ static void ap_timer_cb(void * arg) {
             mgos_sys_config_set_wifi_ap_disable_after(150);
             save_cfg( & mgos_sys_config, NULL);
             mgos_wifi_setup_ap(&mgos_sys_config.wifi.ap);
+            mgos_gpio_blink(OUTPUT_LED_PIN, 250, 250);
             LOG(LL_WARN, ("#### AP Started ####"));
 
             mgos_clear_timer(timeout_timer_id);
