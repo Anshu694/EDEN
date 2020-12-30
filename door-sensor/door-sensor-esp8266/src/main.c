@@ -24,14 +24,11 @@
 
 #include "mgos_net.h"
 
-#include "esp_missing_includes.h"
-
 
 // PINS
-#define R_SENSOR        5   //D1
-#define AP_BUTTON       14  //D5
-#define OUTPUT_ATTINY   4   //D2
-
+#define R_SENSOR 5 //D1
+#define AP_BUTTON 14 //D5
+#define OUTPUT_ATTINY 4 //D2
 
 // For ESP8266
 #define OUTPUT_LED_PIN 2
@@ -111,18 +108,12 @@ static void timeout_timer_cb(void * arg) {
 */
 static void ap_timer_cb(void * arg) {
     mgos_gpio_setup_input(AP_BUTTON, MGOS_GPIO_PULL_UP);
-    if (!mgos_gpio_read(AP_BUTTON))
-    {
-    	if (!mgos_sys_config_get_wifi_ap_enable()) {
+    if (!mgos_gpio_read(AP_BUTTON)) {
+        if (!mgos_sys_config_get_wifi_ap_enable()) {
             mgos_sys_config_set_wifi_ap_enable(true);
             mgos_sys_config_set_wifi_ap_disable_after(150);
             save_cfg( & mgos_sys_config, NULL);
-            mgos_wifi_setup_ap(&mgos_sys_config.wifi.ap);
-            mgos_gpio_blink(OUTPUT_LED_PIN, 250, 250);
-            LOG(LL_WARN, ("#### AP Started ####"));
-
-            mgos_clear_timer(timeout_timer_id);
-            timeout_timer_id = mgos_set_timer(150000, true, timeout_timer_cb, NULL);
+            mgos_system_restart_after(500);
         }
     }
     (void) arg;
@@ -133,7 +124,7 @@ static void ap_timer_cb(void * arg) {
    sleep_timer_cb
 */
 static void sleep_timer_cb(void * arg) {
-	mgos_wdt_feed();
+    mgos_wdt_feed();
     if (sleep_timer_var) {
         // save to device
         sleep_timer_var = (!save_cfg( & mgos_sys_config, NULL));
@@ -216,21 +207,17 @@ static void mqtt_ev_handler(struct mg_connection * c, int ev, void * p, void * u
 static void led_net_ev_handler(int ev, void * evd, void * arg) {
     switch (ev) {
     case MGOS_NET_EV_DISCONNECTED:
-        LOG(LL_WARN, ("MGOS_NET_EV_DISCONNECTED"));
         if (mgos_sys_config_get_wifi_ap_enable()) {
             mgos_gpio_blink(OUTPUT_LED_PIN, 250, 250);
+        } else {
+            mgos_gpio_blink(OUTPUT_LED_PIN, 1000, 1000);
         }
-        else{
-        	mgos_gpio_blink(OUTPUT_LED_PIN, 1000, 1000);
-        }
-        
+
         break;
 
     case MGOS_NET_EV_IP_ACQUIRED:
-        LOG(LL_WARN, ("MGOS_NET_EV_IP_ACQUIRED"));
-        
-        if (mgos_sys_config_get_wifi_ap_enable())
-        {
+        mgos_gpio_blink(OUTPUT_LED_PIN, 1000, 1000);
+        if (mgos_sys_config_get_wifi_ap_enable()) {
             mgos_sys_config_set_wifi_ap_enable(false);
             save_cfg( & mgos_sys_config, NULL);
             mgos_wifi_setup_ap( & mgos_sys_config.wifi.ap);
@@ -239,7 +226,6 @@ static void led_net_ev_handler(int ev, void * evd, void * arg) {
         break;
 
     case MGOS_EVENT_CLOUD_DISCONNECTED:
-        LOG(LL_WARN, ("MGOS_EVENT_CLOUD_DISCONNECTED"));
         if (mgos_sys_config_get_wifi_ap_enable()) {
             mgos_gpio_blink(OUTPUT_LED_PIN, 250, 250);
         } else {
@@ -248,7 +234,6 @@ static void led_net_ev_handler(int ev, void * evd, void * arg) {
         break;
 
     case MGOS_EVENT_CLOUD_CONNECTED:
-        LOG(LL_WARN, ("MGOS_EVENT_CLOUD_CONNECTED"));
         mgos_gpio_blink(OUTPUT_LED_PIN, 0, 0);
         mgos_gpio_write(OUTPUT_LED_PIN, LED_ON);
         break;
@@ -269,8 +254,6 @@ enum mgos_app_init_result mgos_app_init(void) {
     /* Set device parameters */
     set_device_param();
 
-    LOG(LL_WARN, ("\n\n\n### Init Setting ### %d", mgos_sys_config_get_wifi_ap_enable()));
-
     if (mgos_sys_config_get_wifi_ap_enable()) {
         /* Fast blink in AP Mode */
         mgos_gpio_blink(OUTPUT_LED_PIN, 250, 250);
@@ -278,10 +261,9 @@ enum mgos_app_init_result mgos_app_init(void) {
 
         // 2.5 Minute timeout for AP mode
         timeout_timer_id = mgos_set_timer(150000, true, timeout_timer_cb, NULL);
-    }
-    else{
-        // 30 Sec timeout publishing data
-        timeout_timer_id = mgos_set_timer(30000, true, timeout_timer_cb, NULL);
+    } else {
+        // 40 Sec timeout publishing data
+        timeout_timer_id = mgos_set_timer(40000, true, timeout_timer_cb, NULL);
         // Check every 5Sec
         ap_timer_id = mgos_set_timer(5000, true, ap_timer_cb, NULL);
     }
