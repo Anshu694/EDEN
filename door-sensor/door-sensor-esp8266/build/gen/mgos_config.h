@@ -1,7 +1,7 @@
 /* clang-format off */
 /*
  * Generated file - do not edit.
- * Command: /mongoose-os/tools/mgos_gen_config.py --c_name=mgos_config --c_global_name=mgos_sys_config --dest_dir=/data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/build/gen/ /mongoose-os/src/mgos_debug_udp_config.yaml /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/build/gen/mos_conf_schema.yml
+ * Command: /mongoose-os/tools/mgos_gen_config.py --c_name=mgos_config --c_global_name=mgos_sys_config --dest_dir=/data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/build/gen/ /mongoose-os/src/mgos_debug_udp_config.yaml /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/build/gen/mos_conf_schema.yml
  */
 
 #pragma once
@@ -92,8 +92,6 @@ struct mgos_config_shadow {
   int enable;
   const char * lib;
   int get_on_connect;
-  int ota_enable;
-  int autocommit;
 };
 
 struct mgos_config_aws_greengrass {
@@ -107,6 +105,20 @@ struct mgos_config_aws {
   struct mgos_config_aws_greengrass greengrass;
 };
 
+struct mgos_config_http {
+  int enable;
+  const char * listen_addr;
+  const char * document_root;
+  const char * index_files;
+  const char * ssl_cert;
+  const char * ssl_key;
+  const char * ssl_ca_cert;
+  const char * upload_acl;
+  const char * hidden_files;
+  const char * auth_domain;
+  const char * auth_file;
+};
+
 struct mgos_config_update {
   int timeout;
   int commit_timeout;
@@ -117,17 +129,6 @@ struct mgos_config_update {
   const char * ssl_client_cert_file;
   const char * ssl_server_name;
   int enable_post;
-};
-
-struct mgos_config_rpc_ws {
-  int enable;
-  const char * server_address;
-  int reconnect_interval_min;
-  int reconnect_interval_max;
-  const char * ssl_server_name;
-  const char * ssl_cert;
-  const char * ssl_key;
-  const char * ssl_ca_cert;
 };
 
 struct mgos_config_rpc_mqtt {
@@ -145,6 +146,17 @@ struct mgos_config_rpc_uart {
   const char * dst;
 };
 
+struct mgos_config_rpc_ws {
+  int enable;
+  const char * server_address;
+  int reconnect_interval_min;
+  int reconnect_interval_max;
+  const char * ssl_server_name;
+  const char * ssl_cert;
+  const char * ssl_key;
+  const char * ssl_ca_cert;
+};
+
 struct mgos_config_rpc {
   int enable;
   int http_enable;
@@ -155,56 +167,9 @@ struct mgos_config_rpc {
   const char * acl_file;
   const char * auth_domain;
   const char * auth_file;
-  struct mgos_config_rpc_ws ws;
   struct mgos_config_rpc_mqtt mqtt;
   struct mgos_config_rpc_uart uart;
-};
-
-struct mgos_config_dash {
-  int enable;
-  const char * token;
-  const char * server;
-  const char * ssl_cert;
-  const char * ssl_key;
-  const char * ssl_ca_cert;
-  int send_logs;
-};
-
-struct mgos_config_file_logger {
-  int enable;
-  const char * dir;
-  const char * prefix;
-  int max_file_size;
-  int max_num_files;
-  int timestamps;
-  int level;
-  const char * include;
-  int syslog_enable;
-  int rpc_service_enable;
-  int buf_size;
-  int buf_line;
-};
-
-struct mgos_config_http {
-  int enable;
-  const char * listen_addr;
-  const char * document_root;
-  const char * index_files;
-  const char * ssl_cert;
-  const char * ssl_key;
-  const char * ssl_ca_cert;
-  const char * upload_acl;
-  const char * hidden_files;
-  const char * auth_domain;
-  const char * auth_file;
-};
-
-struct mgos_config_sntp {
-  int enable;
-  const char * server;
-  int retry_min;
-  int retry_max;
-  int update_interval;
+  struct mgos_config_rpc_ws ws;
 };
 
 struct mgos_config_spi {
@@ -261,47 +226,6 @@ struct mgos_config_wifi {
   int sta_connect_timeout;
 };
 
-struct mgos_config_additional_alert {
-  int out_1;
-  int out_2;
-  int out_3;
-  int out_4;
-};
-
-struct mgos_config_additional_timer {
-  int out_1;
-  int out_2;
-  int out_3;
-  int out_4;
-};
-
-struct mgos_config_additional_future {
-  int out_1;
-  int out_2;
-  int out_3;
-  int out_4;
-};
-
-struct mgos_config_additional {
-  struct mgos_config_additional_alert alert;
-  struct mgos_config_additional_timer timer;
-  struct mgos_config_additional_future future;
-};
-
-struct mgos_config_outputPins {
-  int out_1;
-  int out_2;
-  int out_3;
-  int out_4;
-};
-
-struct mgos_config_inputPins {
-  int in_1;
-  int in_2;
-  int in_3;
-  int in_4;
-};
-
 struct mgos_config {
   struct mgos_config_debug debug;
   struct mgos_config_i2c i2c;
@@ -313,17 +237,11 @@ struct mgos_config {
   struct mgos_config_mqtt mqtt1;
   struct mgos_config_shadow shadow;
   struct mgos_config_aws aws;
+  struct mgos_config_http http;
   struct mgos_config_update update;
   struct mgos_config_rpc rpc;
-  struct mgos_config_dash dash;
-  struct mgos_config_file_logger file_logger;
-  struct mgos_config_http http;
-  struct mgos_config_sntp sntp;
   struct mgos_config_spi spi;
   struct mgos_config_wifi wifi;
-  struct mgos_config_additional additional;
-  struct mgos_config_outputPins outputPins;
-  struct mgos_config_inputPins inputPins;
 };
 
 
@@ -1150,22 +1068,6 @@ static inline int mgos_sys_config_get_shadow_get_on_connect(void) { return mgos_
 void mgos_config_set_shadow_get_on_connect(struct mgos_config *cfg, int v);
 static inline void mgos_sys_config_set_shadow_get_on_connect(int v) { mgos_config_set_shadow_get_on_connect(&mgos_sys_config, v); }
 
-/* shadow.ota_enable */
-#define MGOS_CONFIG_HAVE_SHADOW_OTA_ENABLE
-#define MGOS_SYS_CONFIG_HAVE_SHADOW_OTA_ENABLE
-int mgos_config_get_shadow_ota_enable(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_shadow_ota_enable(void) { return mgos_config_get_shadow_ota_enable(&mgos_sys_config); }
-void mgos_config_set_shadow_ota_enable(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_shadow_ota_enable(int v) { mgos_config_set_shadow_ota_enable(&mgos_sys_config, v); }
-
-/* shadow.autocommit */
-#define MGOS_CONFIG_HAVE_SHADOW_AUTOCOMMIT
-#define MGOS_SYS_CONFIG_HAVE_SHADOW_AUTOCOMMIT
-int mgos_config_get_shadow_autocommit(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_shadow_autocommit(void) { return mgos_config_get_shadow_autocommit(&mgos_sys_config); }
-void mgos_config_set_shadow_autocommit(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_shadow_autocommit(int v) { mgos_config_set_shadow_autocommit(&mgos_sys_config, v); }
-
 /* aws */
 #define MGOS_CONFIG_HAVE_AWS
 #define MGOS_SYS_CONFIG_HAVE_AWS
@@ -1217,6 +1119,104 @@ int mgos_config_get_aws_greengrass_reconnect_timeout_max(struct mgos_config *cfg
 static inline int mgos_sys_config_get_aws_greengrass_reconnect_timeout_max(void) { return mgos_config_get_aws_greengrass_reconnect_timeout_max(&mgos_sys_config); }
 void mgos_config_set_aws_greengrass_reconnect_timeout_max(struct mgos_config *cfg, int v);
 static inline void mgos_sys_config_set_aws_greengrass_reconnect_timeout_max(int v) { mgos_config_set_aws_greengrass_reconnect_timeout_max(&mgos_sys_config, v); }
+
+/* http */
+#define MGOS_CONFIG_HAVE_HTTP
+#define MGOS_SYS_CONFIG_HAVE_HTTP
+const struct mgos_config_http * mgos_config_get_http(struct mgos_config *cfg);
+static inline const struct mgos_config_http * mgos_sys_config_get_http(void) { return mgos_config_get_http(&mgos_sys_config); }
+const struct mgos_conf_entry *mgos_config_schema_http(void);
+bool mgos_config_parse_http(struct mg_str json, struct mgos_config_http *cfg);
+bool mgos_config_copy_http(const struct mgos_config_http *src, struct mgos_config_http *dst);
+void mgos_config_free_http(struct mgos_config_http *cfg);
+
+/* http.enable */
+#define MGOS_CONFIG_HAVE_HTTP_ENABLE
+#define MGOS_SYS_CONFIG_HAVE_HTTP_ENABLE
+int mgos_config_get_http_enable(struct mgos_config *cfg);
+static inline int mgos_sys_config_get_http_enable(void) { return mgos_config_get_http_enable(&mgos_sys_config); }
+void mgos_config_set_http_enable(struct mgos_config *cfg, int v);
+static inline void mgos_sys_config_set_http_enable(int v) { mgos_config_set_http_enable(&mgos_sys_config, v); }
+
+/* http.listen_addr */
+#define MGOS_CONFIG_HAVE_HTTP_LISTEN_ADDR
+#define MGOS_SYS_CONFIG_HAVE_HTTP_LISTEN_ADDR
+const char * mgos_config_get_http_listen_addr(struct mgos_config *cfg);
+static inline const char * mgos_sys_config_get_http_listen_addr(void) { return mgos_config_get_http_listen_addr(&mgos_sys_config); }
+void mgos_config_set_http_listen_addr(struct mgos_config *cfg, const char * v);
+static inline void mgos_sys_config_set_http_listen_addr(const char * v) { mgos_config_set_http_listen_addr(&mgos_sys_config, v); }
+
+/* http.document_root */
+#define MGOS_CONFIG_HAVE_HTTP_DOCUMENT_ROOT
+#define MGOS_SYS_CONFIG_HAVE_HTTP_DOCUMENT_ROOT
+const char * mgos_config_get_http_document_root(struct mgos_config *cfg);
+static inline const char * mgos_sys_config_get_http_document_root(void) { return mgos_config_get_http_document_root(&mgos_sys_config); }
+void mgos_config_set_http_document_root(struct mgos_config *cfg, const char * v);
+static inline void mgos_sys_config_set_http_document_root(const char * v) { mgos_config_set_http_document_root(&mgos_sys_config, v); }
+
+/* http.index_files */
+#define MGOS_CONFIG_HAVE_HTTP_INDEX_FILES
+#define MGOS_SYS_CONFIG_HAVE_HTTP_INDEX_FILES
+const char * mgos_config_get_http_index_files(struct mgos_config *cfg);
+static inline const char * mgos_sys_config_get_http_index_files(void) { return mgos_config_get_http_index_files(&mgos_sys_config); }
+void mgos_config_set_http_index_files(struct mgos_config *cfg, const char * v);
+static inline void mgos_sys_config_set_http_index_files(const char * v) { mgos_config_set_http_index_files(&mgos_sys_config, v); }
+
+/* http.ssl_cert */
+#define MGOS_CONFIG_HAVE_HTTP_SSL_CERT
+#define MGOS_SYS_CONFIG_HAVE_HTTP_SSL_CERT
+const char * mgos_config_get_http_ssl_cert(struct mgos_config *cfg);
+static inline const char * mgos_sys_config_get_http_ssl_cert(void) { return mgos_config_get_http_ssl_cert(&mgos_sys_config); }
+void mgos_config_set_http_ssl_cert(struct mgos_config *cfg, const char * v);
+static inline void mgos_sys_config_set_http_ssl_cert(const char * v) { mgos_config_set_http_ssl_cert(&mgos_sys_config, v); }
+
+/* http.ssl_key */
+#define MGOS_CONFIG_HAVE_HTTP_SSL_KEY
+#define MGOS_SYS_CONFIG_HAVE_HTTP_SSL_KEY
+const char * mgos_config_get_http_ssl_key(struct mgos_config *cfg);
+static inline const char * mgos_sys_config_get_http_ssl_key(void) { return mgos_config_get_http_ssl_key(&mgos_sys_config); }
+void mgos_config_set_http_ssl_key(struct mgos_config *cfg, const char * v);
+static inline void mgos_sys_config_set_http_ssl_key(const char * v) { mgos_config_set_http_ssl_key(&mgos_sys_config, v); }
+
+/* http.ssl_ca_cert */
+#define MGOS_CONFIG_HAVE_HTTP_SSL_CA_CERT
+#define MGOS_SYS_CONFIG_HAVE_HTTP_SSL_CA_CERT
+const char * mgos_config_get_http_ssl_ca_cert(struct mgos_config *cfg);
+static inline const char * mgos_sys_config_get_http_ssl_ca_cert(void) { return mgos_config_get_http_ssl_ca_cert(&mgos_sys_config); }
+void mgos_config_set_http_ssl_ca_cert(struct mgos_config *cfg, const char * v);
+static inline void mgos_sys_config_set_http_ssl_ca_cert(const char * v) { mgos_config_set_http_ssl_ca_cert(&mgos_sys_config, v); }
+
+/* http.upload_acl */
+#define MGOS_CONFIG_HAVE_HTTP_UPLOAD_ACL
+#define MGOS_SYS_CONFIG_HAVE_HTTP_UPLOAD_ACL
+const char * mgos_config_get_http_upload_acl(struct mgos_config *cfg);
+static inline const char * mgos_sys_config_get_http_upload_acl(void) { return mgos_config_get_http_upload_acl(&mgos_sys_config); }
+void mgos_config_set_http_upload_acl(struct mgos_config *cfg, const char * v);
+static inline void mgos_sys_config_set_http_upload_acl(const char * v) { mgos_config_set_http_upload_acl(&mgos_sys_config, v); }
+
+/* http.hidden_files */
+#define MGOS_CONFIG_HAVE_HTTP_HIDDEN_FILES
+#define MGOS_SYS_CONFIG_HAVE_HTTP_HIDDEN_FILES
+const char * mgos_config_get_http_hidden_files(struct mgos_config *cfg);
+static inline const char * mgos_sys_config_get_http_hidden_files(void) { return mgos_config_get_http_hidden_files(&mgos_sys_config); }
+void mgos_config_set_http_hidden_files(struct mgos_config *cfg, const char * v);
+static inline void mgos_sys_config_set_http_hidden_files(const char * v) { mgos_config_set_http_hidden_files(&mgos_sys_config, v); }
+
+/* http.auth_domain */
+#define MGOS_CONFIG_HAVE_HTTP_AUTH_DOMAIN
+#define MGOS_SYS_CONFIG_HAVE_HTTP_AUTH_DOMAIN
+const char * mgos_config_get_http_auth_domain(struct mgos_config *cfg);
+static inline const char * mgos_sys_config_get_http_auth_domain(void) { return mgos_config_get_http_auth_domain(&mgos_sys_config); }
+void mgos_config_set_http_auth_domain(struct mgos_config *cfg, const char * v);
+static inline void mgos_sys_config_set_http_auth_domain(const char * v) { mgos_config_set_http_auth_domain(&mgos_sys_config, v); }
+
+/* http.auth_file */
+#define MGOS_CONFIG_HAVE_HTTP_AUTH_FILE
+#define MGOS_SYS_CONFIG_HAVE_HTTP_AUTH_FILE
+const char * mgos_config_get_http_auth_file(struct mgos_config *cfg);
+static inline const char * mgos_sys_config_get_http_auth_file(void) { return mgos_config_get_http_auth_file(&mgos_sys_config); }
+void mgos_config_set_http_auth_file(struct mgos_config *cfg, const char * v);
+static inline void mgos_sys_config_set_http_auth_file(const char * v) { mgos_config_set_http_auth_file(&mgos_sys_config, v); }
 
 /* update */
 #define MGOS_CONFIG_HAVE_UPDATE
@@ -1382,80 +1382,6 @@ static inline const char * mgos_sys_config_get_rpc_auth_file(void) { return mgos
 void mgos_config_set_rpc_auth_file(struct mgos_config *cfg, const char * v);
 static inline void mgos_sys_config_set_rpc_auth_file(const char * v) { mgos_config_set_rpc_auth_file(&mgos_sys_config, v); }
 
-/* rpc.ws */
-#define MGOS_CONFIG_HAVE_RPC_WS
-#define MGOS_SYS_CONFIG_HAVE_RPC_WS
-const struct mgos_config_rpc_ws * mgos_config_get_rpc_ws(struct mgos_config *cfg);
-static inline const struct mgos_config_rpc_ws * mgos_sys_config_get_rpc_ws(void) { return mgos_config_get_rpc_ws(&mgos_sys_config); }
-const struct mgos_conf_entry *mgos_config_schema_rpc_ws(void);
-bool mgos_config_parse_rpc_ws(struct mg_str json, struct mgos_config_rpc_ws *cfg);
-bool mgos_config_copy_rpc_ws(const struct mgos_config_rpc_ws *src, struct mgos_config_rpc_ws *dst);
-void mgos_config_free_rpc_ws(struct mgos_config_rpc_ws *cfg);
-
-/* rpc.ws.enable */
-#define MGOS_CONFIG_HAVE_RPC_WS_ENABLE
-#define MGOS_SYS_CONFIG_HAVE_RPC_WS_ENABLE
-int mgos_config_get_rpc_ws_enable(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_rpc_ws_enable(void) { return mgos_config_get_rpc_ws_enable(&mgos_sys_config); }
-void mgos_config_set_rpc_ws_enable(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_rpc_ws_enable(int v) { mgos_config_set_rpc_ws_enable(&mgos_sys_config, v); }
-
-/* rpc.ws.server_address */
-#define MGOS_CONFIG_HAVE_RPC_WS_SERVER_ADDRESS
-#define MGOS_SYS_CONFIG_HAVE_RPC_WS_SERVER_ADDRESS
-const char * mgos_config_get_rpc_ws_server_address(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_rpc_ws_server_address(void) { return mgos_config_get_rpc_ws_server_address(&mgos_sys_config); }
-void mgos_config_set_rpc_ws_server_address(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_rpc_ws_server_address(const char * v) { mgos_config_set_rpc_ws_server_address(&mgos_sys_config, v); }
-
-/* rpc.ws.reconnect_interval_min */
-#define MGOS_CONFIG_HAVE_RPC_WS_RECONNECT_INTERVAL_MIN
-#define MGOS_SYS_CONFIG_HAVE_RPC_WS_RECONNECT_INTERVAL_MIN
-int mgos_config_get_rpc_ws_reconnect_interval_min(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_rpc_ws_reconnect_interval_min(void) { return mgos_config_get_rpc_ws_reconnect_interval_min(&mgos_sys_config); }
-void mgos_config_set_rpc_ws_reconnect_interval_min(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_rpc_ws_reconnect_interval_min(int v) { mgos_config_set_rpc_ws_reconnect_interval_min(&mgos_sys_config, v); }
-
-/* rpc.ws.reconnect_interval_max */
-#define MGOS_CONFIG_HAVE_RPC_WS_RECONNECT_INTERVAL_MAX
-#define MGOS_SYS_CONFIG_HAVE_RPC_WS_RECONNECT_INTERVAL_MAX
-int mgos_config_get_rpc_ws_reconnect_interval_max(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_rpc_ws_reconnect_interval_max(void) { return mgos_config_get_rpc_ws_reconnect_interval_max(&mgos_sys_config); }
-void mgos_config_set_rpc_ws_reconnect_interval_max(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_rpc_ws_reconnect_interval_max(int v) { mgos_config_set_rpc_ws_reconnect_interval_max(&mgos_sys_config, v); }
-
-/* rpc.ws.ssl_server_name */
-#define MGOS_CONFIG_HAVE_RPC_WS_SSL_SERVER_NAME
-#define MGOS_SYS_CONFIG_HAVE_RPC_WS_SSL_SERVER_NAME
-const char * mgos_config_get_rpc_ws_ssl_server_name(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_rpc_ws_ssl_server_name(void) { return mgos_config_get_rpc_ws_ssl_server_name(&mgos_sys_config); }
-void mgos_config_set_rpc_ws_ssl_server_name(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_rpc_ws_ssl_server_name(const char * v) { mgos_config_set_rpc_ws_ssl_server_name(&mgos_sys_config, v); }
-
-/* rpc.ws.ssl_cert */
-#define MGOS_CONFIG_HAVE_RPC_WS_SSL_CERT
-#define MGOS_SYS_CONFIG_HAVE_RPC_WS_SSL_CERT
-const char * mgos_config_get_rpc_ws_ssl_cert(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_rpc_ws_ssl_cert(void) { return mgos_config_get_rpc_ws_ssl_cert(&mgos_sys_config); }
-void mgos_config_set_rpc_ws_ssl_cert(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_rpc_ws_ssl_cert(const char * v) { mgos_config_set_rpc_ws_ssl_cert(&mgos_sys_config, v); }
-
-/* rpc.ws.ssl_key */
-#define MGOS_CONFIG_HAVE_RPC_WS_SSL_KEY
-#define MGOS_SYS_CONFIG_HAVE_RPC_WS_SSL_KEY
-const char * mgos_config_get_rpc_ws_ssl_key(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_rpc_ws_ssl_key(void) { return mgos_config_get_rpc_ws_ssl_key(&mgos_sys_config); }
-void mgos_config_set_rpc_ws_ssl_key(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_rpc_ws_ssl_key(const char * v) { mgos_config_set_rpc_ws_ssl_key(&mgos_sys_config, v); }
-
-/* rpc.ws.ssl_ca_cert */
-#define MGOS_CONFIG_HAVE_RPC_WS_SSL_CA_CERT
-#define MGOS_SYS_CONFIG_HAVE_RPC_WS_SSL_CA_CERT
-const char * mgos_config_get_rpc_ws_ssl_ca_cert(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_rpc_ws_ssl_ca_cert(void) { return mgos_config_get_rpc_ws_ssl_ca_cert(&mgos_sys_config); }
-void mgos_config_set_rpc_ws_ssl_ca_cert(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_rpc_ws_ssl_ca_cert(const char * v) { mgos_config_set_rpc_ws_ssl_ca_cert(&mgos_sys_config, v); }
-
 /* rpc.mqtt */
 #define MGOS_CONFIG_HAVE_RPC_MQTT
 #define MGOS_SYS_CONFIG_HAVE_RPC_MQTT
@@ -1548,325 +1474,79 @@ static inline const char * mgos_sys_config_get_rpc_uart_dst(void) { return mgos_
 void mgos_config_set_rpc_uart_dst(struct mgos_config *cfg, const char * v);
 static inline void mgos_sys_config_set_rpc_uart_dst(const char * v) { mgos_config_set_rpc_uart_dst(&mgos_sys_config, v); }
 
-/* dash */
-#define MGOS_CONFIG_HAVE_DASH
-#define MGOS_SYS_CONFIG_HAVE_DASH
-const struct mgos_config_dash * mgos_config_get_dash(struct mgos_config *cfg);
-static inline const struct mgos_config_dash * mgos_sys_config_get_dash(void) { return mgos_config_get_dash(&mgos_sys_config); }
-const struct mgos_conf_entry *mgos_config_schema_dash(void);
-bool mgos_config_parse_dash(struct mg_str json, struct mgos_config_dash *cfg);
-bool mgos_config_copy_dash(const struct mgos_config_dash *src, struct mgos_config_dash *dst);
-void mgos_config_free_dash(struct mgos_config_dash *cfg);
+/* rpc.ws */
+#define MGOS_CONFIG_HAVE_RPC_WS
+#define MGOS_SYS_CONFIG_HAVE_RPC_WS
+const struct mgos_config_rpc_ws * mgos_config_get_rpc_ws(struct mgos_config *cfg);
+static inline const struct mgos_config_rpc_ws * mgos_sys_config_get_rpc_ws(void) { return mgos_config_get_rpc_ws(&mgos_sys_config); }
+const struct mgos_conf_entry *mgos_config_schema_rpc_ws(void);
+bool mgos_config_parse_rpc_ws(struct mg_str json, struct mgos_config_rpc_ws *cfg);
+bool mgos_config_copy_rpc_ws(const struct mgos_config_rpc_ws *src, struct mgos_config_rpc_ws *dst);
+void mgos_config_free_rpc_ws(struct mgos_config_rpc_ws *cfg);
 
-/* dash.enable */
-#define MGOS_CONFIG_HAVE_DASH_ENABLE
-#define MGOS_SYS_CONFIG_HAVE_DASH_ENABLE
-int mgos_config_get_dash_enable(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_dash_enable(void) { return mgos_config_get_dash_enable(&mgos_sys_config); }
-void mgos_config_set_dash_enable(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_dash_enable(int v) { mgos_config_set_dash_enable(&mgos_sys_config, v); }
+/* rpc.ws.enable */
+#define MGOS_CONFIG_HAVE_RPC_WS_ENABLE
+#define MGOS_SYS_CONFIG_HAVE_RPC_WS_ENABLE
+int mgos_config_get_rpc_ws_enable(struct mgos_config *cfg);
+static inline int mgos_sys_config_get_rpc_ws_enable(void) { return mgos_config_get_rpc_ws_enable(&mgos_sys_config); }
+void mgos_config_set_rpc_ws_enable(struct mgos_config *cfg, int v);
+static inline void mgos_sys_config_set_rpc_ws_enable(int v) { mgos_config_set_rpc_ws_enable(&mgos_sys_config, v); }
 
-/* dash.token */
-#define MGOS_CONFIG_HAVE_DASH_TOKEN
-#define MGOS_SYS_CONFIG_HAVE_DASH_TOKEN
-const char * mgos_config_get_dash_token(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_dash_token(void) { return mgos_config_get_dash_token(&mgos_sys_config); }
-void mgos_config_set_dash_token(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_dash_token(const char * v) { mgos_config_set_dash_token(&mgos_sys_config, v); }
+/* rpc.ws.server_address */
+#define MGOS_CONFIG_HAVE_RPC_WS_SERVER_ADDRESS
+#define MGOS_SYS_CONFIG_HAVE_RPC_WS_SERVER_ADDRESS
+const char * mgos_config_get_rpc_ws_server_address(struct mgos_config *cfg);
+static inline const char * mgos_sys_config_get_rpc_ws_server_address(void) { return mgos_config_get_rpc_ws_server_address(&mgos_sys_config); }
+void mgos_config_set_rpc_ws_server_address(struct mgos_config *cfg, const char * v);
+static inline void mgos_sys_config_set_rpc_ws_server_address(const char * v) { mgos_config_set_rpc_ws_server_address(&mgos_sys_config, v); }
 
-/* dash.server */
-#define MGOS_CONFIG_HAVE_DASH_SERVER
-#define MGOS_SYS_CONFIG_HAVE_DASH_SERVER
-const char * mgos_config_get_dash_server(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_dash_server(void) { return mgos_config_get_dash_server(&mgos_sys_config); }
-void mgos_config_set_dash_server(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_dash_server(const char * v) { mgos_config_set_dash_server(&mgos_sys_config, v); }
+/* rpc.ws.reconnect_interval_min */
+#define MGOS_CONFIG_HAVE_RPC_WS_RECONNECT_INTERVAL_MIN
+#define MGOS_SYS_CONFIG_HAVE_RPC_WS_RECONNECT_INTERVAL_MIN
+int mgos_config_get_rpc_ws_reconnect_interval_min(struct mgos_config *cfg);
+static inline int mgos_sys_config_get_rpc_ws_reconnect_interval_min(void) { return mgos_config_get_rpc_ws_reconnect_interval_min(&mgos_sys_config); }
+void mgos_config_set_rpc_ws_reconnect_interval_min(struct mgos_config *cfg, int v);
+static inline void mgos_sys_config_set_rpc_ws_reconnect_interval_min(int v) { mgos_config_set_rpc_ws_reconnect_interval_min(&mgos_sys_config, v); }
 
-/* dash.ssl_cert */
-#define MGOS_CONFIG_HAVE_DASH_SSL_CERT
-#define MGOS_SYS_CONFIG_HAVE_DASH_SSL_CERT
-const char * mgos_config_get_dash_ssl_cert(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_dash_ssl_cert(void) { return mgos_config_get_dash_ssl_cert(&mgos_sys_config); }
-void mgos_config_set_dash_ssl_cert(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_dash_ssl_cert(const char * v) { mgos_config_set_dash_ssl_cert(&mgos_sys_config, v); }
+/* rpc.ws.reconnect_interval_max */
+#define MGOS_CONFIG_HAVE_RPC_WS_RECONNECT_INTERVAL_MAX
+#define MGOS_SYS_CONFIG_HAVE_RPC_WS_RECONNECT_INTERVAL_MAX
+int mgos_config_get_rpc_ws_reconnect_interval_max(struct mgos_config *cfg);
+static inline int mgos_sys_config_get_rpc_ws_reconnect_interval_max(void) { return mgos_config_get_rpc_ws_reconnect_interval_max(&mgos_sys_config); }
+void mgos_config_set_rpc_ws_reconnect_interval_max(struct mgos_config *cfg, int v);
+static inline void mgos_sys_config_set_rpc_ws_reconnect_interval_max(int v) { mgos_config_set_rpc_ws_reconnect_interval_max(&mgos_sys_config, v); }
 
-/* dash.ssl_key */
-#define MGOS_CONFIG_HAVE_DASH_SSL_KEY
-#define MGOS_SYS_CONFIG_HAVE_DASH_SSL_KEY
-const char * mgos_config_get_dash_ssl_key(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_dash_ssl_key(void) { return mgos_config_get_dash_ssl_key(&mgos_sys_config); }
-void mgos_config_set_dash_ssl_key(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_dash_ssl_key(const char * v) { mgos_config_set_dash_ssl_key(&mgos_sys_config, v); }
+/* rpc.ws.ssl_server_name */
+#define MGOS_CONFIG_HAVE_RPC_WS_SSL_SERVER_NAME
+#define MGOS_SYS_CONFIG_HAVE_RPC_WS_SSL_SERVER_NAME
+const char * mgos_config_get_rpc_ws_ssl_server_name(struct mgos_config *cfg);
+static inline const char * mgos_sys_config_get_rpc_ws_ssl_server_name(void) { return mgos_config_get_rpc_ws_ssl_server_name(&mgos_sys_config); }
+void mgos_config_set_rpc_ws_ssl_server_name(struct mgos_config *cfg, const char * v);
+static inline void mgos_sys_config_set_rpc_ws_ssl_server_name(const char * v) { mgos_config_set_rpc_ws_ssl_server_name(&mgos_sys_config, v); }
 
-/* dash.ssl_ca_cert */
-#define MGOS_CONFIG_HAVE_DASH_SSL_CA_CERT
-#define MGOS_SYS_CONFIG_HAVE_DASH_SSL_CA_CERT
-const char * mgos_config_get_dash_ssl_ca_cert(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_dash_ssl_ca_cert(void) { return mgos_config_get_dash_ssl_ca_cert(&mgos_sys_config); }
-void mgos_config_set_dash_ssl_ca_cert(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_dash_ssl_ca_cert(const char * v) { mgos_config_set_dash_ssl_ca_cert(&mgos_sys_config, v); }
+/* rpc.ws.ssl_cert */
+#define MGOS_CONFIG_HAVE_RPC_WS_SSL_CERT
+#define MGOS_SYS_CONFIG_HAVE_RPC_WS_SSL_CERT
+const char * mgos_config_get_rpc_ws_ssl_cert(struct mgos_config *cfg);
+static inline const char * mgos_sys_config_get_rpc_ws_ssl_cert(void) { return mgos_config_get_rpc_ws_ssl_cert(&mgos_sys_config); }
+void mgos_config_set_rpc_ws_ssl_cert(struct mgos_config *cfg, const char * v);
+static inline void mgos_sys_config_set_rpc_ws_ssl_cert(const char * v) { mgos_config_set_rpc_ws_ssl_cert(&mgos_sys_config, v); }
 
-/* dash.send_logs */
-#define MGOS_CONFIG_HAVE_DASH_SEND_LOGS
-#define MGOS_SYS_CONFIG_HAVE_DASH_SEND_LOGS
-int mgos_config_get_dash_send_logs(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_dash_send_logs(void) { return mgos_config_get_dash_send_logs(&mgos_sys_config); }
-void mgos_config_set_dash_send_logs(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_dash_send_logs(int v) { mgos_config_set_dash_send_logs(&mgos_sys_config, v); }
+/* rpc.ws.ssl_key */
+#define MGOS_CONFIG_HAVE_RPC_WS_SSL_KEY
+#define MGOS_SYS_CONFIG_HAVE_RPC_WS_SSL_KEY
+const char * mgos_config_get_rpc_ws_ssl_key(struct mgos_config *cfg);
+static inline const char * mgos_sys_config_get_rpc_ws_ssl_key(void) { return mgos_config_get_rpc_ws_ssl_key(&mgos_sys_config); }
+void mgos_config_set_rpc_ws_ssl_key(struct mgos_config *cfg, const char * v);
+static inline void mgos_sys_config_set_rpc_ws_ssl_key(const char * v) { mgos_config_set_rpc_ws_ssl_key(&mgos_sys_config, v); }
 
-/* file_logger */
-#define MGOS_CONFIG_HAVE_FILE_LOGGER
-#define MGOS_SYS_CONFIG_HAVE_FILE_LOGGER
-const struct mgos_config_file_logger * mgos_config_get_file_logger(struct mgos_config *cfg);
-static inline const struct mgos_config_file_logger * mgos_sys_config_get_file_logger(void) { return mgos_config_get_file_logger(&mgos_sys_config); }
-const struct mgos_conf_entry *mgos_config_schema_file_logger(void);
-bool mgos_config_parse_file_logger(struct mg_str json, struct mgos_config_file_logger *cfg);
-bool mgos_config_copy_file_logger(const struct mgos_config_file_logger *src, struct mgos_config_file_logger *dst);
-void mgos_config_free_file_logger(struct mgos_config_file_logger *cfg);
-
-/* file_logger.enable */
-#define MGOS_CONFIG_HAVE_FILE_LOGGER_ENABLE
-#define MGOS_SYS_CONFIG_HAVE_FILE_LOGGER_ENABLE
-int mgos_config_get_file_logger_enable(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_file_logger_enable(void) { return mgos_config_get_file_logger_enable(&mgos_sys_config); }
-void mgos_config_set_file_logger_enable(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_file_logger_enable(int v) { mgos_config_set_file_logger_enable(&mgos_sys_config, v); }
-
-/* file_logger.dir */
-#define MGOS_CONFIG_HAVE_FILE_LOGGER_DIR
-#define MGOS_SYS_CONFIG_HAVE_FILE_LOGGER_DIR
-const char * mgos_config_get_file_logger_dir(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_file_logger_dir(void) { return mgos_config_get_file_logger_dir(&mgos_sys_config); }
-void mgos_config_set_file_logger_dir(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_file_logger_dir(const char * v) { mgos_config_set_file_logger_dir(&mgos_sys_config, v); }
-
-/* file_logger.prefix */
-#define MGOS_CONFIG_HAVE_FILE_LOGGER_PREFIX
-#define MGOS_SYS_CONFIG_HAVE_FILE_LOGGER_PREFIX
-const char * mgos_config_get_file_logger_prefix(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_file_logger_prefix(void) { return mgos_config_get_file_logger_prefix(&mgos_sys_config); }
-void mgos_config_set_file_logger_prefix(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_file_logger_prefix(const char * v) { mgos_config_set_file_logger_prefix(&mgos_sys_config, v); }
-
-/* file_logger.max_file_size */
-#define MGOS_CONFIG_HAVE_FILE_LOGGER_MAX_FILE_SIZE
-#define MGOS_SYS_CONFIG_HAVE_FILE_LOGGER_MAX_FILE_SIZE
-int mgos_config_get_file_logger_max_file_size(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_file_logger_max_file_size(void) { return mgos_config_get_file_logger_max_file_size(&mgos_sys_config); }
-void mgos_config_set_file_logger_max_file_size(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_file_logger_max_file_size(int v) { mgos_config_set_file_logger_max_file_size(&mgos_sys_config, v); }
-
-/* file_logger.max_num_files */
-#define MGOS_CONFIG_HAVE_FILE_LOGGER_MAX_NUM_FILES
-#define MGOS_SYS_CONFIG_HAVE_FILE_LOGGER_MAX_NUM_FILES
-int mgos_config_get_file_logger_max_num_files(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_file_logger_max_num_files(void) { return mgos_config_get_file_logger_max_num_files(&mgos_sys_config); }
-void mgos_config_set_file_logger_max_num_files(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_file_logger_max_num_files(int v) { mgos_config_set_file_logger_max_num_files(&mgos_sys_config, v); }
-
-/* file_logger.timestamps */
-#define MGOS_CONFIG_HAVE_FILE_LOGGER_TIMESTAMPS
-#define MGOS_SYS_CONFIG_HAVE_FILE_LOGGER_TIMESTAMPS
-int mgos_config_get_file_logger_timestamps(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_file_logger_timestamps(void) { return mgos_config_get_file_logger_timestamps(&mgos_sys_config); }
-void mgos_config_set_file_logger_timestamps(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_file_logger_timestamps(int v) { mgos_config_set_file_logger_timestamps(&mgos_sys_config, v); }
-
-/* file_logger.level */
-#define MGOS_CONFIG_HAVE_FILE_LOGGER_LEVEL
-#define MGOS_SYS_CONFIG_HAVE_FILE_LOGGER_LEVEL
-int mgos_config_get_file_logger_level(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_file_logger_level(void) { return mgos_config_get_file_logger_level(&mgos_sys_config); }
-void mgos_config_set_file_logger_level(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_file_logger_level(int v) { mgos_config_set_file_logger_level(&mgos_sys_config, v); }
-
-/* file_logger.include */
-#define MGOS_CONFIG_HAVE_FILE_LOGGER_INCLUDE
-#define MGOS_SYS_CONFIG_HAVE_FILE_LOGGER_INCLUDE
-const char * mgos_config_get_file_logger_include(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_file_logger_include(void) { return mgos_config_get_file_logger_include(&mgos_sys_config); }
-void mgos_config_set_file_logger_include(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_file_logger_include(const char * v) { mgos_config_set_file_logger_include(&mgos_sys_config, v); }
-
-/* file_logger.syslog_enable */
-#define MGOS_CONFIG_HAVE_FILE_LOGGER_SYSLOG_ENABLE
-#define MGOS_SYS_CONFIG_HAVE_FILE_LOGGER_SYSLOG_ENABLE
-int mgos_config_get_file_logger_syslog_enable(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_file_logger_syslog_enable(void) { return mgos_config_get_file_logger_syslog_enable(&mgos_sys_config); }
-void mgos_config_set_file_logger_syslog_enable(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_file_logger_syslog_enable(int v) { mgos_config_set_file_logger_syslog_enable(&mgos_sys_config, v); }
-
-/* file_logger.rpc_service_enable */
-#define MGOS_CONFIG_HAVE_FILE_LOGGER_RPC_SERVICE_ENABLE
-#define MGOS_SYS_CONFIG_HAVE_FILE_LOGGER_RPC_SERVICE_ENABLE
-int mgos_config_get_file_logger_rpc_service_enable(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_file_logger_rpc_service_enable(void) { return mgos_config_get_file_logger_rpc_service_enable(&mgos_sys_config); }
-void mgos_config_set_file_logger_rpc_service_enable(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_file_logger_rpc_service_enable(int v) { mgos_config_set_file_logger_rpc_service_enable(&mgos_sys_config, v); }
-
-/* file_logger.buf_size */
-#define MGOS_CONFIG_HAVE_FILE_LOGGER_BUF_SIZE
-#define MGOS_SYS_CONFIG_HAVE_FILE_LOGGER_BUF_SIZE
-int mgos_config_get_file_logger_buf_size(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_file_logger_buf_size(void) { return mgos_config_get_file_logger_buf_size(&mgos_sys_config); }
-void mgos_config_set_file_logger_buf_size(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_file_logger_buf_size(int v) { mgos_config_set_file_logger_buf_size(&mgos_sys_config, v); }
-
-/* file_logger.buf_line */
-#define MGOS_CONFIG_HAVE_FILE_LOGGER_BUF_LINE
-#define MGOS_SYS_CONFIG_HAVE_FILE_LOGGER_BUF_LINE
-int mgos_config_get_file_logger_buf_line(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_file_logger_buf_line(void) { return mgos_config_get_file_logger_buf_line(&mgos_sys_config); }
-void mgos_config_set_file_logger_buf_line(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_file_logger_buf_line(int v) { mgos_config_set_file_logger_buf_line(&mgos_sys_config, v); }
-
-/* http */
-#define MGOS_CONFIG_HAVE_HTTP
-#define MGOS_SYS_CONFIG_HAVE_HTTP
-const struct mgos_config_http * mgos_config_get_http(struct mgos_config *cfg);
-static inline const struct mgos_config_http * mgos_sys_config_get_http(void) { return mgos_config_get_http(&mgos_sys_config); }
-const struct mgos_conf_entry *mgos_config_schema_http(void);
-bool mgos_config_parse_http(struct mg_str json, struct mgos_config_http *cfg);
-bool mgos_config_copy_http(const struct mgos_config_http *src, struct mgos_config_http *dst);
-void mgos_config_free_http(struct mgos_config_http *cfg);
-
-/* http.enable */
-#define MGOS_CONFIG_HAVE_HTTP_ENABLE
-#define MGOS_SYS_CONFIG_HAVE_HTTP_ENABLE
-int mgos_config_get_http_enable(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_http_enable(void) { return mgos_config_get_http_enable(&mgos_sys_config); }
-void mgos_config_set_http_enable(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_http_enable(int v) { mgos_config_set_http_enable(&mgos_sys_config, v); }
-
-/* http.listen_addr */
-#define MGOS_CONFIG_HAVE_HTTP_LISTEN_ADDR
-#define MGOS_SYS_CONFIG_HAVE_HTTP_LISTEN_ADDR
-const char * mgos_config_get_http_listen_addr(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_http_listen_addr(void) { return mgos_config_get_http_listen_addr(&mgos_sys_config); }
-void mgos_config_set_http_listen_addr(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_http_listen_addr(const char * v) { mgos_config_set_http_listen_addr(&mgos_sys_config, v); }
-
-/* http.document_root */
-#define MGOS_CONFIG_HAVE_HTTP_DOCUMENT_ROOT
-#define MGOS_SYS_CONFIG_HAVE_HTTP_DOCUMENT_ROOT
-const char * mgos_config_get_http_document_root(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_http_document_root(void) { return mgos_config_get_http_document_root(&mgos_sys_config); }
-void mgos_config_set_http_document_root(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_http_document_root(const char * v) { mgos_config_set_http_document_root(&mgos_sys_config, v); }
-
-/* http.index_files */
-#define MGOS_CONFIG_HAVE_HTTP_INDEX_FILES
-#define MGOS_SYS_CONFIG_HAVE_HTTP_INDEX_FILES
-const char * mgos_config_get_http_index_files(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_http_index_files(void) { return mgos_config_get_http_index_files(&mgos_sys_config); }
-void mgos_config_set_http_index_files(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_http_index_files(const char * v) { mgos_config_set_http_index_files(&mgos_sys_config, v); }
-
-/* http.ssl_cert */
-#define MGOS_CONFIG_HAVE_HTTP_SSL_CERT
-#define MGOS_SYS_CONFIG_HAVE_HTTP_SSL_CERT
-const char * mgos_config_get_http_ssl_cert(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_http_ssl_cert(void) { return mgos_config_get_http_ssl_cert(&mgos_sys_config); }
-void mgos_config_set_http_ssl_cert(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_http_ssl_cert(const char * v) { mgos_config_set_http_ssl_cert(&mgos_sys_config, v); }
-
-/* http.ssl_key */
-#define MGOS_CONFIG_HAVE_HTTP_SSL_KEY
-#define MGOS_SYS_CONFIG_HAVE_HTTP_SSL_KEY
-const char * mgos_config_get_http_ssl_key(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_http_ssl_key(void) { return mgos_config_get_http_ssl_key(&mgos_sys_config); }
-void mgos_config_set_http_ssl_key(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_http_ssl_key(const char * v) { mgos_config_set_http_ssl_key(&mgos_sys_config, v); }
-
-/* http.ssl_ca_cert */
-#define MGOS_CONFIG_HAVE_HTTP_SSL_CA_CERT
-#define MGOS_SYS_CONFIG_HAVE_HTTP_SSL_CA_CERT
-const char * mgos_config_get_http_ssl_ca_cert(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_http_ssl_ca_cert(void) { return mgos_config_get_http_ssl_ca_cert(&mgos_sys_config); }
-void mgos_config_set_http_ssl_ca_cert(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_http_ssl_ca_cert(const char * v) { mgos_config_set_http_ssl_ca_cert(&mgos_sys_config, v); }
-
-/* http.upload_acl */
-#define MGOS_CONFIG_HAVE_HTTP_UPLOAD_ACL
-#define MGOS_SYS_CONFIG_HAVE_HTTP_UPLOAD_ACL
-const char * mgos_config_get_http_upload_acl(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_http_upload_acl(void) { return mgos_config_get_http_upload_acl(&mgos_sys_config); }
-void mgos_config_set_http_upload_acl(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_http_upload_acl(const char * v) { mgos_config_set_http_upload_acl(&mgos_sys_config, v); }
-
-/* http.hidden_files */
-#define MGOS_CONFIG_HAVE_HTTP_HIDDEN_FILES
-#define MGOS_SYS_CONFIG_HAVE_HTTP_HIDDEN_FILES
-const char * mgos_config_get_http_hidden_files(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_http_hidden_files(void) { return mgos_config_get_http_hidden_files(&mgos_sys_config); }
-void mgos_config_set_http_hidden_files(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_http_hidden_files(const char * v) { mgos_config_set_http_hidden_files(&mgos_sys_config, v); }
-
-/* http.auth_domain */
-#define MGOS_CONFIG_HAVE_HTTP_AUTH_DOMAIN
-#define MGOS_SYS_CONFIG_HAVE_HTTP_AUTH_DOMAIN
-const char * mgos_config_get_http_auth_domain(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_http_auth_domain(void) { return mgos_config_get_http_auth_domain(&mgos_sys_config); }
-void mgos_config_set_http_auth_domain(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_http_auth_domain(const char * v) { mgos_config_set_http_auth_domain(&mgos_sys_config, v); }
-
-/* http.auth_file */
-#define MGOS_CONFIG_HAVE_HTTP_AUTH_FILE
-#define MGOS_SYS_CONFIG_HAVE_HTTP_AUTH_FILE
-const char * mgos_config_get_http_auth_file(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_http_auth_file(void) { return mgos_config_get_http_auth_file(&mgos_sys_config); }
-void mgos_config_set_http_auth_file(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_http_auth_file(const char * v) { mgos_config_set_http_auth_file(&mgos_sys_config, v); }
-
-/* sntp */
-#define MGOS_CONFIG_HAVE_SNTP
-#define MGOS_SYS_CONFIG_HAVE_SNTP
-const struct mgos_config_sntp * mgos_config_get_sntp(struct mgos_config *cfg);
-static inline const struct mgos_config_sntp * mgos_sys_config_get_sntp(void) { return mgos_config_get_sntp(&mgos_sys_config); }
-const struct mgos_conf_entry *mgos_config_schema_sntp(void);
-bool mgos_config_parse_sntp(struct mg_str json, struct mgos_config_sntp *cfg);
-bool mgos_config_copy_sntp(const struct mgos_config_sntp *src, struct mgos_config_sntp *dst);
-void mgos_config_free_sntp(struct mgos_config_sntp *cfg);
-
-/* sntp.enable */
-#define MGOS_CONFIG_HAVE_SNTP_ENABLE
-#define MGOS_SYS_CONFIG_HAVE_SNTP_ENABLE
-int mgos_config_get_sntp_enable(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_sntp_enable(void) { return mgos_config_get_sntp_enable(&mgos_sys_config); }
-void mgos_config_set_sntp_enable(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_sntp_enable(int v) { mgos_config_set_sntp_enable(&mgos_sys_config, v); }
-
-/* sntp.server */
-#define MGOS_CONFIG_HAVE_SNTP_SERVER
-#define MGOS_SYS_CONFIG_HAVE_SNTP_SERVER
-const char * mgos_config_get_sntp_server(struct mgos_config *cfg);
-static inline const char * mgos_sys_config_get_sntp_server(void) { return mgos_config_get_sntp_server(&mgos_sys_config); }
-void mgos_config_set_sntp_server(struct mgos_config *cfg, const char * v);
-static inline void mgos_sys_config_set_sntp_server(const char * v) { mgos_config_set_sntp_server(&mgos_sys_config, v); }
-
-/* sntp.retry_min */
-#define MGOS_CONFIG_HAVE_SNTP_RETRY_MIN
-#define MGOS_SYS_CONFIG_HAVE_SNTP_RETRY_MIN
-int mgos_config_get_sntp_retry_min(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_sntp_retry_min(void) { return mgos_config_get_sntp_retry_min(&mgos_sys_config); }
-void mgos_config_set_sntp_retry_min(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_sntp_retry_min(int v) { mgos_config_set_sntp_retry_min(&mgos_sys_config, v); }
-
-/* sntp.retry_max */
-#define MGOS_CONFIG_HAVE_SNTP_RETRY_MAX
-#define MGOS_SYS_CONFIG_HAVE_SNTP_RETRY_MAX
-int mgos_config_get_sntp_retry_max(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_sntp_retry_max(void) { return mgos_config_get_sntp_retry_max(&mgos_sys_config); }
-void mgos_config_set_sntp_retry_max(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_sntp_retry_max(int v) { mgos_config_set_sntp_retry_max(&mgos_sys_config, v); }
-
-/* sntp.update_interval */
-#define MGOS_CONFIG_HAVE_SNTP_UPDATE_INTERVAL
-#define MGOS_SYS_CONFIG_HAVE_SNTP_UPDATE_INTERVAL
-int mgos_config_get_sntp_update_interval(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_sntp_update_interval(void) { return mgos_config_get_sntp_update_interval(&mgos_sys_config); }
-void mgos_config_set_sntp_update_interval(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_sntp_update_interval(int v) { mgos_config_set_sntp_update_interval(&mgos_sys_config, v); }
+/* rpc.ws.ssl_ca_cert */
+#define MGOS_CONFIG_HAVE_RPC_WS_SSL_CA_CERT
+#define MGOS_SYS_CONFIG_HAVE_RPC_WS_SSL_CA_CERT
+const char * mgos_config_get_rpc_ws_ssl_ca_cert(struct mgos_config *cfg);
+static inline const char * mgos_sys_config_get_rpc_ws_ssl_ca_cert(void) { return mgos_config_get_rpc_ws_ssl_ca_cert(&mgos_sys_config); }
+void mgos_config_set_rpc_ws_ssl_ca_cert(struct mgos_config *cfg, const char * v);
+static inline void mgos_sys_config_set_rpc_ws_ssl_ca_cert(const char * v) { mgos_config_set_rpc_ws_ssl_ca_cert(&mgos_sys_config, v); }
 
 /* spi */
 #define MGOS_CONFIG_HAVE_SPI
@@ -2431,226 +2111,6 @@ int mgos_config_get_wifi_sta_connect_timeout(struct mgos_config *cfg);
 static inline int mgos_sys_config_get_wifi_sta_connect_timeout(void) { return mgos_config_get_wifi_sta_connect_timeout(&mgos_sys_config); }
 void mgos_config_set_wifi_sta_connect_timeout(struct mgos_config *cfg, int v);
 static inline void mgos_sys_config_set_wifi_sta_connect_timeout(int v) { mgos_config_set_wifi_sta_connect_timeout(&mgos_sys_config, v); }
-
-/* additional */
-#define MGOS_CONFIG_HAVE_ADDITIONAL
-#define MGOS_SYS_CONFIG_HAVE_ADDITIONAL
-const struct mgos_config_additional * mgos_config_get_additional(struct mgos_config *cfg);
-static inline const struct mgos_config_additional * mgos_sys_config_get_additional(void) { return mgos_config_get_additional(&mgos_sys_config); }
-const struct mgos_conf_entry *mgos_config_schema_additional(void);
-bool mgos_config_parse_additional(struct mg_str json, struct mgos_config_additional *cfg);
-bool mgos_config_copy_additional(const struct mgos_config_additional *src, struct mgos_config_additional *dst);
-void mgos_config_free_additional(struct mgos_config_additional *cfg);
-
-/* additional.alert */
-#define MGOS_CONFIG_HAVE_ADDITIONAL_ALERT
-#define MGOS_SYS_CONFIG_HAVE_ADDITIONAL_ALERT
-const struct mgos_config_additional_alert * mgos_config_get_additional_alert(struct mgos_config *cfg);
-static inline const struct mgos_config_additional_alert * mgos_sys_config_get_additional_alert(void) { return mgos_config_get_additional_alert(&mgos_sys_config); }
-const struct mgos_conf_entry *mgos_config_schema_additional_alert(void);
-bool mgos_config_parse_additional_alert(struct mg_str json, struct mgos_config_additional_alert *cfg);
-bool mgos_config_copy_additional_alert(const struct mgos_config_additional_alert *src, struct mgos_config_additional_alert *dst);
-void mgos_config_free_additional_alert(struct mgos_config_additional_alert *cfg);
-
-/* additional.alert.out_1 */
-#define MGOS_CONFIG_HAVE_ADDITIONAL_ALERT_OUT_1
-#define MGOS_SYS_CONFIG_HAVE_ADDITIONAL_ALERT_OUT_1
-int mgos_config_get_additional_alert_out_1(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_additional_alert_out_1(void) { return mgos_config_get_additional_alert_out_1(&mgos_sys_config); }
-void mgos_config_set_additional_alert_out_1(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_additional_alert_out_1(int v) { mgos_config_set_additional_alert_out_1(&mgos_sys_config, v); }
-
-/* additional.alert.out_2 */
-#define MGOS_CONFIG_HAVE_ADDITIONAL_ALERT_OUT_2
-#define MGOS_SYS_CONFIG_HAVE_ADDITIONAL_ALERT_OUT_2
-int mgos_config_get_additional_alert_out_2(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_additional_alert_out_2(void) { return mgos_config_get_additional_alert_out_2(&mgos_sys_config); }
-void mgos_config_set_additional_alert_out_2(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_additional_alert_out_2(int v) { mgos_config_set_additional_alert_out_2(&mgos_sys_config, v); }
-
-/* additional.alert.out_3 */
-#define MGOS_CONFIG_HAVE_ADDITIONAL_ALERT_OUT_3
-#define MGOS_SYS_CONFIG_HAVE_ADDITIONAL_ALERT_OUT_3
-int mgos_config_get_additional_alert_out_3(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_additional_alert_out_3(void) { return mgos_config_get_additional_alert_out_3(&mgos_sys_config); }
-void mgos_config_set_additional_alert_out_3(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_additional_alert_out_3(int v) { mgos_config_set_additional_alert_out_3(&mgos_sys_config, v); }
-
-/* additional.alert.out_4 */
-#define MGOS_CONFIG_HAVE_ADDITIONAL_ALERT_OUT_4
-#define MGOS_SYS_CONFIG_HAVE_ADDITIONAL_ALERT_OUT_4
-int mgos_config_get_additional_alert_out_4(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_additional_alert_out_4(void) { return mgos_config_get_additional_alert_out_4(&mgos_sys_config); }
-void mgos_config_set_additional_alert_out_4(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_additional_alert_out_4(int v) { mgos_config_set_additional_alert_out_4(&mgos_sys_config, v); }
-
-/* additional.timer */
-#define MGOS_CONFIG_HAVE_ADDITIONAL_TIMER
-#define MGOS_SYS_CONFIG_HAVE_ADDITIONAL_TIMER
-const struct mgos_config_additional_timer * mgos_config_get_additional_timer(struct mgos_config *cfg);
-static inline const struct mgos_config_additional_timer * mgos_sys_config_get_additional_timer(void) { return mgos_config_get_additional_timer(&mgos_sys_config); }
-const struct mgos_conf_entry *mgos_config_schema_additional_timer(void);
-bool mgos_config_parse_additional_timer(struct mg_str json, struct mgos_config_additional_timer *cfg);
-bool mgos_config_copy_additional_timer(const struct mgos_config_additional_timer *src, struct mgos_config_additional_timer *dst);
-void mgos_config_free_additional_timer(struct mgos_config_additional_timer *cfg);
-
-/* additional.timer.out_1 */
-#define MGOS_CONFIG_HAVE_ADDITIONAL_TIMER_OUT_1
-#define MGOS_SYS_CONFIG_HAVE_ADDITIONAL_TIMER_OUT_1
-int mgos_config_get_additional_timer_out_1(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_additional_timer_out_1(void) { return mgos_config_get_additional_timer_out_1(&mgos_sys_config); }
-void mgos_config_set_additional_timer_out_1(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_additional_timer_out_1(int v) { mgos_config_set_additional_timer_out_1(&mgos_sys_config, v); }
-
-/* additional.timer.out_2 */
-#define MGOS_CONFIG_HAVE_ADDITIONAL_TIMER_OUT_2
-#define MGOS_SYS_CONFIG_HAVE_ADDITIONAL_TIMER_OUT_2
-int mgos_config_get_additional_timer_out_2(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_additional_timer_out_2(void) { return mgos_config_get_additional_timer_out_2(&mgos_sys_config); }
-void mgos_config_set_additional_timer_out_2(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_additional_timer_out_2(int v) { mgos_config_set_additional_timer_out_2(&mgos_sys_config, v); }
-
-/* additional.timer.out_3 */
-#define MGOS_CONFIG_HAVE_ADDITIONAL_TIMER_OUT_3
-#define MGOS_SYS_CONFIG_HAVE_ADDITIONAL_TIMER_OUT_3
-int mgos_config_get_additional_timer_out_3(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_additional_timer_out_3(void) { return mgos_config_get_additional_timer_out_3(&mgos_sys_config); }
-void mgos_config_set_additional_timer_out_3(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_additional_timer_out_3(int v) { mgos_config_set_additional_timer_out_3(&mgos_sys_config, v); }
-
-/* additional.timer.out_4 */
-#define MGOS_CONFIG_HAVE_ADDITIONAL_TIMER_OUT_4
-#define MGOS_SYS_CONFIG_HAVE_ADDITIONAL_TIMER_OUT_4
-int mgos_config_get_additional_timer_out_4(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_additional_timer_out_4(void) { return mgos_config_get_additional_timer_out_4(&mgos_sys_config); }
-void mgos_config_set_additional_timer_out_4(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_additional_timer_out_4(int v) { mgos_config_set_additional_timer_out_4(&mgos_sys_config, v); }
-
-/* additional.future */
-#define MGOS_CONFIG_HAVE_ADDITIONAL_FUTURE
-#define MGOS_SYS_CONFIG_HAVE_ADDITIONAL_FUTURE
-const struct mgos_config_additional_future * mgos_config_get_additional_future(struct mgos_config *cfg);
-static inline const struct mgos_config_additional_future * mgos_sys_config_get_additional_future(void) { return mgos_config_get_additional_future(&mgos_sys_config); }
-const struct mgos_conf_entry *mgos_config_schema_additional_future(void);
-bool mgos_config_parse_additional_future(struct mg_str json, struct mgos_config_additional_future *cfg);
-bool mgos_config_copy_additional_future(const struct mgos_config_additional_future *src, struct mgos_config_additional_future *dst);
-void mgos_config_free_additional_future(struct mgos_config_additional_future *cfg);
-
-/* additional.future.out_1 */
-#define MGOS_CONFIG_HAVE_ADDITIONAL_FUTURE_OUT_1
-#define MGOS_SYS_CONFIG_HAVE_ADDITIONAL_FUTURE_OUT_1
-int mgos_config_get_additional_future_out_1(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_additional_future_out_1(void) { return mgos_config_get_additional_future_out_1(&mgos_sys_config); }
-void mgos_config_set_additional_future_out_1(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_additional_future_out_1(int v) { mgos_config_set_additional_future_out_1(&mgos_sys_config, v); }
-
-/* additional.future.out_2 */
-#define MGOS_CONFIG_HAVE_ADDITIONAL_FUTURE_OUT_2
-#define MGOS_SYS_CONFIG_HAVE_ADDITIONAL_FUTURE_OUT_2
-int mgos_config_get_additional_future_out_2(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_additional_future_out_2(void) { return mgos_config_get_additional_future_out_2(&mgos_sys_config); }
-void mgos_config_set_additional_future_out_2(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_additional_future_out_2(int v) { mgos_config_set_additional_future_out_2(&mgos_sys_config, v); }
-
-/* additional.future.out_3 */
-#define MGOS_CONFIG_HAVE_ADDITIONAL_FUTURE_OUT_3
-#define MGOS_SYS_CONFIG_HAVE_ADDITIONAL_FUTURE_OUT_3
-int mgos_config_get_additional_future_out_3(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_additional_future_out_3(void) { return mgos_config_get_additional_future_out_3(&mgos_sys_config); }
-void mgos_config_set_additional_future_out_3(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_additional_future_out_3(int v) { mgos_config_set_additional_future_out_3(&mgos_sys_config, v); }
-
-/* additional.future.out_4 */
-#define MGOS_CONFIG_HAVE_ADDITIONAL_FUTURE_OUT_4
-#define MGOS_SYS_CONFIG_HAVE_ADDITIONAL_FUTURE_OUT_4
-int mgos_config_get_additional_future_out_4(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_additional_future_out_4(void) { return mgos_config_get_additional_future_out_4(&mgos_sys_config); }
-void mgos_config_set_additional_future_out_4(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_additional_future_out_4(int v) { mgos_config_set_additional_future_out_4(&mgos_sys_config, v); }
-
-/* outputPins */
-#define MGOS_CONFIG_HAVE_OUTPUTPINS
-#define MGOS_SYS_CONFIG_HAVE_OUTPUTPINS
-const struct mgos_config_outputPins * mgos_config_get_outputPins(struct mgos_config *cfg);
-static inline const struct mgos_config_outputPins * mgos_sys_config_get_outputPins(void) { return mgos_config_get_outputPins(&mgos_sys_config); }
-const struct mgos_conf_entry *mgos_config_schema_outputPins(void);
-bool mgos_config_parse_outputPins(struct mg_str json, struct mgos_config_outputPins *cfg);
-bool mgos_config_copy_outputPins(const struct mgos_config_outputPins *src, struct mgos_config_outputPins *dst);
-void mgos_config_free_outputPins(struct mgos_config_outputPins *cfg);
-
-/* outputPins.out_1 */
-#define MGOS_CONFIG_HAVE_OUTPUTPINS_OUT_1
-#define MGOS_SYS_CONFIG_HAVE_OUTPUTPINS_OUT_1
-int mgos_config_get_outputPins_out_1(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_outputPins_out_1(void) { return mgos_config_get_outputPins_out_1(&mgos_sys_config); }
-void mgos_config_set_outputPins_out_1(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_outputPins_out_1(int v) { mgos_config_set_outputPins_out_1(&mgos_sys_config, v); }
-
-/* outputPins.out_2 */
-#define MGOS_CONFIG_HAVE_OUTPUTPINS_OUT_2
-#define MGOS_SYS_CONFIG_HAVE_OUTPUTPINS_OUT_2
-int mgos_config_get_outputPins_out_2(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_outputPins_out_2(void) { return mgos_config_get_outputPins_out_2(&mgos_sys_config); }
-void mgos_config_set_outputPins_out_2(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_outputPins_out_2(int v) { mgos_config_set_outputPins_out_2(&mgos_sys_config, v); }
-
-/* outputPins.out_3 */
-#define MGOS_CONFIG_HAVE_OUTPUTPINS_OUT_3
-#define MGOS_SYS_CONFIG_HAVE_OUTPUTPINS_OUT_3
-int mgos_config_get_outputPins_out_3(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_outputPins_out_3(void) { return mgos_config_get_outputPins_out_3(&mgos_sys_config); }
-void mgos_config_set_outputPins_out_3(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_outputPins_out_3(int v) { mgos_config_set_outputPins_out_3(&mgos_sys_config, v); }
-
-/* outputPins.out_4 */
-#define MGOS_CONFIG_HAVE_OUTPUTPINS_OUT_4
-#define MGOS_SYS_CONFIG_HAVE_OUTPUTPINS_OUT_4
-int mgos_config_get_outputPins_out_4(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_outputPins_out_4(void) { return mgos_config_get_outputPins_out_4(&mgos_sys_config); }
-void mgos_config_set_outputPins_out_4(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_outputPins_out_4(int v) { mgos_config_set_outputPins_out_4(&mgos_sys_config, v); }
-
-/* inputPins */
-#define MGOS_CONFIG_HAVE_INPUTPINS
-#define MGOS_SYS_CONFIG_HAVE_INPUTPINS
-const struct mgos_config_inputPins * mgos_config_get_inputPins(struct mgos_config *cfg);
-static inline const struct mgos_config_inputPins * mgos_sys_config_get_inputPins(void) { return mgos_config_get_inputPins(&mgos_sys_config); }
-const struct mgos_conf_entry *mgos_config_schema_inputPins(void);
-bool mgos_config_parse_inputPins(struct mg_str json, struct mgos_config_inputPins *cfg);
-bool mgos_config_copy_inputPins(const struct mgos_config_inputPins *src, struct mgos_config_inputPins *dst);
-void mgos_config_free_inputPins(struct mgos_config_inputPins *cfg);
-
-/* inputPins.in_1 */
-#define MGOS_CONFIG_HAVE_INPUTPINS_IN_1
-#define MGOS_SYS_CONFIG_HAVE_INPUTPINS_IN_1
-int mgos_config_get_inputPins_in_1(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_inputPins_in_1(void) { return mgos_config_get_inputPins_in_1(&mgos_sys_config); }
-void mgos_config_set_inputPins_in_1(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_inputPins_in_1(int v) { mgos_config_set_inputPins_in_1(&mgos_sys_config, v); }
-
-/* inputPins.in_2 */
-#define MGOS_CONFIG_HAVE_INPUTPINS_IN_2
-#define MGOS_SYS_CONFIG_HAVE_INPUTPINS_IN_2
-int mgos_config_get_inputPins_in_2(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_inputPins_in_2(void) { return mgos_config_get_inputPins_in_2(&mgos_sys_config); }
-void mgos_config_set_inputPins_in_2(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_inputPins_in_2(int v) { mgos_config_set_inputPins_in_2(&mgos_sys_config, v); }
-
-/* inputPins.in_3 */
-#define MGOS_CONFIG_HAVE_INPUTPINS_IN_3
-#define MGOS_SYS_CONFIG_HAVE_INPUTPINS_IN_3
-int mgos_config_get_inputPins_in_3(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_inputPins_in_3(void) { return mgos_config_get_inputPins_in_3(&mgos_sys_config); }
-void mgos_config_set_inputPins_in_3(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_inputPins_in_3(int v) { mgos_config_set_inputPins_in_3(&mgos_sys_config, v); }
-
-/* inputPins.in_4 */
-#define MGOS_CONFIG_HAVE_INPUTPINS_IN_4
-#define MGOS_SYS_CONFIG_HAVE_INPUTPINS_IN_4
-int mgos_config_get_inputPins_in_4(struct mgos_config *cfg);
-static inline int mgos_sys_config_get_inputPins_in_4(void) { return mgos_config_get_inputPins_in_4(&mgos_sys_config); }
-void mgos_config_set_inputPins_in_4(struct mgos_config *cfg, int v);
-static inline void mgos_sys_config_set_inputPins_in_4(int v) { mgos_config_set_inputPins_in_4(&mgos_sys_config, v); }
 
 bool mgos_sys_config_get(const struct mg_str key, struct mg_str *value);
 bool mgos_sys_config_set(const struct mg_str key, const struct mg_str value, bool free_strings);

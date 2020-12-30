@@ -274,190 +274,6 @@
   - i
   - 60
   - title: Maximum reconnect timeout
-- - update
-  - o
-  - title: Firmware updater
-- - update.timeout
-  - i
-  - 600
-  - title: Update will be aborted if it does not finish within this time
-- - update.commit_timeout
-  - i
-  - title: After applying update, wait for commit up to this long
-- - update.url
-  - s
-  - title: Fetch updates from here
-- - update.interval
-  - i
-  - title: Check for updates this often
-- - update.extra_http_headers
-  - s
-  - title: Extra HTTP request headers
-- - update.ssl_ca_file
-  - s
-  - ca.pem
-  - title: TLS CA file
-- - update.ssl_client_cert_file
-  - s
-  - title: TLS client cert file
-- - update.ssl_server_name
-  - s
-  - title: TLS Server Name
-- - shadow.ota_enable
-  - b
-  - true
-  - title: Enable OTA via shadow
-- - shadow.autocommit
-  - b
-  - false
-  - title: Autocommit OTA if the shadow connection is successful
-- - rpc
-  - o
-  - title: RPC settings
-- - rpc.enable
-  - b
-  - true
-  - title: Enable RPC
-- - rpc.http_enable
-  - b
-  - true
-  - title: Enable RPC over HTTP
-- - rpc.service_sys_enable
-  - b
-  - true
-  - title: Enable Sys RPC service
-- - rpc.max_frame_size
-  - i
-  - 4096
-  - title: Max Frame Size
-- - rpc.max_queue_length
-  - i
-  - 25
-  - title: Max Queue Length
-- - rpc.default_out_channel_idle_close_timeout
-  - i
-  - 10
-  - title: Default idle close timeout for outbound channels
-- - rpc.acl_file
-  - s
-  - title: File with RPC ACL JSON
-- - rpc.auth_domain
-  - s
-  - title: Realm to use for digest authentication
-- - rpc.auth_file
-  - s
-  - title: File with user credentials in the htdigest format
-- - rpc.ws
-  - o
-  - title: RPC over WebSocket settings
-- - rpc.ws.enable
-  - b
-  - true
-  - title: Enable RPC over WebSocket
-- - rpc.ws.server_address
-  - s
-  - ""
-  - title: Cloud server address
-- - rpc.ws.reconnect_interval_min
-  - i
-  - 1
-  - title: Minimal reconnect interval
-- - rpc.ws.reconnect_interval_max
-  - i
-  - 60
-  - title: Maximal reconnect interval
-- - rpc.ws.ssl_server_name
-  - s
-  - title: TLS Server Name
-- - rpc.ws.ssl_cert
-  - s
-  - title: TLS client cert file
-- - rpc.ws.ssl_key
-  - s
-  - title: TLS client key file
-- - rpc.ws.ssl_ca_cert
-  - s
-  - title: TLS CA file
-- - dash.enable
-  - b
-  - false
-  - title: Enable
-- - dash.token
-  - s
-  - ""
-  - title: Access token
-- - dash.server
-  - s
-  - wss://mdash.net/api/v2/rpc
-  - title: Server address
-- - dash.ssl_cert
-  - s
-  - ""
-  - title: Client certificate to present to the server
-- - dash.ssl_key
-  - s
-  - ""
-  - title: Private key corresponding to the certificate
-- - dash.ssl_ca_cert
-  - s
-  - ca.pem
-  - title: Verify server certificate using this CA bundle
-- - dash.send_logs
-  - b
-  - false
-  - title: Send logs
-- - file_logger
-  - o
-  - title: File logger settings
-- - file_logger.enable
-  - b
-  - false
-  - title: Enable
-- - file_logger.dir
-  - s
-  - /
-  - title: Directory to store log files into
-- - file_logger.prefix
-  - s
-  - log_
-  - title: Prefix for the log files
-- - file_logger.max_file_size
-  - i
-  - 4000
-  - title: Max size of each log file
-- - file_logger.max_num_files
-  - i
-  - 10
-  - title: Max number of files. At most 100 files are supported.
-- - file_logger.timestamps
-  - b
-  - true
-  - title: Add timestamps to entries (uptime)
-- - file_logger.level
-  - i
-  - 2
-  - title: Maximum log level for messages to get logged
-- - file_logger.include
-  - s
-  - ""
-  - title: A comma-separated list of substrings. If set, only messages containing
-      one of these are logged.
-- - file_logger.syslog_enable
-  - b
-  - true
-  - title: Capture system log messages
-- - file_logger.rpc_service_enable
-  - b
-  - false
-  - title: Export RPC service for management
-- - file_logger.buf_size
-  - i
-  - 256
-  - title: Buffer size
-- - file_logger.buf_line
-  - b
-  - true
-  - title: Line-buffering (flush after each line)
 - - http
   - o
   - title: HTTP Server
@@ -499,10 +315,75 @@
 - - http.auth_file
   - s
   - title: Password file to use for auth
+- - update
+  - o
+  - title: Firmware updater
+- - update.timeout
+  - i
+  - 600
+  - title: Update will be aborted if it does not finish within this time
+- - update.commit_timeout
+  - i
+  - title: After applying update, wait for commit up to this long
+- - update.url
+  - s
+  - title: Fetch updates from here
+- - update.interval
+  - i
+  - title: Check for updates this often
+- - update.extra_http_headers
+  - s
+  - title: Extra HTTP request headers
+- - update.ssl_ca_file
+  - s
+  - ca.pem
+  - title: TLS CA file
+- - update.ssl_client_cert_file
+  - s
+  - title: TLS client cert file
+- - update.ssl_server_name
+  - s
+  - title: TLS Server Name
 - - update.enable_post
   - b
   - true
   - title: Enable POST updates
+- - rpc
+  - o
+  - title: RPC settings
+- - rpc.enable
+  - b
+  - true
+  - title: Enable RPC
+- - rpc.http_enable
+  - b
+  - true
+  - title: Enable RPC over HTTP
+- - rpc.service_sys_enable
+  - b
+  - true
+  - title: Enable Sys RPC service
+- - rpc.max_frame_size
+  - i
+  - 4096
+  - title: Max Frame Size
+- - rpc.max_queue_length
+  - i
+  - 25
+  - title: Max Queue Length
+- - rpc.default_out_channel_idle_close_timeout
+  - i
+  - 10
+  - title: Default idle close timeout for outbound channels
+- - rpc.acl_file
+  - s
+  - title: File with RPC ACL JSON
+- - rpc.auth_domain
+  - s
+  - title: Realm to use for digest authentication
+- - rpc.auth_file
+  - s
+  - title: File with user credentials in the htdigest format
 - - rpc.mqtt
   - o
   - title: RPC over MQTT settings
@@ -546,29 +427,37 @@
   - s
   - ""
   - title: Destination reachable via this channel
-- - sntp
+- - rpc.ws
   - o
-  - title: SNTP settings
-- - sntp.enable
+  - title: RPC over WebSocket settings
+- - rpc.ws.enable
   - b
   - true
-  - title: Enable SNTP
-- - sntp.server
+  - title: Enable RPC over WebSocket
+- - rpc.ws.server_address
   - s
-  - time.google.com
-  - title: Server address
-- - sntp.retry_min
+  - ""
+  - title: Cloud server address
+- - rpc.ws.reconnect_interval_min
   - i
   - 1
-  - title: Minimum retry interval
-- - sntp.retry_max
+  - title: Minimal reconnect interval
+- - rpc.ws.reconnect_interval_max
   - i
-  - 30
-  - title: Maximum retry interval
-- - sntp.update_interval
-  - i
-  - 7200
-  - title: Update interval. If 0, performs a one-off sync
+  - 60
+  - title: Maximal reconnect interval
+- - rpc.ws.ssl_server_name
+  - s
+  - title: TLS Server Name
+- - rpc.ws.ssl_cert
+  - s
+  - title: TLS client cert file
+- - rpc.ws.ssl_key
+  - s
+  - title: TLS client key file
+- - rpc.ws.ssl_ca_cert
+  - s
+  - title: TLS CA file
 - - spi
   - o
   - title: SPI settings
@@ -743,22 +632,18 @@
   - title: Keep AP enabled when station is on
 - - debug.level
   - i
-  - 1
+  - -1
   - title: Debug Level
-- - file_logger.enable
-  - b
-  - false
-  - title: Enable
 - - wifi.ap
   - o
   - title: WiFi Access Point Config
 - - wifi.ap.enable
   - b
-  - true
+  - false
   - title: Enable
 - - wifi.ap.ssid
   - s
-  - Eden_D_??????
+  - EDEN_DS_??????
   - title: SSID
 - - wifi.ap.pass
   - s
@@ -797,19 +682,32 @@
   - s
   - 192.168.4.100
   - title: DHCP End Address
-- - wifi.ap.trigger_on_gpio
-  - i
-  - -1
-  - title: Trigger AP on low GPIO
 - - wifi.ap.disable_after
   - i
-  - 90
-  - title: If > 0, will disable itself after the specified number of 1.5 seconds
+  - 150
+  - title: If > 0, will disable itself after the specified number of seconds i.e 2.5
+      min
 - - wifi.ap.hostname
   - s
   - ""
   - title: If not empty, DNS server will resolve given host name to the IP address
       of AP
+- - wifi.sta
+  - o
+  - title: WiFi Station Config
+- - wifi.sta.enable
+  - b
+  - true
+  - title: Connect to existing WiFi
+- - wifi.sta.ssid
+  - s
+  - eden
+  - title: SSID
+- - wifi.sta.pass
+  - s
+  - eden1234
+  - title: Password
+    type: password
 - - device.id
   - ??????
 - - aws.thing_name
@@ -871,118 +769,3 @@
   - s
   - ??????/request/update
   - title: Subscribe topic for extra keys
-- - dash.enable
-  - b
-  - false
-  - title: Enable
-- - dash.send_logs
-  - b
-  - false
-  - title: Send logs
-- - wifi.sta1.ssid
-  - s
-  - eden
-  - title: SSID
-- - wifi.sta1.pass
-  - s
-  - eden1234
-  - title: Password
-    type: password
-- - additional
-  - o
-  - title: additional variable current value
-- - additional.alert
-  - o
-  - title: additional variable alert
-- - additional.timer
-  - o
-  - title: additional variable timer
-- - additional.future
-  - o
-  - title: additional variable future
-- - additional.alert.out_1
-  - i
-  - 0
-  - title: alert for output pin 1
-- - additional.alert.out_2
-  - i
-  - 0
-  - title: alert for output pin 2
-- - additional.alert.out_3
-  - i
-  - 0
-  - title: alert for output pin 3
-- - additional.alert.out_4
-  - i
-  - 0
-  - title: alert for output pin 4
-- - additional.timer.out_1
-  - i
-  - 0
-  - title: timer for output pin 1
-- - additional.timer.out_2
-  - i
-  - 0
-  - title: timer for output pin 2
-- - additional.timer.out_3
-  - i
-  - 0
-  - title: timer for output pin 3
-- - additional.timer.out_4
-  - i
-  - 0
-  - title: timer for output pin 4
-- - additional.future.out_1
-  - i
-  - 0
-  - title: future value for output pin 1
-- - additional.future.out_2
-  - i
-  - 0
-  - title: future value for output pin 2
-- - additional.future.out_3
-  - i
-  - 0
-  - title: future value for output pin 3
-- - additional.future.out_4
-  - i
-  - 0
-  - title: future value for output pin 4
-- - outputPins
-  - o
-  - title: Output pins current value
-- - outputPins.out_1
-  - i
-  - 0
-  - title: Value of pin 1
-- - outputPins.out_2
-  - i
-  - 0
-  - title: Value of pin 2
-- - outputPins.out_3
-  - i
-  - 0
-  - title: Value of pin 3
-- - outputPins.out_4
-  - i
-  - 0
-  - title: Value of pin 4
-- - inputPins
-  - o
-  - title: Input pins current value
-- - inputPins.in_1
-  - i
-  - 0
-  - title: Value of pin 1
-- - inputPins.in_2
-  - i
-  - 0
-  - title: Value of pin 2
-- - inputPins.in_3
-  - i
-  - 0
-  - title: Value of pin 3
-- - inputPins.in_4
-  - i
-  - 0
-  - title: Value of pin 4

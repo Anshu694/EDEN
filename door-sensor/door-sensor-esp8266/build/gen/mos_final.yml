@@ -1,6 +1,6 @@
-name: DOOR_SENSOR
+name: EDEN_DS
 type: app
-version: 1.0.0
+version: 1.0.1
 platform: esp8266
 platforms:
 - cc3200
@@ -10,155 +10,149 @@ platforms:
 author: Suman Kumar <suman@edensmarthomes.com>
 description: A Mongoose OS app for wifi door sensor
 sources:
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/src/main.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/build/gen/mgos_deps_init.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/i2c/src/mgos_i2c_master.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/i2c/src/gpio/mgos_i2c_gpio_master.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/src/mgos_atca.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/src/mgos_atca_hal.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/atca_cfgs.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/atca_command.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/atca_device.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/atca_execution.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/atca_iface.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_aes.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_aes_cbc.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_aes_cmac.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_aes_ctr.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_aes_gcm.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_checkmac.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_counter.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_derivekey.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_ecdh.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_gendig.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_genkey.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_hmac.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_info.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_kdf.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_lock.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_mac.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_nonce.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_privwrite.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_random.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_read.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_secureboot.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_selftest.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_sha.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_sign.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_updateextra.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_verify.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_write.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_helpers.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/host/atca_host.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/mbedtls/atca_mbedtls_wrap.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-common/src/mgos_vfs.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-common/src/mgos_vfs_dev.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-common/src/mgos_vfs_internal.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-common/src/esp8266/esp_fs.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-common/src/esp8266/esp_vfs_dev_sysflash.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-dev-part/src/mgos_vfs_dev_part.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-lfs/src/mgos_vfs_lfs.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-lfs/littlefs/lfs.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-lfs/littlefs/lfs_util.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-lfs/littlefs1/lfs1.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-lfs/littlefs1/lfs1_util.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-spiffs/src/mgos_vfs_fs_spiffs.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-spiffs/src/spiffs/spiffs_cache.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-spiffs/src/spiffs/spiffs_check.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-spiffs/src/spiffs/spiffs_gc.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-spiffs/src/spiffs/spiffs_hydrogen.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-spiffs/src/spiffs/spiffs_nucleus.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/core/src/mgos_core.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/core/src/esp8266/esp_rboot.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/mqtt/src/mgos_mqtt.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/mqtt/src/mgos_mqtt_conn.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/shadow/src/mgos_shadow.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/aws/src/mgos_aws.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/aws/src/mgos_aws_greengrass.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/aws/src/mgos_aws_shadow.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-common/src/mg_rpc.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-common/src/mg_rpc_channel.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-common/src/mg_rpc_channel_http.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-common/src/mgos_rpc.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-ws/src/mgos_rpc_channel_ws.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-ws/src/mgos_rpc_ws.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/file-logger/src/mgos_file_logger.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/http-server/src/mgos_http_server.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-loopback/src/mg_rpc_channel_loopback.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-mqtt/src/mgos_rpc_channel_mqtt.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-service-config/src/mgos_service_config.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-service-fs/src/mgos_service_fs.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-service-gpio/src/mgos_gpio_service.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-service-i2c/src/mgos_i2c_service.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-uart/src/mgos_rpc_channel_uart.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/sntp/src/mgos_sntp.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/spi/src/mgos_spi.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/spi/src/mgos_spi_mjs.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/spi/src/common_gpio/mgos_spi_gpio.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-dev-spi-flash/src/mgos_vfs_dev_spi_flash.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/wifi/src/mgos_wifi.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/wifi/src/mjs_wifi.c
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/wifi/src/esp8266/esp_wifi.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/src/main.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/build/gen/mgos_deps_init.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/i2c/src/mgos_i2c_master.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/i2c/src/gpio/mgos_i2c_gpio_master.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/src/mgos_atca.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/src/mgos_atca_hal.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/atca_cfgs.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/atca_command.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/atca_device.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/atca_execution.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/atca_iface.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_aes.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_aes_cbc.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_aes_cmac.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_aes_ctr.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_aes_gcm.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_checkmac.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_counter.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_derivekey.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_ecdh.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_gendig.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_genkey.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_hmac.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_info.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_kdf.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_lock.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_mac.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_nonce.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_privwrite.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_random.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_read.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_secureboot.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_selftest.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_sha.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_sign.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_updateextra.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_verify.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_write.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_helpers.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/host/atca_host.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/mbedtls/atca_mbedtls_wrap.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-common/src/mgos_vfs.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-common/src/mgos_vfs_dev.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-common/src/mgos_vfs_internal.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-common/src/esp8266/esp_fs.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-common/src/esp8266/esp_vfs_dev_sysflash.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-dev-part/src/mgos_vfs_dev_part.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-lfs/src/mgos_vfs_lfs.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-lfs/littlefs/lfs.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-lfs/littlefs/lfs_util.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-lfs/littlefs1/lfs1.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-lfs/littlefs1/lfs1_util.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-spiffs/src/mgos_vfs_fs_spiffs.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-spiffs/src/spiffs/spiffs_cache.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-spiffs/src/spiffs/spiffs_check.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-spiffs/src/spiffs/spiffs_gc.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-spiffs/src/spiffs/spiffs_hydrogen.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-spiffs/src/spiffs/spiffs_nucleus.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/core/src/mgos_core.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/core/src/esp8266/esp_rboot.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/mqtt/src/mgos_mqtt.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/mqtt/src/mgos_mqtt_conn.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/shadow/src/mgos_shadow.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/aws/src/mgos_aws.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/aws/src/mgos_aws_greengrass.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/aws/src/mgos_aws_shadow.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/http-server/src/mgos_http_server.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-common/src/mg_rpc.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-common/src/mg_rpc_channel.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-common/src/mg_rpc_channel_http.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-common/src/mgos_rpc.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-loopback/src/mg_rpc_channel_loopback.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-mqtt/src/mgos_rpc_channel_mqtt.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-service-config/src/mgos_service_config.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-service-fs/src/mgos_service_fs.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-service-gpio/src/mgos_gpio_service.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-service-i2c/src/mgos_i2c_service.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-uart/src/mgos_rpc_channel_uart.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-ws/src/mgos_rpc_channel_ws.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-ws/src/mgos_rpc_ws.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/spi/src/mgos_spi.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/spi/src/mgos_spi_mjs.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/spi/src/common_gpio/mgos_spi_gpio.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-dev-spi-flash/src/mgos_vfs_dev_spi_flash.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/wifi/src/mgos_wifi.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/wifi/src/mjs_wifi.c
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/wifi/src/esp8266/esp_wifi.c
 includes:
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/i2c/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/crypto
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/hal
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/mbedtls/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/mbedtls/include/esp8266
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/mbedtls/mbedtls/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-common/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-common/include/esp8266
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/mongoose/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-dev-part/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-lfs/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-lfs/littlefs
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-lfs/littlefs1
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-spiffs/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-spiffs/include/spiffs
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-spiffs/include/esp8266
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/core/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/core/include/esp8266
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/mqtt/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/shadow/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/aws/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/ota-common/src
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/ota-common/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/ota-common/include/esp8266
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/ota-http-client/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-common/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-ws/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/dash/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/file-logger/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/http-server/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-loopback/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-mqtt/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-service-config/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-service-fs/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-service-gpio/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-service-i2c/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-service-ota/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-uart/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/spi/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-dev-spi-flash/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/wifi/include
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/wifi/include/esp8266
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/i2c/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/crypto
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/hal
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/mbedtls/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/mbedtls/include/esp8266
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/mbedtls/mbedtls/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-common/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-common/include/esp8266
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/mongoose/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-dev-part/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-lfs/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-lfs/littlefs
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-lfs/littlefs1
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-spiffs/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-spiffs/include/spiffs
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-spiffs/include/esp8266
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/core/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/core/include/esp8266
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/mqtt/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/shadow/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/aws/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/http-server/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/ota-common/src
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/ota-common/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/ota-common/include/esp8266
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/ota-http-client/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-common/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-loopback/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-mqtt/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-service-config/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-service-fs/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-service-gpio/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-service-i2c/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-service-ota/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-uart/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-ws/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/spi/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-dev-spi-flash/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/wifi/include
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/wifi/include/esp8266
 filesystem:
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/ca-bundle/fs/ca.pem
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/fs/aws-0CF5E3.crt.pem
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/fs/aws-0CF5E3.key.pem
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/fs/index.html
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/ca-bundle/fs/ca.pem
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/fs/aws-0CF5E3.crt.pem
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/fs/aws-0CF5E3.key.pem
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/fs/index.html
 binary_libs:
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/build/objs/libmbedtls-esp8266-2.18.0.a
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/build/objs/libmongoose-esp8266-2.18.0.a
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/build/objs/libota-common-esp8266-2.18.0.a
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/build/objs/libota-http-client-esp8266-2.18.0.a
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/build/objs/libota-shadow-esp8266-2.18.0.a
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/build/objs/libdash-esp8266-2.18.0.a
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/build/objs/libota-http-server-esp8266-2.18.0.a
-- /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/build/objs/librpc-service-ota-esp8266-2.18.0.a
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/build/objs/libmbedtls-esp8266-2.18.0.a
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/build/objs/libmongoose-esp8266-2.18.0.a
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/build/objs/libota-common-esp8266-2.18.0.a
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/build/objs/libota-http-client-esp8266-2.18.0.a
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/build/objs/libota-http-server-esp8266-2.18.0.a
+- /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/build/objs/librpc-service-ota-esp8266-2.18.0.a
 config_schema:
 - - i2c
   - o
@@ -436,190 +430,6 @@ config_schema:
   - i
   - 60
   - title: Maximum reconnect timeout
-- - update
-  - o
-  - title: Firmware updater
-- - update.timeout
-  - i
-  - 600
-  - title: Update will be aborted if it does not finish within this time
-- - update.commit_timeout
-  - i
-  - title: After applying update, wait for commit up to this long
-- - update.url
-  - s
-  - title: Fetch updates from here
-- - update.interval
-  - i
-  - title: Check for updates this often
-- - update.extra_http_headers
-  - s
-  - title: Extra HTTP request headers
-- - update.ssl_ca_file
-  - s
-  - ca.pem
-  - title: TLS CA file
-- - update.ssl_client_cert_file
-  - s
-  - title: TLS client cert file
-- - update.ssl_server_name
-  - s
-  - title: TLS Server Name
-- - shadow.ota_enable
-  - b
-  - true
-  - title: Enable OTA via shadow
-- - shadow.autocommit
-  - b
-  - false
-  - title: Autocommit OTA if the shadow connection is successful
-- - rpc
-  - o
-  - title: RPC settings
-- - rpc.enable
-  - b
-  - true
-  - title: Enable RPC
-- - rpc.http_enable
-  - b
-  - true
-  - title: Enable RPC over HTTP
-- - rpc.service_sys_enable
-  - b
-  - true
-  - title: Enable Sys RPC service
-- - rpc.max_frame_size
-  - i
-  - 4096
-  - title: Max Frame Size
-- - rpc.max_queue_length
-  - i
-  - 25
-  - title: Max Queue Length
-- - rpc.default_out_channel_idle_close_timeout
-  - i
-  - 10
-  - title: Default idle close timeout for outbound channels
-- - rpc.acl_file
-  - s
-  - title: File with RPC ACL JSON
-- - rpc.auth_domain
-  - s
-  - title: Realm to use for digest authentication
-- - rpc.auth_file
-  - s
-  - title: File with user credentials in the htdigest format
-- - rpc.ws
-  - o
-  - title: RPC over WebSocket settings
-- - rpc.ws.enable
-  - b
-  - true
-  - title: Enable RPC over WebSocket
-- - rpc.ws.server_address
-  - s
-  - ""
-  - title: Cloud server address
-- - rpc.ws.reconnect_interval_min
-  - i
-  - 1
-  - title: Minimal reconnect interval
-- - rpc.ws.reconnect_interval_max
-  - i
-  - 60
-  - title: Maximal reconnect interval
-- - rpc.ws.ssl_server_name
-  - s
-  - title: TLS Server Name
-- - rpc.ws.ssl_cert
-  - s
-  - title: TLS client cert file
-- - rpc.ws.ssl_key
-  - s
-  - title: TLS client key file
-- - rpc.ws.ssl_ca_cert
-  - s
-  - title: TLS CA file
-- - dash.enable
-  - b
-  - false
-  - title: Enable
-- - dash.token
-  - s
-  - ""
-  - title: Access token
-- - dash.server
-  - s
-  - wss://mdash.net/api/v2/rpc
-  - title: Server address
-- - dash.ssl_cert
-  - s
-  - ""
-  - title: Client certificate to present to the server
-- - dash.ssl_key
-  - s
-  - ""
-  - title: Private key corresponding to the certificate
-- - dash.ssl_ca_cert
-  - s
-  - ca.pem
-  - title: Verify server certificate using this CA bundle
-- - dash.send_logs
-  - b
-  - false
-  - title: Send logs
-- - file_logger
-  - o
-  - title: File logger settings
-- - file_logger.enable
-  - b
-  - false
-  - title: Enable
-- - file_logger.dir
-  - s
-  - /
-  - title: Directory to store log files into
-- - file_logger.prefix
-  - s
-  - log_
-  - title: Prefix for the log files
-- - file_logger.max_file_size
-  - i
-  - 4000
-  - title: Max size of each log file
-- - file_logger.max_num_files
-  - i
-  - 10
-  - title: Max number of files. At most 100 files are supported.
-- - file_logger.timestamps
-  - b
-  - true
-  - title: Add timestamps to entries (uptime)
-- - file_logger.level
-  - i
-  - 2
-  - title: Maximum log level for messages to get logged
-- - file_logger.include
-  - s
-  - ""
-  - title: A comma-separated list of substrings. If set, only messages containing
-      one of these are logged.
-- - file_logger.syslog_enable
-  - b
-  - true
-  - title: Capture system log messages
-- - file_logger.rpc_service_enable
-  - b
-  - false
-  - title: Export RPC service for management
-- - file_logger.buf_size
-  - i
-  - 256
-  - title: Buffer size
-- - file_logger.buf_line
-  - b
-  - true
-  - title: Line-buffering (flush after each line)
 - - http
   - o
   - title: HTTP Server
@@ -661,10 +471,75 @@ config_schema:
 - - http.auth_file
   - s
   - title: Password file to use for auth
+- - update
+  - o
+  - title: Firmware updater
+- - update.timeout
+  - i
+  - 600
+  - title: Update will be aborted if it does not finish within this time
+- - update.commit_timeout
+  - i
+  - title: After applying update, wait for commit up to this long
+- - update.url
+  - s
+  - title: Fetch updates from here
+- - update.interval
+  - i
+  - title: Check for updates this often
+- - update.extra_http_headers
+  - s
+  - title: Extra HTTP request headers
+- - update.ssl_ca_file
+  - s
+  - ca.pem
+  - title: TLS CA file
+- - update.ssl_client_cert_file
+  - s
+  - title: TLS client cert file
+- - update.ssl_server_name
+  - s
+  - title: TLS Server Name
 - - update.enable_post
   - b
   - true
   - title: Enable POST updates
+- - rpc
+  - o
+  - title: RPC settings
+- - rpc.enable
+  - b
+  - true
+  - title: Enable RPC
+- - rpc.http_enable
+  - b
+  - true
+  - title: Enable RPC over HTTP
+- - rpc.service_sys_enable
+  - b
+  - true
+  - title: Enable Sys RPC service
+- - rpc.max_frame_size
+  - i
+  - 4096
+  - title: Max Frame Size
+- - rpc.max_queue_length
+  - i
+  - 25
+  - title: Max Queue Length
+- - rpc.default_out_channel_idle_close_timeout
+  - i
+  - 10
+  - title: Default idle close timeout for outbound channels
+- - rpc.acl_file
+  - s
+  - title: File with RPC ACL JSON
+- - rpc.auth_domain
+  - s
+  - title: Realm to use for digest authentication
+- - rpc.auth_file
+  - s
+  - title: File with user credentials in the htdigest format
 - - rpc.mqtt
   - o
   - title: RPC over MQTT settings
@@ -708,29 +583,37 @@ config_schema:
   - s
   - ""
   - title: Destination reachable via this channel
-- - sntp
+- - rpc.ws
   - o
-  - title: SNTP settings
-- - sntp.enable
+  - title: RPC over WebSocket settings
+- - rpc.ws.enable
   - b
   - true
-  - title: Enable SNTP
-- - sntp.server
+  - title: Enable RPC over WebSocket
+- - rpc.ws.server_address
   - s
-  - time.google.com
-  - title: Server address
-- - sntp.retry_min
+  - ""
+  - title: Cloud server address
+- - rpc.ws.reconnect_interval_min
   - i
   - 1
-  - title: Minimum retry interval
-- - sntp.retry_max
+  - title: Minimal reconnect interval
+- - rpc.ws.reconnect_interval_max
   - i
-  - 30
-  - title: Maximum retry interval
-- - sntp.update_interval
-  - i
-  - 7200
-  - title: Update interval. If 0, performs a one-off sync
+  - 60
+  - title: Maximal reconnect interval
+- - rpc.ws.ssl_server_name
+  - s
+  - title: TLS Server Name
+- - rpc.ws.ssl_cert
+  - s
+  - title: TLS client cert file
+- - rpc.ws.ssl_key
+  - s
+  - title: TLS client key file
+- - rpc.ws.ssl_ca_cert
+  - s
+  - title: TLS CA file
 - - spi
   - o
   - title: SPI settings
@@ -905,22 +788,18 @@ config_schema:
   - title: Keep AP enabled when station is on
 - - debug.level
   - i
-  - 1
+  - -1
   - title: Debug Level
-- - file_logger.enable
-  - b
-  - false
-  - title: Enable
 - - wifi.ap
   - o
   - title: WiFi Access Point Config
 - - wifi.ap.enable
   - b
-  - true
+  - false
   - title: Enable
 - - wifi.ap.ssid
   - s
-  - Eden_D_??????
+  - EDEN_DS_??????
   - title: SSID
 - - wifi.ap.pass
   - s
@@ -959,19 +838,32 @@ config_schema:
   - s
   - 192.168.4.100
   - title: DHCP End Address
-- - wifi.ap.trigger_on_gpio
-  - i
-  - -1
-  - title: Trigger AP on low GPIO
 - - wifi.ap.disable_after
   - i
-  - 90
-  - title: If > 0, will disable itself after the specified number of 1.5 seconds
+  - 150
+  - title: If > 0, will disable itself after the specified number of seconds i.e 2.5
+      min
 - - wifi.ap.hostname
   - s
   - ""
   - title: If not empty, DNS server will resolve given host name to the IP address
       of AP
+- - wifi.sta
+  - o
+  - title: WiFi Station Config
+- - wifi.sta.enable
+  - b
+  - true
+  - title: Connect to existing WiFi
+- - wifi.sta.ssid
+  - s
+  - eden
+  - title: SSID
+- - wifi.sta.pass
+  - s
+  - eden1234
+  - title: Password
+    type: password
 - - device.id
   - ??????
 - - aws.thing_name
@@ -1033,121 +925,6 @@ config_schema:
   - s
   - ??????/request/update
   - title: Subscribe topic for extra keys
-- - dash.enable
-  - b
-  - false
-  - title: Enable
-- - dash.send_logs
-  - b
-  - false
-  - title: Send logs
-- - wifi.sta1.ssid
-  - s
-  - eden
-  - title: SSID
-- - wifi.sta1.pass
-  - s
-  - eden1234
-  - title: Password
-    type: password
-- - additional
-  - o
-  - title: additional variable current value
-- - additional.alert
-  - o
-  - title: additional variable alert
-- - additional.timer
-  - o
-  - title: additional variable timer
-- - additional.future
-  - o
-  - title: additional variable future
-- - additional.alert.out_1
-  - i
-  - 0
-  - title: alert for output pin 1
-- - additional.alert.out_2
-  - i
-  - 0
-  - title: alert for output pin 2
-- - additional.alert.out_3
-  - i
-  - 0
-  - title: alert for output pin 3
-- - additional.alert.out_4
-  - i
-  - 0
-  - title: alert for output pin 4
-- - additional.timer.out_1
-  - i
-  - 0
-  - title: timer for output pin 1
-- - additional.timer.out_2
-  - i
-  - 0
-  - title: timer for output pin 2
-- - additional.timer.out_3
-  - i
-  - 0
-  - title: timer for output pin 3
-- - additional.timer.out_4
-  - i
-  - 0
-  - title: timer for output pin 4
-- - additional.future.out_1
-  - i
-  - 0
-  - title: future value for output pin 1
-- - additional.future.out_2
-  - i
-  - 0
-  - title: future value for output pin 2
-- - additional.future.out_3
-  - i
-  - 0
-  - title: future value for output pin 3
-- - additional.future.out_4
-  - i
-  - 0
-  - title: future value for output pin 4
-- - outputPins
-  - o
-  - title: Output pins current value
-- - outputPins.out_1
-  - i
-  - 0
-  - title: Value of pin 1
-- - outputPins.out_2
-  - i
-  - 0
-  - title: Value of pin 2
-- - outputPins.out_3
-  - i
-  - 0
-  - title: Value of pin 3
-- - outputPins.out_4
-  - i
-  - 0
-  - title: Value of pin 4
-- - inputPins
-  - o
-  - title: Input pins current value
-- - inputPins.in_1
-  - i
-  - 0
-  - title: Value of pin 1
-- - inputPins.in_2
-  - i
-  - 0
-  - title: Value of pin 2
-- - inputPins.in_3
-  - i
-  - 0
-  - title: Value of pin 3
-- - inputPins.in_4
-  - i
-  - 0
-  - title: Value of pin 4
 build_vars:
   BOARD: ""
   MGOS: "1"
@@ -1156,8 +933,6 @@ build_vars:
   MGOS_HAVE_AWS: "1"
   MGOS_HAVE_CA_BUNDLE: "1"
   MGOS_HAVE_CORE: "1"
-  MGOS_HAVE_DASH: "1"
-  MGOS_HAVE_FILE_LOGGER: "1"
   MGOS_HAVE_HTTP_SERVER: "1"
   MGOS_HAVE_I2C: "1"
   MGOS_HAVE_MBEDTLS: "1"
@@ -1166,7 +941,6 @@ build_vars:
   MGOS_HAVE_OTA_COMMON: "1"
   MGOS_HAVE_OTA_HTTP_CLIENT: "1"
   MGOS_HAVE_OTA_HTTP_SERVER: "1"
-  MGOS_HAVE_OTA_SHADOW: "1"
   MGOS_HAVE_RPC_COMMON: "1"
   MGOS_HAVE_RPC_LOOPBACK: "1"
   MGOS_HAVE_RPC_MQTT: "1"
@@ -1178,7 +952,6 @@ build_vars:
   MGOS_HAVE_RPC_UART: "1"
   MGOS_HAVE_RPC_WS: "1"
   MGOS_HAVE_SHADOW: "1"
-  MGOS_HAVE_SNTP: "1"
   MGOS_HAVE_SPI: "1"
   MGOS_HAVE_VFS_COMMON: "1"
   MGOS_HAVE_VFS_DEV_PART: "1"
@@ -1215,8 +988,6 @@ cdefs:
   MGOS_HAVE_AWS: "1"
   MGOS_HAVE_CA_BUNDLE: "1"
   MGOS_HAVE_CORE: "1"
-  MGOS_HAVE_DASH: "1"
-  MGOS_HAVE_FILE_LOGGER: "1"
   MGOS_HAVE_HTTP_SERVER: "1"
   MGOS_HAVE_I2C: "1"
   MGOS_HAVE_MBEDTLS: "1"
@@ -1225,7 +996,6 @@ cdefs:
   MGOS_HAVE_OTA_COMMON: "1"
   MGOS_HAVE_OTA_HTTP_CLIENT: "1"
   MGOS_HAVE_OTA_HTTP_SERVER: "1"
-  MGOS_HAVE_OTA_SHADOW: "1"
   MGOS_HAVE_RPC_COMMON: "1"
   MGOS_HAVE_RPC_LOOPBACK: "1"
   MGOS_HAVE_RPC_MQTT: "1"
@@ -1237,7 +1007,6 @@ cdefs:
   MGOS_HAVE_RPC_UART: "1"
   MGOS_HAVE_RPC_WS: "1"
   MGOS_HAVE_SHADOW: "1"
-  MGOS_HAVE_SNTP: "1"
   MGOS_HAVE_SPI: "1"
   MGOS_HAVE_VFS_COMMON: "1"
   MGOS_HAVE_VFS_DEV_PART: "1"
@@ -1258,128 +1027,128 @@ libs_handled:
     origin: https://github.com/mongoose-os-libs/i2c
     location: https://github.com/mongoose-os-libs/i2c
     name: i2c
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/i2c
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/i2c
   init_deps:
   - core
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/i2c/src/mgos_i2c_master.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/i2c/src/gpio/mgos_i2c_gpio_master.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/i2c/src/mgos_i2c_master.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/i2c/src/gpio/mgos_i2c_gpio_master.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/atca
     location: https://github.com/mongoose-os-libs/atca
     name: atca
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca
   init_deps:
   - i2c
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/src/mgos_atca.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/src/mgos_atca_hal.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/atca_cfgs.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/atca_command.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/atca_device.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/atca_execution.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/atca_iface.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_aes.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_aes_cbc.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_aes_cmac.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_aes_ctr.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_aes_gcm.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_checkmac.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_counter.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_derivekey.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_ecdh.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_gendig.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_genkey.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_hmac.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_info.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_kdf.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_lock.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_mac.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_nonce.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_privwrite.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_random.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_read.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_secureboot.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_selftest.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_sha.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_sign.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_updateextra.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_verify.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_basic_write.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/basic/atca_helpers.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/host/atca_host.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/atca/cryptoauthlib/lib/mbedtls/atca_mbedtls_wrap.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/src/mgos_atca.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/src/mgos_atca_hal.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/atca_cfgs.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/atca_command.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/atca_device.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/atca_execution.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/atca_iface.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_aes.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_aes_cbc.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_aes_cmac.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_aes_ctr.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_aes_gcm.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_checkmac.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_counter.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_derivekey.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_ecdh.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_gendig.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_genkey.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_hmac.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_info.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_kdf.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_lock.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_mac.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_nonce.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_privwrite.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_random.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_read.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_secureboot.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_selftest.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_sha.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_sign.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_updateextra.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_verify.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_basic_write.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/basic/atca_helpers.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/host/atca_host.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/atca/cryptoauthlib/lib/mbedtls/atca_mbedtls_wrap.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/mbedtls
     location: https://github.com/mongoose-os-libs/mbedtls
     name: mbedtls
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/mbedtls
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/mbedtls
   version: 2.16.6-cesanta1
 - lib:
     origin: https://github.com/mongoose-os-libs/vfs-common
     location: https://github.com/mongoose-os-libs/vfs-common
     name: vfs-common
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-common
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-common
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-common/src/mgos_vfs.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-common/src/mgos_vfs_dev.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-common/src/mgos_vfs_internal.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-common/src/esp8266/esp_fs.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-common/src/esp8266/esp_vfs_dev_sysflash.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-common/src/mgos_vfs.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-common/src/mgos_vfs_dev.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-common/src/mgos_vfs_internal.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-common/src/esp8266/esp_fs.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-common/src/esp8266/esp_vfs_dev_sysflash.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/mongoose
     location: https://github.com/mongoose-os-libs/mongoose
     name: mongoose
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/mongoose
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/mongoose
   version: "6.16"
 - lib:
     origin: https://github.com/mongoose-os-libs/vfs-dev-part
     location: https://github.com/mongoose-os-libs/vfs-dev-part
     name: vfs-dev-part
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-dev-part
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-dev-part
   init_deps:
   - vfs-common
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-dev-part/src/mgos_vfs_dev_part.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-dev-part/src/mgos_vfs_dev_part.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/vfs-fs-lfs
     location: https://github.com/mongoose-os-libs/vfs-fs-lfs
     name: vfs-fs-lfs
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-lfs
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-lfs
   init_deps:
   - vfs-common
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-lfs/src/mgos_vfs_lfs.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-lfs/littlefs/lfs.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-lfs/littlefs/lfs_util.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-lfs/littlefs1/lfs1.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-lfs/littlefs1/lfs1_util.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-lfs/src/mgos_vfs_lfs.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-lfs/littlefs/lfs.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-lfs/littlefs/lfs_util.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-lfs/littlefs1/lfs1.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-lfs/littlefs1/lfs1_util.c
   version: 2.2.0
 - lib:
     origin: https://github.com/mongoose-os-libs/vfs-fs-spiffs
     location: https://github.com/mongoose-os-libs/vfs-fs-spiffs
     name: vfs-fs-spiffs
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-spiffs
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-spiffs
   init_deps:
   - vfs-common
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-spiffs/src/mgos_vfs_fs_spiffs.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-spiffs/src/spiffs/spiffs_cache.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-spiffs/src/spiffs/spiffs_check.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-spiffs/src/spiffs/spiffs_gc.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-spiffs/src/spiffs/spiffs_hydrogen.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-fs-spiffs/src/spiffs/spiffs_nucleus.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-spiffs/src/mgos_vfs_fs_spiffs.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-spiffs/src/spiffs/spiffs_cache.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-spiffs/src/spiffs/spiffs_check.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-spiffs/src/spiffs/spiffs_gc.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-spiffs/src/spiffs/spiffs_hydrogen.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-fs-spiffs/src/spiffs/spiffs_nucleus.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/core
     location: https://github.com/mongoose-os-libs/core
     name: core
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/core
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/core
   init_deps:
   - mongoose
   - ota-common
@@ -1389,14 +1158,14 @@ libs_handled:
   - vfs-fs-lfs
   - vfs-fs-spiffs
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/core/src/mgos_core.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/core/src/esp8266/esp_rboot.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/core/src/mgos_core.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/core/src/esp8266/esp_rboot.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/ca-bundle
     location: https://github.com/mongoose-os-libs/ca-bundle
     name: ca-bundle
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/ca-bundle
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/ca-bundle
   init_deps:
   - core
   version: "1.0"
@@ -1404,131 +1173,70 @@ libs_handled:
     origin: https://github.com/mongoose-os-libs/mqtt
     location: https://github.com/mongoose-os-libs/mqtt
     name: mqtt
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/mqtt
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/mqtt
   init_deps:
   - core
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/mqtt/src/mgos_mqtt.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/mqtt/src/mgos_mqtt_conn.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/mqtt/src/mgos_mqtt.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/mqtt/src/mgos_mqtt_conn.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/shadow
     location: https://github.com/mongoose-os-libs/shadow
     name: shadow
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/shadow
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/shadow
   init_deps:
   - core
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/shadow/src/mgos_shadow.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/shadow/src/mgos_shadow.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/aws
     location: https://github.com/mongoose-os-libs/aws
     name: aws
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/aws
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/aws
   init_deps:
   - ca-bundle
   - core
   - mqtt
   - shadow
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/aws/src/mgos_aws.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/aws/src/mgos_aws_greengrass.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/aws/src/mgos_aws_shadow.c
-  version: "1.0"
-- lib:
-    origin: https://github.com/mongoose-os-libs/ota-common
-    location: https://github.com/mongoose-os-libs/ota-common
-    name: ota-common
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/ota-common
-  version: 1.2.1
-- lib:
-    origin: https://github.com/mongoose-os-libs/ota-http-client
-    location: https://github.com/mongoose-os-libs/ota-http-client
-    name: ota-http-client
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/ota-http-client
-  init_deps:
-  - core
-  - ota-common
-  version: "1.0"
-- lib:
-    origin: https://github.com/mongoose-os-libs/ota-shadow
-    location: https://github.com/mongoose-os-libs/ota-shadow
-    name: ota-shadow
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/ota-shadow
-  init_deps:
-  - core
-  - ota-common
-  - ota-http-client
-  - shadow
-  version: "1.0"
-- lib:
-    origin: https://github.com/mongoose-os-libs/rpc-common
-    location: https://github.com/mongoose-os-libs/rpc-common
-    name: rpc-common
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-common
-  init_deps:
-  - core
-  - http-server
-  - mongoose
-  sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-common/src/mg_rpc.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-common/src/mg_rpc_channel.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-common/src/mg_rpc_channel_http.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-common/src/mgos_rpc.c
-  version: "1.0"
-- lib:
-    origin: https://github.com/mongoose-os-libs/rpc-ws
-    location: https://github.com/mongoose-os-libs/rpc-ws
-    name: rpc-ws
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-ws
-  init_deps:
-  - core
-  - http-server
-  - rpc-common
-  sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-ws/src/mgos_rpc_channel_ws.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-ws/src/mgos_rpc_ws.c
-  version: "1.0"
-- lib:
-    origin: https://github.com/mongoose-os-libs/dash
-    location: https://github.com/mongoose-os-libs/dash
-    name: dash
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/dash
-  init_deps:
-  - core
-  - ota-shadow
-  - rpc-ws
-  - shadow
-  version: "1.0"
-- lib:
-    origin: https://github.com/mongoose-os-libs/file-logger
-    location: https://github.com/mongoose-os-libs/file-logger
-    name: file-logger
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/file-logger
-  init_deps:
-  - core
-  - rpc-common
-  sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/file-logger/src/mgos_file_logger.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/aws/src/mgos_aws.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/aws/src/mgos_aws_greengrass.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/aws/src/mgos_aws_shadow.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/http-server
     location: https://github.com/mongoose-os-libs/http-server
     name: http-server
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/http-server
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/http-server
   init_deps:
   - atca
   - core
   - wifi
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/http-server/src/mgos_http_server.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/http-server/src/mgos_http_server.c
+  version: "1.0"
+- lib:
+    origin: https://github.com/mongoose-os-libs/ota-common
+    location: https://github.com/mongoose-os-libs/ota-common
+    name: ota-common
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/ota-common
+  version: 1.2.1
+- lib:
+    origin: https://github.com/mongoose-os-libs/ota-http-client
+    location: https://github.com/mongoose-os-libs/ota-http-client
+    name: ota-http-client
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/ota-http-client
+  init_deps:
+  - core
+  - ota-common
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/ota-http-server
     location: https://github.com/mongoose-os-libs/ota-http-server
     name: ota-http-server
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/ota-http-server
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/ota-http-server
   init_deps:
   - core
   - http-server
@@ -1536,79 +1244,94 @@ libs_handled:
   - ota-http-client
   version: "1.0"
 - lib:
+    origin: https://github.com/mongoose-os-libs/rpc-common
+    location: https://github.com/mongoose-os-libs/rpc-common
+    name: rpc-common
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-common
+  init_deps:
+  - core
+  - http-server
+  - mongoose
+  sources:
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-common/src/mg_rpc.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-common/src/mg_rpc_channel.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-common/src/mg_rpc_channel_http.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-common/src/mgos_rpc.c
+  version: "1.0"
+- lib:
     origin: https://github.com/mongoose-os-libs/rpc-loopback
     location: https://github.com/mongoose-os-libs/rpc-loopback
     name: rpc-loopback
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-loopback
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-loopback
   init_deps:
   - core
   - rpc-common
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-loopback/src/mg_rpc_channel_loopback.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-loopback/src/mg_rpc_channel_loopback.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/rpc-mqtt
     location: https://github.com/mongoose-os-libs/rpc-mqtt
     name: rpc-mqtt
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-mqtt
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-mqtt
   init_deps:
   - aws
   - core
   - mqtt
   - rpc-common
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-mqtt/src/mgos_rpc_channel_mqtt.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-mqtt/src/mgos_rpc_channel_mqtt.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/rpc-service-config
     location: https://github.com/mongoose-os-libs/rpc-service-config
     name: rpc-service-config
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-service-config
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-service-config
   init_deps:
   - core
   - rpc-common
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-service-config/src/mgos_service_config.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-service-config/src/mgos_service_config.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/rpc-service-fs
     location: https://github.com/mongoose-os-libs/rpc-service-fs
     name: rpc-service-fs
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-service-fs
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-service-fs
   init_deps:
   - core
   - rpc-common
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-service-fs/src/mgos_service_fs.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-service-fs/src/mgos_service_fs.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/rpc-service-gpio
     location: https://github.com/mongoose-os-libs/rpc-service-gpio
     name: rpc-service-gpio
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-service-gpio
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-service-gpio
   init_deps:
   - core
   - rpc-common
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-service-gpio/src/mgos_gpio_service.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-service-gpio/src/mgos_gpio_service.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/rpc-service-i2c
     location: https://github.com/mongoose-os-libs/rpc-service-i2c
     name: rpc-service-i2c
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-service-i2c
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-service-i2c
   init_deps:
   - core
   - i2c
   - rpc-common
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-service-i2c/src/mgos_i2c_service.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-service-i2c/src/mgos_i2c_service.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/rpc-service-ota
     location: https://github.com/mongoose-os-libs/rpc-service-ota
     name: rpc-service-ota
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-service-ota
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-service-ota
   init_deps:
   - core
   - ota-http-client
@@ -1618,56 +1341,59 @@ libs_handled:
     origin: https://github.com/mongoose-os-libs/rpc-uart
     location: https://github.com/mongoose-os-libs/rpc-uart
     name: rpc-uart
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-uart
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-uart
   init_deps:
   - core
   - rpc-common
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/rpc-uart/src/mgos_rpc_channel_uart.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-uart/src/mgos_rpc_channel_uart.c
   version: "1.0"
 - lib:
-    origin: https://github.com/mongoose-os-libs/sntp
-    location: https://github.com/mongoose-os-libs/sntp
-    name: sntp
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/sntp
+    origin: https://github.com/mongoose-os-libs/rpc-ws
+    location: https://github.com/mongoose-os-libs/rpc-ws
+    name: rpc-ws
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-ws
   init_deps:
   - core
+  - http-server
+  - rpc-common
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/sntp/src/mgos_sntp.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-ws/src/mgos_rpc_channel_ws.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/rpc-ws/src/mgos_rpc_ws.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/spi
     location: https://github.com/mongoose-os-libs/spi
     name: spi
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/spi
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/spi
   init_deps:
   - core
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/spi/src/mgos_spi.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/spi/src/mgos_spi_mjs.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/spi/src/common_gpio/mgos_spi_gpio.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/spi/src/mgos_spi.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/spi/src/mgos_spi_mjs.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/spi/src/common_gpio/mgos_spi_gpio.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/vfs-dev-spi-flash
     location: https://github.com/mongoose-os-libs/vfs-dev-spi-flash
     name: vfs-dev-spi-flash
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-dev-spi-flash
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-dev-spi-flash
   init_deps:
   - vfs-common
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/vfs-dev-spi-flash/src/mgos_vfs_dev_spi_flash.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/vfs-dev-spi-flash/src/mgos_vfs_dev_spi_flash.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/wifi
     location: https://github.com/mongoose-os-libs/wifi
     name: wifi
-  path: /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/wifi
+  path: /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/wifi
   init_deps:
   - core
   sources:
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/wifi/src/mgos_wifi.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/wifi/src/mjs_wifi.c
-  - /data/fwbuild-volumes/2.18.0/apps/DOOR_SENSOR/esp8266/build_contexts/build_ctx_102257794/deps/wifi/src/esp8266/esp_wifi.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/wifi/src/mgos_wifi.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/wifi/src/mjs_wifi.c
+  - /data/fwbuild-volumes/2.18.0/apps/EDEN_DS/esp8266/build_contexts/build_ctx_320505657/deps/wifi/src/esp8266/esp_wifi.c
   version: "1.0"
 init_deps:
 - mongoose
@@ -1684,16 +1410,12 @@ init_deps:
 - mqtt
 - shadow
 - aws
-- ota-http-client
-- ota-shadow
 - wifi
 - http-server
-- rpc-common
-- rpc-ws
-- dash
-- file-logger
 - mbedtls
+- ota-http-client
 - ota-http-server
+- rpc-common
 - rpc-loopback
 - rpc-mqtt
 - rpc-service-config
@@ -1702,5 +1424,5 @@ init_deps:
 - rpc-service-i2c
 - rpc-service-ota
 - rpc-uart
-- sntp
+- rpc-ws
 - spi

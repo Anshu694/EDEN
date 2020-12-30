@@ -1,8 +1,8 @@
 author: Suman Kumar <suman@edensmarthomes.com>
-name: DOOR_SENSOR
+name: EDEN_DS
 description: A Mongoose OS app for wifi door sensor
 
-version: 1.0.0
+version: 1.0.1
 
 libs_version: ${mos_version}
 modules_version: ${mos_version}
@@ -29,18 +29,12 @@ filesystem:
 
 config_schema:
   # Debug Settings
-  - ["debug.level", "i", 1, {title: "Debug Level"}]
-  #- ["debug.event_level", "i", 2, {title: "Max level for which a MGOS_EVENT_LOG is raised"}]
-
-  # Enable File logger
-  - ["file_logger.enable", "b", false, {"title": "Enable"}]
-  #- ["file_logger.level", "i", 1, {"title": "Maximum log level for messages to get logged"}]
-
+  - ["debug.level", "i", -1, {title: "Debug Level"}]
 
   # WiFi AP Config
   - ["wifi.ap", "o", {title: "WiFi Access Point Config"}]
-  - ["wifi.ap.enable", "b", true, {title: "Enable"}]
-  - ["wifi.ap.ssid", "s", "Eden_D_??????", {title: "SSID"}]
+  - ["wifi.ap.enable", "b", false, {title: "Enable"}]
+  - ["wifi.ap.ssid", "s", "EDEN_DS_??????", {title: "SSID"}]
   - ["wifi.ap.pass", "s", "eden1234", {title: "Password", type: "password"}]
   - ["wifi.ap.hidden", "b", false, {title: "Hide SSID"}]
   - ["wifi.ap.channel", "i", 6, {title: "Channel"}]
@@ -50,9 +44,13 @@ config_schema:
   - ["wifi.ap.gw", "s", "192.168.4.1", {title: "Default Gateway"}]
   - ["wifi.ap.dhcp_start", "s", "192.168.4.2", {title: "DHCP Start Address"}]
   - ["wifi.ap.dhcp_end", "s", "192.168.4.100", {title: "DHCP End Address"}]
-  - ["wifi.ap.trigger_on_gpio", "i", -1, {title: "Trigger AP on low GPIO"}]
-  - ["wifi.ap.disable_after", "i", 90, {title: "If > 0, will disable itself after the specified number of 1.5 seconds"}]
+  - ["wifi.ap.disable_after", "i", 150, {title: "If > 0, will disable itself after the specified number of seconds i.e 2.5 min"}]
   - ["wifi.ap.hostname", "s", "", {title: "If not empty, DNS server will resolve given host name to the IP address of AP"}]
+
+  - ["wifi.sta", "o", {title: "WiFi Station Config"}]
+  - ["wifi.sta.enable", "b", true, {title: "Connect to existing WiFi"}]
+  - ["wifi.sta.ssid", "s", "eden", {title: "SSID"}]
+  - ["wifi.sta.pass", "s", "eden1234",  {title: "Password", type: "password"}]
 
 
   # Don't change device id
@@ -80,53 +78,7 @@ config_schema:
   - ["mqtt.sub_update", "s", "??????/request/update", {title: "Subscribe topic for extra keys"}]
 
 
-  # Dash Config
-  - ["dash.enable", "b", false, {"title": "Enable"}]
-  - ["dash.send_logs", "b", false, {"title": "Send logs"}]
-
-
-  # WiFi Station Config 1
-  - ["wifi.sta1.ssid", "s", "eden", {title: "SSID"}]
-  - ["wifi.sta1.pass", "s", "eden1234", {title: "Password", type: "password"}]
-
-
-  # Additional config
-  - ["additional", "o", {title: "additional variable current value"}]
-  - ["additional.alert", "o", {title: "additional variable alert"}]
-  - ["additional.timer", "o", {title: "additional variable timer"}]
-  - ["additional.future", "o", {title: "additional variable future"}]
-
-  - ["additional.alert.out_1", "i", 0, {title: "alert for output pin 1"}]
-  - ["additional.alert.out_2", "i", 0, {title: "alert for output pin 2"}]
-  - ["additional.alert.out_3", "i", 0, {title: "alert for output pin 3"}]
-  - ["additional.alert.out_4", "i", 0, {title: "alert for output pin 4"}]
-
-  - ["additional.timer.out_1", "i", 0, {title: "timer for output pin 1"}]
-  - ["additional.timer.out_2", "i", 0, {title: "timer for output pin 2"}]
-  - ["additional.timer.out_3", "i", 0, {title: "timer for output pin 3"}]
-  - ["additional.timer.out_4", "i", 0, {title: "timer for output pin 4"}]
-  
-  - ["additional.future.out_1", "i", 0, {title: "future value for output pin 1"}]
-  - ["additional.future.out_2", "i", 0, {title: "future value for output pin 2"}]
-  - ["additional.future.out_3", "i", 0, {title: "future value for output pin 3"}]
-  - ["additional.future.out_4", "i", 0, {title: "future value for output pin 4"}]
-  
-  - ["outputPins", "o", {title: "Output pins current value"}]
-  - ["outputPins.out_1", "i", 0, {title: "Value of pin 1"}]
-  - ["outputPins.out_2", "i", 0, {title: "Value of pin 2"}]
-  - ["outputPins.out_3", "i", 0, {title: "Value of pin 3"}]
-  - ["outputPins.out_4", "i", 0, {title: "Value of pin 4"}]
-
-  - ["inputPins", "o", {title: "Input pins current value"}]
-  - ["inputPins.in_1", "i", 0, {title: "Value of pin 1"}]
-  - ["inputPins.in_2", "i", 0, {title: "Value of pin 2"}]
-  - ["inputPins.in_3", "i", 0, {title: "Value of pin 3"}]
-  - ["inputPins.in_4", "i", 0, {title: "Value of pin 4"}]
-
-
 libs: 
-  - origin: https://github.com/mongoose-os-libs/file-logger
-  - origin: https://github.com/mongoose-os-libs/dash
   - origin: https://github.com/mongoose-os-libs/ca-bundle
   - origin: https://github.com/mongoose-os-libs/http-server
   - origin: https://github.com/mongoose-os-libs/ota-http-server
@@ -144,7 +96,7 @@ libs:
   - origin: https://github.com/mongoose-os-libs/aws
   - origin: https://github.com/mongoose-os-libs/mqtt
   - origin: https://github.com/mongoose-os-libs/shadow
-  - origin: https://github.com/mongoose-os-libs/sntp
+  #- origin: https://github.com/mongoose-os-libs/sntp
   #- origin: https://github.com/mongoose-os-libs/adc
   #For custom RPC
   - origin: https://github.com/mongoose-os-libs/rpc-ws
