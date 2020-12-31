@@ -2,7 +2,7 @@ author: Suman Kumar <suman@edensmarthomes.com>
 name: EDEN_4
 description: A Mongoose OS app for wifi switch dimmer
 
-version: 1.0.0
+version: 1.0.1
 
 libs_version: ${mos_version}
 modules_version: ${mos_version}
@@ -29,10 +29,10 @@ filesystem:
 
 config_schema:
   # Debug Settings
-  - ["debug.level", "i", 1, {title: "Debug Level"}]
+  - ["debug.level", "i", -1, {title: "Debug Level"}]
 
   # Enable File logger
-  - ["file_logger.enable", "b", true, {"title": "Enable"}]
+  - ["file_logger.enable", "b", false, {"title": "Enable"}]
 
   # WiFi AP Config
   - ["wifi.ap", "o", {title: "WiFi Access Point Config"}]
@@ -48,7 +48,7 @@ config_schema:
   - ["wifi.ap.dhcp_start", "s", "192.168.4.2", {title: "DHCP Start Address"}]
   - ["wifi.ap.dhcp_end", "s", "192.168.4.100", {title: "DHCP End Address"}]
   - ["wifi.ap.trigger_on_gpio", "i", -1, {title: "Trigger AP on low GPIO"}]
-  - ["wifi.ap.disable_after", "i", 0, {title: "If > 0, will disable itself after the specified number of seconds"}]
+  - ["wifi.ap.disable_after", "i", 300, {title: "If > 0, will disable itself after the specified number of seconds"}]
   - ["wifi.ap.hostname", "s", "", {title: "If not empty, DNS server will resolve given host name to the IP address of AP"}]
 
 
@@ -80,11 +80,6 @@ config_schema:
   # Dash Config
   - ["dash.enable", "b", false, {"title": "Enable"}]
   - ["dash.send_logs", "b", false, {"title": "Send logs"}]
-
-
-  # WiFi Station Config 1
-  - ["wifi.sta1.ssid", "s", "eden", {title: "SSID"}]
-  - ["wifi.sta1.pass", "s", "eden1234", {title: "Password", type: "password"}]
 
 
   # Additional config
@@ -124,7 +119,6 @@ config_schema:
   - ["inputPins.state_2", "i", 0, {title: "state of pin 2"}]
   - ["inputPins.state_3", "i", 0, {title: "state of pin 3"}]
   - ["inputPins.state_4", "i", 0, {title: "state of pin 4"}]
-
 
 
 libs: 
