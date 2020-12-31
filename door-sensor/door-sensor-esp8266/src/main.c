@@ -124,7 +124,6 @@ static void ap_timer_cb(void * arg) {
    sleep_timer_cb
 */
 static void sleep_timer_cb(void * arg) {
-    mgos_wdt_feed();
     if (sleep_timer_var) {
         // save to device
         sleep_timer_var = (!save_cfg( & mgos_sys_config, NULL));
@@ -145,7 +144,6 @@ static void sleep_timer_cb(void * arg) {
    WiFi RPC callback
 */
 static void wifi_rpc_cb(struct mg_rpc_request_info * ri, void * cb_arg, struct mg_rpc_frame_info * fi, struct mg_str args) {
-    mgos_wdt_feed();
     struct mbuf fb;
     struct json_out out = JSON_OUT_MBUF( & fb);
     mbuf_init( & fb, 20);
@@ -159,16 +157,14 @@ static void wifi_rpc_cb(struct mg_rpc_request_info * ri, void * cb_arg, struct m
         mgos_sys_config_set_wifi_sta_ssid(ssid);
         mgos_sys_config_set_wifi_sta_pass(pass);
 
-        // Disable AP
-        mgos_sys_config_set_wifi_ap_enable(false);
-
-        // Send response
+        // Send Response
         json_printf( & out, "{type: %Q}", "EDEN_DS");
         mg_rpc_send_responsef(ri, "%.*s", fb.len, fb.buf);
         ri = NULL;
         mbuf_free( & fb);
 
-        // Save config and Restart
+        // Disable AP, Save config and Restart
+        mgos_sys_config_set_wifi_ap_enable(false);
         save_cfg( & mgos_sys_config, NULL);
         mgos_system_restart_after(500);
     }
@@ -186,8 +182,6 @@ static void wifi_rpc_cb(struct mg_rpc_request_info * ri, void * cb_arg, struct m
    MQTT callback
 */
 static void mqtt_ev_handler(struct mg_connection * c, int ev, void * p, void * user_data) {
-    mgos_wdt_feed();
-
     // MQTT connection
     if (ev == MG_EV_MQTT_CONNACK) {
         mgos_gpio_set_mode(R_SENSOR, MGOS_GPIO_MODE_INPUT);
@@ -249,7 +243,6 @@ enum mgos_app_init_result mgos_app_init(void) {
     /* Set LED OFF Default No connection */
     mgos_gpio_set_mode(OUTPUT_LED_PIN, MGOS_GPIO_MODE_OUTPUT);
     mgos_gpio_write(OUTPUT_LED_PIN, LED_OFF);
-    mgos_wdt_feed();
 
     /* Set device parameters */
     set_device_param();
@@ -284,6 +277,5 @@ enum mgos_app_init_result mgos_app_init(void) {
     if (mgos_sys_config_get_mqtt_enable()) {
         mgos_mqtt_add_global_handler(mqtt_ev_handler, NULL);
     }
-    mgos_wdt_feed();
     return MGOS_APP_INIT_SUCCESS;
 }

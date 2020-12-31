@@ -1,7 +1,7 @@
 /* clang-format off */
 /*
  * Generated file - do not edit.
- * Command: /mongoose-os/tools/mgos_gen_config.py --c_name=mgos_config --c_global_name=mgos_sys_config --dest_dir=/data/fwbuild-volumes/2.18.0/apps/EDEN_RGB/esp8266/build_contexts/build_ctx_418106657/build/gen/ /mongoose-os/src/mgos_debug_udp_config.yaml /data/fwbuild-volumes/2.18.0/apps/EDEN_RGB/esp8266/build_contexts/build_ctx_418106657/build/gen/mos_conf_schema.yml
+ * Command: /mongoose-os/tools/mgos_gen_config.py --c_name=mgos_config --c_global_name=mgos_sys_config --dest_dir=/data/fwbuild-volumes/2.18.0/apps/EDEN_RGB/esp8266/build_contexts/build_ctx_907215150/build/gen/ /mongoose-os/src/mgos_debug_udp_config.yaml /data/fwbuild-volumes/2.18.0/apps/EDEN_RGB/esp8266/build_contexts/build_ctx_907215150/build/gen/mos_conf_schema.yml
  */
 
 #include "mgos_config.h"
@@ -299,7 +299,7 @@ const struct mgos_config mgos_config_defaults = {
   .debug.udp_log_addr = NULL,
   .debug.udp_log_level = 3,
   .debug.mbedtls_level = 1,
-  .debug.level = 1,
+  .debug.level = -1,
   .debug.file_level = NULL,
   .debug.event_level = 2,
   .debug.stdout_uart = 0,
@@ -436,7 +436,7 @@ const struct mgos_config mgos_config_defaults = {
   .dash.ssl_key = NULL,
   .dash.ssl_ca_cert = "ca.pem",
   .dash.send_logs = 0,
-  .file_logger.enable = 1,
+  .file_logger.enable = 0,
   .file_logger.dir = "/",
   .file_logger.prefix = "log_",
   .file_logger.max_file_size = 4000,

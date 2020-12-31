@@ -743,11 +743,11 @@
   - title: Keep AP enabled when station is on
 - - debug.level
   - i
-  - 1
+  - -1
   - title: Debug Level
 - - file_logger.enable
   - b
-  - true
+  - false
   - title: Enable
 - - wifi.ap
   - o
@@ -879,15 +879,6 @@
   - b
   - false
   - title: Send logs
-- - wifi.sta1.ssid
-  - s
-  - eden
-  - title: SSID
-- - wifi.sta1.pass
-  - s
-  - eden1234
-  - title: Password
-    type: password
 - - rgb
   - o
   - title: RGB Configuration

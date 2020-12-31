@@ -29,10 +29,11 @@ filesystem:
 
 config_schema:
   # Debug Settings
-  - ["debug.level", "i", 1, {title: "Debug Level"}]
+  - ["debug.level", "i", -1, {title: "Debug Level"}]
 
   # Enable File logger
-  - ["file_logger.enable", "b", true, {"title": "Enable"}]
+  - ["file_logger.enable", "b", false, {"title": "Enable"}]
+
 
   # WiFi AP Config
   - ["wifi.ap", "o", {title: "WiFi Access Point Config"}]
@@ -82,11 +83,6 @@ config_schema:
   - ["dash.send_logs", "b", false, {"title": "Send logs"}]
 
 
-  # WiFi Station Config 1
-  - ["wifi.sta1.ssid", "s", "eden", {title: "SSID"}]
-  - ["wifi.sta1.pass", "s", "eden1234", {title: "Password", type: "password"}]
-
-  
   - ["rgb", "o", {title: "RGB Configuration"}]
   - ["rgb.r", "i", 0, {title: "red value 0 - 255"}]
   - ["rgb.g", "i", 255, {title: "green value 0 - 255"}]
@@ -108,6 +104,7 @@ config_schema:
 
   - ["eden", "o", {title: "Eden related config"}]
   - ["eden.button", "i", 5, {title: "Button for AP configuration"}]
+
 
 libs:
   - origin: https://github.com/mongoose-os-libs/file-logger

@@ -769,11 +769,11 @@
   - title: DTIM Listen Interval (ms)
 - - debug.level
   - i
-  - 0
+  - -1
   - title: Debug Level
 - - file_logger.enable
   - b
-  - true
+  - false
   - title: Enable
 - - wifi.ap
   - o

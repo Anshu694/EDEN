@@ -29,10 +29,11 @@ filesystem:
 
 config_schema:
   # Debug Settings
-  - ["debug.level", "i", 0, {title: "Debug Level"}]
+  - ["debug.level", "i", -1, {title: "Debug Level"}]
 
   # Enable File logger
-  - ["file_logger.enable", "b", true, {"title": "Enable"}]
+  - ["file_logger.enable", "b", false, {"title": "Enable"}]
+
 
   # WiFi AP Config
   - ["wifi.ap", "o", {title: "WiFi Access Point Config"}]

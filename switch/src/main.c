@@ -357,28 +357,22 @@ static void wifi_rpc_cb(struct mg_rpc_request_info * ri, void * cb_arg, struct m
         mgos_sys_config_set_wifi_sta_ssid(ssid);
         mgos_sys_config_set_wifi_sta_pass(pass);
 
-        
         // Send response
         #if defined(_SWITCH_4_)
         json_printf( & out, "{type: %Q, pin :%Q}", "EDEN_4", "14,25,26,27");
-
         #elif defined(_SWITCH_3_)
         json_printf( & out, "{type: %Q, pin :%Q}", "EDEN_3", "4,5,15");
-
         #elif defined(_SWITCH_2_)
         json_printf( & out, "{type: %Q, pin :%Q}", "EDEN_2", "4,5");
-
         #elif defined(_SWITCH_1_)
         json_printf( & out, "{type: %Q, pin :%Q}", "EDEN_P", "14");
         #endif
-
         mg_rpc_send_responsef(ri, "%.*s", fb.len, fb.buf);
         ri = NULL;
         mbuf_free( & fb);
 
-        // Disable AP
+        // Disable AP, Save config and Restart
         mgos_sys_config_set_wifi_ap_enable(false);
-        // Save config and Restart
         save_cfg( & mgos_sys_config, NULL);
         mgos_system_restart_after(500);
     }
@@ -647,15 +641,22 @@ static void led_net_ev_handler(int ev, void * evd, void * arg) {
         if (mgos_sys_config_get_wifi_ap_enable()) {
             mgos_gpio_blink(OUTPUT_LED_PIN, 250, 250);
         } else {
-            mgos_gpio_blink(OUTPUT_LED_PIN, 1000, 1000);
+            mgos_gpio_blink(OUTPUT_LED_PIN, 500, 500);
         }
+        break;
+
+    case MGOS_NET_EV_CONNECTING:
+        LOG(LL_INFO, ("MGOS_NET_EV_CONNECTING"));
+        break;
+
+    case MGOS_NET_EV_CONNECTED:
+        LOG(LL_INFO, ("MGOS_NET_EV_CONNECTED"));
         break;
 
     case MGOS_NET_EV_IP_ACQUIRED:
         LOG(LL_WARN, ("MGOS_NET_EV_IP_ACQUIRED"));
         mgos_gpio_blink(OUTPUT_LED_PIN, 1000, 1000);
-        if (mgos_sys_config_get_wifi_ap_enable())
-        {
+        if (mgos_sys_config_get_wifi_ap_enable()) {
             mgos_sys_config_set_wifi_ap_enable(false);
             save_cfg( & mgos_sys_config, NULL);
             mgos_wifi_setup_ap( & mgos_sys_config.wifi.ap);
@@ -699,9 +700,8 @@ enum mgos_app_init_result mgos_app_init(void) {
         // Fast blink in AP Mode
         mgos_gpio_blink(OUTPUT_LED_PIN, 250, 250);
         LOG(LL_WARN, ("#### AP Started ####"));
-    }
-    else if (mgos_sys_config_get_wifi_sta_enable()) {
-        mgos_gpio_blink(OUTPUT_LED_PIN, 500, 500);        
+    } else if (mgos_sys_config_get_wifi_sta_enable()) {
+        mgos_gpio_blink(OUTPUT_LED_PIN, 500, 500);
     }
 
     #if defined(_SWITCH_1_) || defined(_SWITCH_2_) || defined(_SWITCH_3_) || defined(_SWITCH_4_)
