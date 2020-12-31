@@ -6,6 +6,10 @@
  mos call wifiSettings '{"ssid": "eden", "pass": "eden1234"}'
  ```
 
+### MQTT END point
+ ```
+ a6ffpc9686vd8-ats.iot.us-west-2.amazonaws.com:8883
+ ```
 
 #### AP name changed for different modules
 * 4 Switch          - EDEN_4
