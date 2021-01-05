@@ -18,7 +18,7 @@ struct mgos_rgb_led {
 /* Comment this line for Common cathode RGB*/
 //#define MGOS_RGB_LED_COMMON_ANODE
 
-#define MGOS_RGB_LED_DEFAULT_FREQ 400 /* Hz */
+#define MGOS_RGB_LED_DEFAULT_FREQ 250 /* Hz */
 
 /* Init the LED pins. */
 bool mgos_rgb_led_init(struct mgos_rgb_led *led, int gpio_r, int gpio_g, int gpio_b);
