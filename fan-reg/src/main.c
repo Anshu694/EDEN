@@ -613,6 +613,7 @@ static void led_net_ev_handler(int ev, void * evd, void * arg) {
 
     case MGOS_NET_EV_CONNECTING:
         LOG(LL_INFO, ("MGOS_NET_EV_CONNECTING"));
+        mgos_gpio_blink(OUTPUT_LED_PIN, 500, 500);
         break;
 
     case MGOS_NET_EV_CONNECTED:
@@ -622,12 +623,6 @@ static void led_net_ev_handler(int ev, void * evd, void * arg) {
     case MGOS_NET_EV_IP_ACQUIRED:
         LOG(LL_WARN, ("MGOS_NET_EV_IP_ACQUIRED"));
         mgos_gpio_blink(OUTPUT_LED_PIN, 1000, 1000);
-        if (mgos_sys_config_get_wifi_ap_enable()) {
-            mgos_sys_config_set_wifi_ap_enable(false);
-            save_cfg( & mgos_sys_config, NULL);
-            mgos_wifi_setup_ap( & mgos_sys_config.wifi.ap);
-            LOG(LL_WARN, ("#### AP Disabled ####"));
-        }
         break;
 
     case MGOS_EVENT_CLOUD_DISCONNECTED:
