@@ -232,7 +232,6 @@ static void wifi_rpc_cb(struct mg_rpc_request_info * ri, void * cb_arg, struct m
 
 static void rgb_set_color_hex_cb(struct mg_rpc_request_info * ri, void * cb_arg, struct mg_rpc_frame_info * fi, struct mg_str args) {
     char * ctest = NULL;
-
     if (json_scanf(args.p, args.len, ri -> args_fmt, & ctest) == 1) {
         // Disable timer
         if (animation_timer_id != 0) {
@@ -424,6 +423,7 @@ static void led_net_ev_handler(int ev, void * evd, void * arg) {
 
     case MGOS_NET_EV_CONNECTING:
         LOG(LL_INFO, ("MGOS_NET_EV_CONNECTING"));
+        mgos_gpio_blink(OUTPUT_LED_PIN, 500, 500);
         break;
 
     case MGOS_NET_EV_CONNECTED:
@@ -433,12 +433,6 @@ static void led_net_ev_handler(int ev, void * evd, void * arg) {
     case MGOS_NET_EV_IP_ACQUIRED:
         LOG(LL_WARN, ("MGOS_NET_EV_IP_ACQUIRED"));
         mgos_gpio_blink(OUTPUT_LED_PIN, 1000, 1000);
-        if (mgos_sys_config_get_wifi_ap_enable()) {
-            mgos_sys_config_set_wifi_ap_enable(false);
-            save_cfg( & mgos_sys_config, NULL);
-            mgos_wifi_setup_ap( & mgos_sys_config.wifi.ap);
-            LOG(LL_WARN, ("#### AP Disabled ####"));
-        }
         break;
 
     case MGOS_EVENT_CLOUD_DISCONNECTED:
@@ -491,10 +485,13 @@ enum mgos_app_init_result mgos_app_init(void) {
     LOG(LL_WARN, ("\n\n\n### Init Setting ### %d", mgos_sys_config_get_wifi_ap_enable()));
 
     if (mgos_sys_config_get_wifi_ap_enable()) {
-        /* Fast blink in AP Mode */
+        // Fast blink in AP Mode
         mgos_gpio_blink(OUTPUT_LED_PIN, 250, 250);
         LOG(LL_WARN, ("#### AP Started ####"));
+    } else if (mgos_sys_config_get_wifi_sta_enable()) {
+        mgos_gpio_blink(OUTPUT_LED_PIN, 500, 500);
     }
+
 
     //mgos_msleep(1000);
     mg_rpc_add_handler(mgos_rpc_get_global(), "wifiSettings", "{ssid:%Q, pass:%Q}", wifi_rpc_cb, NULL);

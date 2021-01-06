@@ -2,7 +2,7 @@ author: Suman Kumar <suman@edensmarthomes.com>
 name: EDEN_RGB
 description: A Mongoose OS app for RGB LED strip
 
-version: 1.0.2
+version: 1.0.3
 
 libs_version: ${mos_version}
 modules_version: ${mos_version}
