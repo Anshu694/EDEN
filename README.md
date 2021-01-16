@@ -17,8 +17,8 @@
 * 2 Switch          - EDEN_2
 * Power Switch      - EDEN_P
 * Fan Module        - EDEN_4F
+* Dimmer Module     - EDEN_4D
 * RGB Module        - EDEN_RGB
-* Curtain           - EDEN_CURTAIN
-* Dimmer            - EDEN_4
+* Curtain           - EDEN_C
 * Door Sensor       - EDEN_DS
 
