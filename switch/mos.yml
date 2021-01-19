@@ -1,5 +1,5 @@
-author: Suman Kumar <suman@edensmarthomes.com>
-name: EDEN_4
+author: Anshuman <anshuman@edensmarthomes.com>
+name: EDEN_3
 description: A Mongoose OS app for wifi switch
 
 version: 2.0.0
@@ -38,7 +38,7 @@ config_schema:
   # WiFi AP Config
   - ["wifi.ap", "o", {title: "WiFi Access Point Config"}]
   - ["wifi.ap.enable", "b", true, {title: "Enable"}]
-  - ["wifi.ap.ssid", "s", "EDEN_4_??????", {title: "SSID"}]
+  - ["wifi.ap.ssid", "s", "EDEN_3_??????", {title: "SSID"}]
   - ["wifi.ap.pass", "s", "eden1234", {title: "Password", type: "password"}]
   - ["wifi.ap.hidden", "b", false, {title: "Hide SSID"}]
   - ["wifi.ap.channel", "i", 6, {title: "Channel"}]

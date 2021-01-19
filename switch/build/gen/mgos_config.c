@@ -1,7 +1,7 @@
 /* clang-format off */
 /*
  * Generated file - do not edit.
- * Command: /mongoose-os/tools/mgos_gen_config.py --c_name=mgos_config --c_global_name=mgos_sys_config --dest_dir=/data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/build/gen/ /mongoose-os/src/mgos_debug_udp_config.yaml /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/build/gen/mos_conf_schema.yml
+ * Command: /mongoose-os/tools/mgos_gen_config.py --c_name=mgos_config --c_global_name=mgos_sys_config --dest_dir=/data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/build/gen/ /mongoose-os/src/mgos_debug_udp_config.yaml /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/build/gen/mos_conf_schema.yml
  */
 
 #include "mgos_config.h"
@@ -13,7 +13,7 @@
 
 /* struct mgos_config */
 static const struct mgos_conf_entry mgos_config_schema_[] = {
-    {.type = CONF_TYPE_OBJECT, .key = "", .offset = 0, .num_desc = 278},
+    {.type = CONF_TYPE_OBJECT, .key = "", .offset = 0, .num_desc = 281},
     {.type = CONF_TYPE_OBJECT, .key = "debug", .offset = offsetof(struct mgos_config, debug), .num_desc = 12},
     {.type = CONF_TYPE_STRING, .key = "udp_log_addr", .offset = offsetof(struct mgos_config, debug.udp_log_addr)},
     {.type = CONF_TYPE_INT, .key = "udp_log_level", .offset = offsetof(struct mgos_config, debug.udp_log_level)},
@@ -269,29 +269,32 @@ static const struct mgos_conf_entry mgos_config_schema_[] = {
     {.type = CONF_TYPE_INT, .key = "sta_cfg_idx", .offset = offsetof(struct mgos_config, wifi.sta_cfg_idx)},
     {.type = CONF_TYPE_INT, .key = "sta_connect_timeout", .offset = offsetof(struct mgos_config, wifi.sta_connect_timeout)},
     {.type = CONF_TYPE_BOOL, .key = "sta_all_chan_scan", .offset = offsetof(struct mgos_config, wifi.sta_all_chan_scan)},
-    {.type = CONF_TYPE_OBJECT, .key = "additional", .offset = offsetof(struct mgos_config, additional), .num_desc = 12},
-    {.type = CONF_TYPE_OBJECT, .key = "alert", .offset = offsetof(struct mgos_config, additional.alert), .num_desc = 3},
+    {.type = CONF_TYPE_OBJECT, .key = "additional", .offset = offsetof(struct mgos_config, additional), .num_desc = 15},
+    {.type = CONF_TYPE_OBJECT, .key = "alert", .offset = offsetof(struct mgos_config, additional.alert), .num_desc = 4},
     {.type = CONF_TYPE_INT, .key = "out_1", .offset = offsetof(struct mgos_config, additional.alert.out_1)},
     {.type = CONF_TYPE_INT, .key = "out_2", .offset = offsetof(struct mgos_config, additional.alert.out_2)},
     {.type = CONF_TYPE_INT, .key = "out_3", .offset = offsetof(struct mgos_config, additional.alert.out_3)},
-    {.type = CONF_TYPE_OBJECT, .key = "timer", .offset = offsetof(struct mgos_config, additional.timer), .num_desc = 3},
+    {.type = CONF_TYPE_INT, .key = "out_4", .offset = offsetof(struct mgos_config, additional.alert.out_4)},
+    {.type = CONF_TYPE_OBJECT, .key = "timer", .offset = offsetof(struct mgos_config, additional.timer), .num_desc = 4},
     {.type = CONF_TYPE_INT, .key = "out_1", .offset = offsetof(struct mgos_config, additional.timer.out_1)},
     {.type = CONF_TYPE_INT, .key = "out_2", .offset = offsetof(struct mgos_config, additional.timer.out_2)},
     {.type = CONF_TYPE_INT, .key = "out_3", .offset = offsetof(struct mgos_config, additional.timer.out_3)},
-    {.type = CONF_TYPE_OBJECT, .key = "future", .offset = offsetof(struct mgos_config, additional.future), .num_desc = 3},
+    {.type = CONF_TYPE_INT, .key = "out_4", .offset = offsetof(struct mgos_config, additional.timer.out_4)},
+    {.type = CONF_TYPE_OBJECT, .key = "future", .offset = offsetof(struct mgos_config, additional.future), .num_desc = 4},
     {.type = CONF_TYPE_INT, .key = "out_1", .offset = offsetof(struct mgos_config, additional.future.out_1)},
     {.type = CONF_TYPE_INT, .key = "out_2", .offset = offsetof(struct mgos_config, additional.future.out_2)},
     {.type = CONF_TYPE_INT, .key = "out_3", .offset = offsetof(struct mgos_config, additional.future.out_3)},
-    {.type = CONF_TYPE_OBJECT, .key = "outputPins", .offset = offsetof(struct mgos_config, outputPins), .num_desc = 3},
+    {.type = CONF_TYPE_INT, .key = "out_4", .offset = offsetof(struct mgos_config, additional.future.out_4)},
+    {.type = CONF_TYPE_OBJECT, .key = "outputPins", .offset = offsetof(struct mgos_config, outputPins), .num_desc = 4},
     {.type = CONF_TYPE_INT, .key = "out_1", .offset = offsetof(struct mgos_config, outputPins.out_1)},
     {.type = CONF_TYPE_INT, .key = "out_2", .offset = offsetof(struct mgos_config, outputPins.out_2)},
     {.type = CONF_TYPE_INT, .key = "out_3", .offset = offsetof(struct mgos_config, outputPins.out_3)},
-    {.type = CONF_TYPE_OBJECT, .key = "inputPins", .offset = offsetof(struct mgos_config, inputPins), .num_desc = 3},
+    {.type = CONF_TYPE_INT, .key = "out_4", .offset = offsetof(struct mgos_config, outputPins.out_4)},
+    {.type = CONF_TYPE_OBJECT, .key = "inputPins", .offset = offsetof(struct mgos_config, inputPins), .num_desc = 4},
     {.type = CONF_TYPE_INT, .key = "in_1", .offset = offsetof(struct mgos_config, inputPins.in_1)},
     {.type = CONF_TYPE_INT, .key = "in_2", .offset = offsetof(struct mgos_config, inputPins.in_2)},
     {.type = CONF_TYPE_INT, .key = "in_3", .offset = offsetof(struct mgos_config, inputPins.in_3)},
-    {.type = CONF_TYPE_OBJECT, .key = "eden", .offset = offsetof(struct mgos_config, eden), .num_desc = 1},
-    {.type = CONF_TYPE_BOOL, .key = "ap_timer", .offset = offsetof(struct mgos_config, eden.ap_timer)},
+    {.type = CONF_TYPE_INT, .key = "in_4", .offset = offsetof(struct mgos_config, inputPins.in_4)},
 };
 
 /* struct mgos_config_debug */
@@ -303,7 +306,7 @@ void mgos_config_debug_set_defaults(struct mgos_config_debug *cfg) {
   cfg->udp_log_addr = NULL;
   cfg->udp_log_level = 3;
   cfg->mbedtls_level = 1;
-  cfg->level = 2;
+  cfg->level = -1;
   cfg->file_level = NULL;
   cfg->event_level = 2;
   cfg->stdout_uart = 0;
@@ -526,13 +529,13 @@ const struct mgos_conf_entry *mgos_config_dash_get_schema(void) {
 }
 
 void mgos_config_dash_set_defaults(struct mgos_config_dash *cfg) {
-  cfg->enable = true;
+  cfg->enable = false;
   cfg->token = NULL;
   cfg->server = "wss://mdash.net/api/v2/rpc";
   cfg->ssl_cert = NULL;
   cfg->ssl_key = NULL;
   cfg->ssl_ca_cert = "ca.pem";
-  cfg->send_logs = true;
+  cfg->send_logs = false;
 }
 
 /* struct mgos_config_file_logger */
@@ -740,28 +743,31 @@ void mgos_config_additional_alert_set_defaults(struct mgos_config_additional_ale
   cfg->out_1 = 0;
   cfg->out_2 = 0;
   cfg->out_3 = 0;
+  cfg->out_4 = 0;
 }
 
 /* struct mgos_config_additional_timer */
 const struct mgos_conf_entry *mgos_config_additional_timer_get_schema(void) {
-  return &mgos_config_schema_[261];
+  return &mgos_config_schema_[262];
 }
 
 void mgos_config_additional_timer_set_defaults(struct mgos_config_additional_timer *cfg) {
   cfg->out_1 = 0;
   cfg->out_2 = 0;
   cfg->out_3 = 0;
+  cfg->out_4 = 0;
 }
 
 /* struct mgos_config_additional_future */
 const struct mgos_conf_entry *mgos_config_additional_future_get_schema(void) {
-  return &mgos_config_schema_[265];
+  return &mgos_config_schema_[267];
 }
 
 void mgos_config_additional_future_set_defaults(struct mgos_config_additional_future *cfg) {
   cfg->out_1 = 0;
   cfg->out_2 = 0;
   cfg->out_3 = 0;
+  cfg->out_4 = 0;
 }
 
 /* struct mgos_config_additional */
@@ -777,33 +783,26 @@ void mgos_config_additional_set_defaults(struct mgos_config_additional *cfg) {
 
 /* struct mgos_config_outputPins */
 const struct mgos_conf_entry *mgos_config_outputPins_get_schema(void) {
-  return &mgos_config_schema_[269];
+  return &mgos_config_schema_[272];
 }
 
 void mgos_config_outputPins_set_defaults(struct mgos_config_outputPins *cfg) {
   cfg->out_1 = 0;
   cfg->out_2 = 0;
   cfg->out_3 = 0;
+  cfg->out_4 = 0;
 }
 
 /* struct mgos_config_inputPins */
 const struct mgos_conf_entry *mgos_config_inputPins_get_schema(void) {
-  return &mgos_config_schema_[273];
+  return &mgos_config_schema_[277];
 }
 
 void mgos_config_inputPins_set_defaults(struct mgos_config_inputPins *cfg) {
   cfg->in_1 = 0;
   cfg->in_2 = 0;
   cfg->in_3 = 0;
-}
-
-/* struct mgos_config_eden */
-const struct mgos_conf_entry *mgos_config_eden_get_schema(void) {
-  return &mgos_config_schema_[277];
-}
-
-void mgos_config_eden_set_defaults(struct mgos_config_eden *cfg) {
-  cfg->ap_timer = true;
+  cfg->in_4 = 0;
 }
 
 /* struct mgos_config */
@@ -833,7 +832,6 @@ void mgos_config_set_defaults(struct mgos_config *cfg) {
   mgos_config_additional_set_defaults(&cfg->additional);
   mgos_config_outputPins_set_defaults(&cfg->outputPins);
   mgos_config_inputPins_set_defaults(&cfg->inputPins);
-  mgos_config_eden_set_defaults(&cfg->eden);
 }
 
 /* Global instance */
@@ -861,7 +859,7 @@ void mgos_config_set_debug_mbedtls_level(struct mgos_config *cfg, int v) { cfg->
 
 /* debug.level */
 int mgos_config_get_debug_level(const struct mgos_config *cfg) { return cfg->debug.level; }
-int mgos_config_get_default_debug_level(void) { return 2; }
+int mgos_config_get_default_debug_level(void) { return -1; }
 void mgos_config_set_debug_level(struct mgos_config *cfg, int v) { cfg->debug.level = v; }
 
 /* debug.file_level */
@@ -1480,7 +1478,7 @@ const struct mgos_config_dash *mgos_config_get_dash(const struct mgos_config *cf
 
 /* dash.enable */
 int mgos_config_get_dash_enable(const struct mgos_config *cfg) { return cfg->dash.enable; }
-int mgos_config_get_default_dash_enable(void) { return true; }
+int mgos_config_get_default_dash_enable(void) { return false; }
 void mgos_config_set_dash_enable(struct mgos_config *cfg, int v) { cfg->dash.enable = v; }
 
 /* dash.token */
@@ -1510,7 +1508,7 @@ void mgos_config_set_dash_ssl_ca_cert(struct mgos_config *cfg, const char * v) {
 
 /* dash.send_logs */
 int mgos_config_get_dash_send_logs(const struct mgos_config *cfg) { return cfg->dash.send_logs; }
-int mgos_config_get_default_dash_send_logs(void) { return true; }
+int mgos_config_get_default_dash_send_logs(void) { return false; }
 void mgos_config_set_dash_send_logs(struct mgos_config *cfg, int v) { cfg->dash.send_logs = v; }
 
 /* file_logger */
@@ -2087,6 +2085,11 @@ int mgos_config_get_additional_alert_out_3(const struct mgos_config *cfg) { retu
 int mgos_config_get_default_additional_alert_out_3(void) { return 0; }
 void mgos_config_set_additional_alert_out_3(struct mgos_config *cfg, int v) { cfg->additional.alert.out_3 = v; }
 
+/* additional.alert.out_4 */
+int mgos_config_get_additional_alert_out_4(const struct mgos_config *cfg) { return cfg->additional.alert.out_4; }
+int mgos_config_get_default_additional_alert_out_4(void) { return 0; }
+void mgos_config_set_additional_alert_out_4(struct mgos_config *cfg, int v) { cfg->additional.alert.out_4 = v; }
+
 /* additional.timer */
 const struct mgos_config_additional_timer *mgos_config_get_additional_timer(const struct mgos_config *cfg) { return &cfg->additional.timer; }
 
@@ -2104,6 +2107,11 @@ void mgos_config_set_additional_timer_out_2(struct mgos_config *cfg, int v) { cf
 int mgos_config_get_additional_timer_out_3(const struct mgos_config *cfg) { return cfg->additional.timer.out_3; }
 int mgos_config_get_default_additional_timer_out_3(void) { return 0; }
 void mgos_config_set_additional_timer_out_3(struct mgos_config *cfg, int v) { cfg->additional.timer.out_3 = v; }
+
+/* additional.timer.out_4 */
+int mgos_config_get_additional_timer_out_4(const struct mgos_config *cfg) { return cfg->additional.timer.out_4; }
+int mgos_config_get_default_additional_timer_out_4(void) { return 0; }
+void mgos_config_set_additional_timer_out_4(struct mgos_config *cfg, int v) { cfg->additional.timer.out_4 = v; }
 
 /* additional.future */
 const struct mgos_config_additional_future *mgos_config_get_additional_future(const struct mgos_config *cfg) { return &cfg->additional.future; }
@@ -2123,6 +2131,11 @@ int mgos_config_get_additional_future_out_3(const struct mgos_config *cfg) { ret
 int mgos_config_get_default_additional_future_out_3(void) { return 0; }
 void mgos_config_set_additional_future_out_3(struct mgos_config *cfg, int v) { cfg->additional.future.out_3 = v; }
 
+/* additional.future.out_4 */
+int mgos_config_get_additional_future_out_4(const struct mgos_config *cfg) { return cfg->additional.future.out_4; }
+int mgos_config_get_default_additional_future_out_4(void) { return 0; }
+void mgos_config_set_additional_future_out_4(struct mgos_config *cfg, int v) { cfg->additional.future.out_4 = v; }
+
 /* outputPins */
 const struct mgos_config_outputPins *mgos_config_get_outputPins(const struct mgos_config *cfg) { return &cfg->outputPins; }
 
@@ -2140,6 +2153,11 @@ void mgos_config_set_outputPins_out_2(struct mgos_config *cfg, int v) { cfg->out
 int mgos_config_get_outputPins_out_3(const struct mgos_config *cfg) { return cfg->outputPins.out_3; }
 int mgos_config_get_default_outputPins_out_3(void) { return 0; }
 void mgos_config_set_outputPins_out_3(struct mgos_config *cfg, int v) { cfg->outputPins.out_3 = v; }
+
+/* outputPins.out_4 */
+int mgos_config_get_outputPins_out_4(const struct mgos_config *cfg) { return cfg->outputPins.out_4; }
+int mgos_config_get_default_outputPins_out_4(void) { return 0; }
+void mgos_config_set_outputPins_out_4(struct mgos_config *cfg, int v) { cfg->outputPins.out_4 = v; }
 
 /* inputPins */
 const struct mgos_config_inputPins *mgos_config_get_inputPins(const struct mgos_config *cfg) { return &cfg->inputPins; }
@@ -2159,13 +2177,10 @@ int mgos_config_get_inputPins_in_3(const struct mgos_config *cfg) { return cfg->
 int mgos_config_get_default_inputPins_in_3(void) { return 0; }
 void mgos_config_set_inputPins_in_3(struct mgos_config *cfg, int v) { cfg->inputPins.in_3 = v; }
 
-/* eden */
-const struct mgos_config_eden *mgos_config_get_eden(const struct mgos_config *cfg) { return &cfg->eden; }
-
-/* eden.ap_timer */
-int mgos_config_get_eden_ap_timer(const struct mgos_config *cfg) { return cfg->eden.ap_timer; }
-int mgos_config_get_default_eden_ap_timer(void) { return true; }
-void mgos_config_set_eden_ap_timer(struct mgos_config *cfg, int v) { cfg->eden.ap_timer = v; }
+/* inputPins.in_4 */
+int mgos_config_get_inputPins_in_4(const struct mgos_config *cfg) { return cfg->inputPins.in_4; }
+int mgos_config_get_default_inputPins_in_4(void) { return 0; }
+void mgos_config_set_inputPins_in_4(struct mgos_config *cfg, int v) { cfg->inputPins.in_4 = v; }
 bool mgos_sys_config_get(const struct mg_str key, struct mg_str *value) {
   return mgos_config_get(key, value, &mgos_sys_config, mgos_config_schema());
 }

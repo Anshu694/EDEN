@@ -1,203 +1,203 @@
 name: EDEN_3
 type: app
-version: "2.0"
+version: 2.0.0
 platform: esp8266
 platforms:
 - cc3200
 - esp32
 - esp8266
 - stm32
-author: Anshuman Rathor <anshuman@edensmarthomes.com>
+author: Anshuman <anshuman@edensmarthomes.com>
 description: A Mongoose OS app for wifi switch
 sources:
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/src/main.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/build/gen/mgos_deps_init.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/mbedtls/src/mgos_mbedtls.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/mbedtls/src/esp8266/esp_aes.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/mbedtls/src/esp8266/esp_md5.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/mbedtls/src/esp8266/esp_sha1.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/aes.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/aes_atca.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/aesni.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/arc4.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/aria.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/asn1parse.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/asn1write.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/base64.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/bignum.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/blowfish.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/camellia.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ccm.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/certs.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/chacha20.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/chachapoly.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/cipher.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/cipher_wrap.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/cmac.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ctr_drbg.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/debug.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/des.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/dhm.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ecdh.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ecdsa.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ecjpake.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ecp.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ecp_atca.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ecp_curves.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/entropy.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/entropy_poll.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/error.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/gcm.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/havege.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/hkdf.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/hmac_drbg.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/md.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/md2.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/md4.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/md5.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/md_wrap.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/memory_buffer_alloc.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/net_sockets.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/nist_kw.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/oid.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/padlock.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/pem.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/pk.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/pk_wrap.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/pkcs11.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/pkcs12.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/pkcs5.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/pkparse.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/pkwrite.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/platform.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/platform_util.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/poly1305.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ripemd160.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/rsa.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/rsa_internal.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/sha1.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/sha256.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/sha512.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ssl_cache.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ssl_ciphersuites.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ssl_cli.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ssl_cookie.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ssl_srv.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ssl_ticket.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ssl_tls.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/threading.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/timing.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/version.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/version_features.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/x509.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/x509_create.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/x509_crl.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/x509_crt.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/x509_csr.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/x509write_crt.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/x509write_csr.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/xtea.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-common/src/mgos_vfs.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-common/src/mgos_vfs_dev.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-common/src/mgos_vfs_internal.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-common/src/esp8266/esp_fs.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-common/src/esp8266/esp_vfs_dev_sysflash.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-dev-part/src/mgos_vfs_dev_part.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-lfs/src/mgos_vfs_lfs.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-lfs/littlefs/lfs.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-lfs/littlefs/lfs_util.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-lfs/littlefs1/lfs1.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-lfs/littlefs1/lfs1_util.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-spiffs/src/mgos_vfs_fs_spiffs.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-spiffs/src/spiffs/spiffs_cache.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-spiffs/src/spiffs/spiffs_check.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-spiffs/src/spiffs/spiffs_gc.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-spiffs/src/spiffs/spiffs_hydrogen.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-spiffs/src/spiffs/spiffs_nucleus.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/core/src/mgos_core.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/core/src/esp8266/esp_rboot.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/mqtt/src/mgos_mqtt.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/mqtt/src/mgos_mqtt_conn.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/shadow/src/mgos_shadow.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/aws/src/mgos_aws.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/aws/src/mgos_aws_greengrass.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/aws/src/mgos_aws_shadow.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-common/src/mg_rpc.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-common/src/mg_rpc_channel.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-common/src/mg_rpc_channel_http.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-common/src/mgos_rpc.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-ws/src/mgos_rpc_channel_ws.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-ws/src/mgos_rpc_ws.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/file-logger/src/mgos_file_logger.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/http-server/src/mgos_http_server.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-loopback/src/mg_rpc_channel_loopback.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-mqtt/src/mgos_rpc_channel_mqtt.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-service-config/src/mgos_service_config.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-service-fs/src/mgos_service_fs.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-service-gpio/src/mgos_gpio_service.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/i2c/src/mgos_i2c_master.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/i2c/src/gpio/mgos_i2c_gpio_master.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-service-i2c/src/mgos_i2c_service.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-uart/src/mgos_rpc_channel_uart.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/sntp/src/mgos_sntp.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/spi/src/mgos_spi.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/spi/src/mgos_spi_mjs.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/spi/src/common_gpio/mgos_spi_gpio.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-dev-spi-flash/src/mgos_vfs_dev_spi_flash.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/wifi/src/mgos_wifi.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/wifi/src/mjs_wifi.c
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/wifi/src/esp8266/esp_wifi.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/src/main.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/build/gen/mgos_deps_init.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/mbedtls/src/mgos_mbedtls.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/mbedtls/src/esp8266/esp_aes.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/mbedtls/src/esp8266/esp_md5.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/mbedtls/src/esp8266/esp_sha1.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/aes.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/aes_atca.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/aesni.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/arc4.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/aria.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/asn1parse.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/asn1write.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/base64.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/bignum.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/blowfish.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/camellia.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ccm.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/certs.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/chacha20.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/chachapoly.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/cipher.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/cipher_wrap.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/cmac.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ctr_drbg.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/debug.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/des.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/dhm.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ecdh.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ecdsa.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ecjpake.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ecp.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ecp_atca.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ecp_curves.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/entropy.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/entropy_poll.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/error.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/gcm.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/havege.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/hkdf.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/hmac_drbg.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/md.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/md2.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/md4.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/md5.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/md_wrap.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/memory_buffer_alloc.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/net_sockets.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/nist_kw.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/oid.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/padlock.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/pem.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/pk.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/pk_wrap.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/pkcs11.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/pkcs12.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/pkcs5.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/pkparse.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/pkwrite.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/platform.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/platform_util.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/poly1305.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ripemd160.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/rsa.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/rsa_internal.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/sha1.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/sha256.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/sha512.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ssl_cache.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ssl_ciphersuites.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ssl_cli.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ssl_cookie.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ssl_srv.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ssl_ticket.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ssl_tls.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/threading.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/timing.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/version.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/version_features.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/x509.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/x509_create.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/x509_crl.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/x509_crt.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/x509_csr.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/x509write_crt.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/x509write_csr.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/xtea.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-common/src/mgos_vfs.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-common/src/mgos_vfs_dev.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-common/src/mgos_vfs_internal.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-common/src/esp8266/esp_fs.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-common/src/esp8266/esp_vfs_dev_sysflash.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-dev-part/src/mgos_vfs_dev_part.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-lfs/src/mgos_vfs_lfs.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-lfs/littlefs/lfs.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-lfs/littlefs/lfs_util.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-lfs/littlefs1/lfs1.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-lfs/littlefs1/lfs1_util.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-spiffs/src/mgos_vfs_fs_spiffs.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-spiffs/src/spiffs/spiffs_cache.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-spiffs/src/spiffs/spiffs_check.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-spiffs/src/spiffs/spiffs_gc.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-spiffs/src/spiffs/spiffs_hydrogen.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-spiffs/src/spiffs/spiffs_nucleus.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/core/src/mgos_core.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/core/src/esp8266/esp_rboot.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/mqtt/src/mgos_mqtt.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/mqtt/src/mgos_mqtt_conn.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/shadow/src/mgos_shadow.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/aws/src/mgos_aws.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/aws/src/mgos_aws_greengrass.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/aws/src/mgos_aws_shadow.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-common/src/mg_rpc.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-common/src/mg_rpc_channel.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-common/src/mg_rpc_channel_http.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-common/src/mgos_rpc.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-ws/src/mgos_rpc_channel_ws.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-ws/src/mgos_rpc_ws.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/file-logger/src/mgos_file_logger.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/http-server/src/mgos_http_server.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-loopback/src/mg_rpc_channel_loopback.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-mqtt/src/mgos_rpc_channel_mqtt.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-service-config/src/mgos_service_config.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-service-fs/src/mgos_service_fs.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-service-gpio/src/mgos_gpio_service.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/i2c/src/mgos_i2c_master.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/i2c/src/gpio/mgos_i2c_gpio_master.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-service-i2c/src/mgos_i2c_service.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-uart/src/mgos_rpc_channel_uart.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/sntp/src/mgos_sntp.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/spi/src/mgos_spi.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/spi/src/mgos_spi_mjs.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/spi/src/common_gpio/mgos_spi_gpio.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-dev-spi-flash/src/mgos_vfs_dev_spi_flash.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/wifi/src/mgos_wifi.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/wifi/src/mjs_wifi.c
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/wifi/src/esp8266/esp_wifi.c
 includes:
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/mbedtls/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/mbedtls/include/esp8266
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-common/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-common/include/esp8266
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/mongoose/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-dev-part/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-lfs/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-lfs/littlefs
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-lfs/littlefs1
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-spiffs/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-spiffs/include/spiffs
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-spiffs/include/esp8266
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/core/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/core/include/esp8266
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/mqtt/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/shadow/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/aws/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/ota-common/src
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/ota-common/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/ota-common/include/esp8266
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/ota-http-client/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-common/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-ws/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/dash/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/file-logger/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/http-server/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-loopback/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-mqtt/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-service-config/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-service-gpio/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/i2c/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-service-i2c/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-service-ota/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-uart/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/spi/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-dev-spi-flash/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/wifi/include
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/wifi/include/esp8266
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/mbedtls/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/mbedtls/include/esp8266
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-common/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-common/include/esp8266
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/mongoose/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-dev-part/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-lfs/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-lfs/littlefs
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-lfs/littlefs1
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-spiffs/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-spiffs/include/spiffs
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-spiffs/include/esp8266
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/core/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/core/include/esp8266
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/mqtt/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/shadow/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/aws/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/ota-common/src
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/ota-common/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/ota-common/include/esp8266
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/ota-http-client/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-common/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-ws/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/dash/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/file-logger/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/http-server/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-loopback/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-mqtt/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-service-config/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-service-gpio/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/i2c/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-service-i2c/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-service-ota/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-uart/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/spi/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-dev-spi-flash/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/wifi/include
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/wifi/include/esp8266
 filesystem:
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/ca-bundle/fs/ca.pem
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/fs/index.html
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/ca-bundle/fs/ca.pem
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/fs/index.html
 binary_libs:
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/build/objs/libmongoose-esp8266-2.19.0.a
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/build/objs/libota-common-esp8266-2.19.0.a
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/build/objs/libota-http-client-esp8266-2.19.0.a
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/build/objs/libota-shadow-esp8266-2.19.0.a
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/build/objs/libdash-esp8266-2.19.0.a
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/build/objs/libota-http-server-esp8266-2.19.0.a
-- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/build/objs/librpc-service-ota-esp8266-2.19.0.a
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/build/objs/libmongoose-esp8266-2.19.0.a
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/build/objs/libota-common-esp8266-2.19.0.a
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/build/objs/libota-http-client-esp8266-2.19.0.a
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/build/objs/libota-shadow-esp8266-2.19.0.a
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/build/objs/libdash-esp8266-2.19.0.a
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/build/objs/libota-http-server-esp8266-2.19.0.a
+- /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/build/objs/librpc-service-ota-esp8266-2.19.0.a
 modules:
 - origin: https://github.com/mongoose-os/mbedtls
   location: https://github.com/mongoose-os/mbedtls
@@ -938,6 +938,14 @@ config_schema:
   - b
   - true
   - title: true to scan all channels or false to perform fast scan
+- - debug.level
+  - i
+  - -1
+  - title: Debug Level
+- - file_logger.enable
+  - b
+  - false
+  - title: Enable
 - - wifi.ap
   - o
   - title: WiFi Access Point Config
@@ -1062,56 +1070,12 @@ config_schema:
   - title: Subscribe topic for extra keys
 - - dash.enable
   - b
-  - true
+  - false
   - title: Enable
 - - dash.send_logs
   - b
-  - true
+  - false
   - title: Send logs
-- - http
-  - o
-  - title: HTTP Server
-- - http.enable
-  - b
-  - true
-  - title: Enable HTTP Server
-- - http.listen_addr
-  - s
-  - "80"
-  - title: Listening port / address
-- - http.document_root
-  - s
-  - /
-  - title: Root for serving files. Setting to empty disables file serving.
-- - http.index_files
-  - s
-  - ""
-  - title: Comma-separated list of index files
-- - http.ssl_cert
-  - s
-  - title: Turn on SSL on the listener, use this cert
-- - http.ssl_key
-  - s
-  - title: SSL key to use
-- - http.ssl_ca_cert
-  - s
-  - title: Verify clients this CA bundle
-- - http.upload_acl
-  - s
-  - '*'
-  - title: Upload file ACL
-- - http.hidden_files
-  - s
-  - title: Hidden file pattern
-- - http.auth_domain
-  - s
-  - title: Enable authentication of all HTTP requests
-- - http.auth_file
-  - s
-  - title: Password file to use for auth
-- - http.extra_headers
-  - s
-  - title: Extra headers to send with every file served
 - - additional
   - o
   - title: additional variable current value
@@ -1136,6 +1100,10 @@ config_schema:
   - i
   - 0
   - title: alert for output pin 3
+- - additional.alert.out_4
+  - i
+  - 0
+  - title: alert for output pin 4
 - - additional.timer.out_1
   - i
   - 0
@@ -1148,6 +1116,10 @@ config_schema:
   - i
   - 0
   - title: timer for output pin 3
+- - additional.timer.out_4
+  - i
+  - 0
+  - title: timer for output pin 4
 - - additional.future.out_1
   - i
   - 0
@@ -1160,6 +1132,10 @@ config_schema:
   - i
   - 0
   - title: future value for output pin 3
+- - additional.future.out_4
+  - i
+  - 0
+  - title: future value for output pin 4
 - - outputPins
   - o
   - title: Output pins current value
@@ -1175,6 +1151,10 @@ config_schema:
   - i
   - 0
   - title: Value of pin 3
+- - outputPins.out_4
+  - i
+  - 0
+  - title: Value of pin 4
 - - inputPins
   - o
   - title: Input pins current value
@@ -1190,13 +1170,10 @@ config_schema:
   - i
   - 0
   - title: Value of pin 3
-- - eden
-  - o
-  - title: Eden related config
-- - eden.ap_timer
-  - b
-  - true
-  - title: Set timer to disbale ap mode
+- - inputPins.in_4
+  - i
+  - 0
+  - title: Value of pin 4
 build_vars:
   BOARD: ""
   MGOS: "1"
@@ -1303,12 +1280,6 @@ cdefs:
   MGOS_ROOT_FS_OPTS_LFS: '{"bs":4096,"is":128}'
   MGOS_ROOT_FS_OPTS_SPIFFS: '{"bs":4096,"ps":256,"es":4096}'
   MGOS_WIFI_ENABLE_AP_STA: "1"
-tags:
-- c
-- wifi
-- switch
-- aws
-- eden
 libs_version: 2.19.0
 modules_version: 2.19.0
 mongoose_os_version: 2.19.0
@@ -1318,156 +1289,156 @@ libs_handled:
     origin: https://github.com/mongoose-os-libs/mbedtls
     location: https://github.com/mongoose-os-libs/mbedtls
     name: mbedtls
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/mbedtls
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/mbedtls
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/mbedtls/src/mgos_mbedtls.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/mbedtls/src/esp8266/esp_aes.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/mbedtls/src/esp8266/esp_md5.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/mbedtls/src/esp8266/esp_sha1.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/aes.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/aes_atca.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/aesni.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/arc4.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/aria.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/asn1parse.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/asn1write.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/base64.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/bignum.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/blowfish.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/camellia.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ccm.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/certs.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/chacha20.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/chachapoly.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/cipher.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/cipher_wrap.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/cmac.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ctr_drbg.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/debug.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/des.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/dhm.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ecdh.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ecdsa.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ecjpake.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ecp.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ecp_atca.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ecp_curves.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/entropy.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/entropy_poll.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/error.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/gcm.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/havege.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/hkdf.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/hmac_drbg.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/md.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/md2.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/md4.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/md5.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/md_wrap.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/memory_buffer_alloc.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/net_sockets.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/nist_kw.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/oid.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/padlock.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/pem.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/pk.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/pk_wrap.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/pkcs11.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/pkcs12.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/pkcs5.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/pkparse.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/pkwrite.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/platform.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/platform_util.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/poly1305.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ripemd160.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/rsa.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/rsa_internal.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/sha1.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/sha256.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/sha512.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ssl_cache.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ssl_ciphersuites.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ssl_cli.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ssl_cookie.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ssl_srv.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ssl_ticket.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/ssl_tls.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/threading.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/timing.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/version.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/version_features.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/x509.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/x509_create.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/x509_crl.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/x509_crt.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/x509_csr.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/x509write_crt.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/x509write_csr.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/modules/mbedtls/library/xtea.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/mbedtls/src/mgos_mbedtls.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/mbedtls/src/esp8266/esp_aes.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/mbedtls/src/esp8266/esp_md5.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/mbedtls/src/esp8266/esp_sha1.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/aes.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/aes_atca.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/aesni.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/arc4.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/aria.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/asn1parse.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/asn1write.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/base64.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/bignum.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/blowfish.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/camellia.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ccm.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/certs.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/chacha20.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/chachapoly.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/cipher.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/cipher_wrap.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/cmac.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ctr_drbg.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/debug.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/des.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/dhm.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ecdh.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ecdsa.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ecjpake.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ecp.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ecp_atca.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ecp_curves.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/entropy.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/entropy_poll.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/error.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/gcm.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/havege.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/hkdf.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/hmac_drbg.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/md.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/md2.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/md4.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/md5.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/md_wrap.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/memory_buffer_alloc.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/net_sockets.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/nist_kw.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/oid.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/padlock.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/pem.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/pk.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/pk_wrap.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/pkcs11.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/pkcs12.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/pkcs5.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/pkparse.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/pkwrite.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/platform.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/platform_util.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/poly1305.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ripemd160.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/rsa.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/rsa_internal.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/sha1.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/sha256.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/sha512.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ssl_cache.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ssl_ciphersuites.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ssl_cli.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ssl_cookie.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ssl_srv.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ssl_ticket.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/ssl_tls.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/threading.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/timing.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/version.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/version_features.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/x509.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/x509_create.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/x509_crl.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/x509_crt.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/x509_csr.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/x509write_crt.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/x509write_csr.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/modules/mbedtls/library/xtea.c
   version: 2.16.6-cesanta1
 - lib:
     origin: https://github.com/mongoose-os-libs/vfs-common
     location: https://github.com/mongoose-os-libs/vfs-common
     name: vfs-common
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-common
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-common
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-common/src/mgos_vfs.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-common/src/mgos_vfs_dev.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-common/src/mgos_vfs_internal.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-common/src/esp8266/esp_fs.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-common/src/esp8266/esp_vfs_dev_sysflash.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-common/src/mgos_vfs.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-common/src/mgos_vfs_dev.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-common/src/mgos_vfs_internal.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-common/src/esp8266/esp_fs.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-common/src/esp8266/esp_vfs_dev_sysflash.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/mongoose
     location: https://github.com/mongoose-os-libs/mongoose
     name: mongoose
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/mongoose
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/mongoose
   version: "6.18"
 - lib:
     origin: https://github.com/mongoose-os-libs/vfs-dev-part
     location: https://github.com/mongoose-os-libs/vfs-dev-part
     name: vfs-dev-part
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-dev-part
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-dev-part
   init_deps:
   - vfs-common
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-dev-part/src/mgos_vfs_dev_part.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-dev-part/src/mgos_vfs_dev_part.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/vfs-fs-lfs
     location: https://github.com/mongoose-os-libs/vfs-fs-lfs
     name: vfs-fs-lfs
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-lfs
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-lfs
   init_deps:
   - vfs-common
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-lfs/src/mgos_vfs_lfs.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-lfs/littlefs/lfs.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-lfs/littlefs/lfs_util.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-lfs/littlefs1/lfs1.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-lfs/littlefs1/lfs1_util.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-lfs/src/mgos_vfs_lfs.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-lfs/littlefs/lfs.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-lfs/littlefs/lfs_util.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-lfs/littlefs1/lfs1.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-lfs/littlefs1/lfs1_util.c
   version: 2.2.0
 - lib:
     origin: https://github.com/mongoose-os-libs/vfs-fs-spiffs
     location: https://github.com/mongoose-os-libs/vfs-fs-spiffs
     name: vfs-fs-spiffs
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-spiffs
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-spiffs
   init_deps:
   - vfs-common
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-spiffs/src/mgos_vfs_fs_spiffs.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-spiffs/src/spiffs/spiffs_cache.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-spiffs/src/spiffs/spiffs_check.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-spiffs/src/spiffs/spiffs_gc.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-spiffs/src/spiffs/spiffs_hydrogen.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-fs-spiffs/src/spiffs/spiffs_nucleus.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-spiffs/src/mgos_vfs_fs_spiffs.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-spiffs/src/spiffs/spiffs_cache.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-spiffs/src/spiffs/spiffs_check.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-spiffs/src/spiffs/spiffs_gc.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-spiffs/src/spiffs/spiffs_hydrogen.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-fs-spiffs/src/spiffs/spiffs_nucleus.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/core
     location: https://github.com/mongoose-os-libs/core
     name: core
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/core
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/core
   init_deps:
   - mongoose
   - ota-common
@@ -1477,14 +1448,14 @@ libs_handled:
   - vfs-fs-lfs
   - vfs-fs-spiffs
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/core/src/mgos_core.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/core/src/esp8266/esp_rboot.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/core/src/mgos_core.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/core/src/esp8266/esp_rboot.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/ca-bundle
     location: https://github.com/mongoose-os-libs/ca-bundle
     name: ca-bundle
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/ca-bundle
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/ca-bundle
   init_deps:
   - core
   version: "1.0"
@@ -1492,49 +1463,49 @@ libs_handled:
     origin: https://github.com/mongoose-os-libs/mqtt
     location: https://github.com/mongoose-os-libs/mqtt
     name: mqtt
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/mqtt
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/mqtt
   init_deps:
   - core
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/mqtt/src/mgos_mqtt.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/mqtt/src/mgos_mqtt_conn.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/mqtt/src/mgos_mqtt.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/mqtt/src/mgos_mqtt_conn.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/shadow
     location: https://github.com/mongoose-os-libs/shadow
     name: shadow
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/shadow
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/shadow
   init_deps:
   - core
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/shadow/src/mgos_shadow.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/shadow/src/mgos_shadow.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/aws
     location: https://github.com/mongoose-os-libs/aws
     name: aws
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/aws
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/aws
   init_deps:
   - ca-bundle
   - core
   - mqtt
   - shadow
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/aws/src/mgos_aws.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/aws/src/mgos_aws_greengrass.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/aws/src/mgos_aws_shadow.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/aws/src/mgos_aws.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/aws/src/mgos_aws_greengrass.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/aws/src/mgos_aws_shadow.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/ota-common
     location: https://github.com/mongoose-os-libs/ota-common
     name: ota-common
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/ota-common
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/ota-common
   version: 1.2.1
 - lib:
     origin: https://github.com/mongoose-os-libs/ota-http-client
     location: https://github.com/mongoose-os-libs/ota-http-client
     name: ota-http-client
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/ota-http-client
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/ota-http-client
   init_deps:
   - core
   - ota-common
@@ -1543,7 +1514,7 @@ libs_handled:
     origin: https://github.com/mongoose-os-libs/ota-shadow
     location: https://github.com/mongoose-os-libs/ota-shadow
     name: ota-shadow
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/ota-shadow
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/ota-shadow
   init_deps:
   - core
   - ota-common
@@ -1554,35 +1525,35 @@ libs_handled:
     origin: https://github.com/mongoose-os-libs/rpc-common
     location: https://github.com/mongoose-os-libs/rpc-common
     name: rpc-common
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-common
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-common
   init_deps:
   - core
   - http-server
   - mongoose
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-common/src/mg_rpc.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-common/src/mg_rpc_channel.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-common/src/mg_rpc_channel_http.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-common/src/mgos_rpc.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-common/src/mg_rpc.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-common/src/mg_rpc_channel.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-common/src/mg_rpc_channel_http.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-common/src/mgos_rpc.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/rpc-ws
     location: https://github.com/mongoose-os-libs/rpc-ws
     name: rpc-ws
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-ws
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-ws
   init_deps:
   - core
   - http-server
   - rpc-common
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-ws/src/mgos_rpc_channel_ws.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-ws/src/mgos_rpc_ws.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-ws/src/mgos_rpc_channel_ws.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-ws/src/mgos_rpc_ws.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/dash
     location: https://github.com/mongoose-os-libs/dash
     name: dash
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/dash
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/dash
   init_deps:
   - core
   - ota-shadow
@@ -1593,29 +1564,29 @@ libs_handled:
     origin: https://github.com/mongoose-os-libs/file-logger
     location: https://github.com/mongoose-os-libs/file-logger
     name: file-logger
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/file-logger
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/file-logger
   init_deps:
   - core
   - rpc-common
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/file-logger/src/mgos_file_logger.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/file-logger/src/mgos_file_logger.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/http-server
     location: https://github.com/mongoose-os-libs/http-server
     name: http-server
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/http-server
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/http-server
   init_deps:
   - core
   - wifi
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/http-server/src/mgos_http_server.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/http-server/src/mgos_http_server.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/ota-http-server
     location: https://github.com/mongoose-os-libs/ota-http-server
     name: ota-http-server
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/ota-http-server
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/ota-http-server
   init_deps:
   - core
   - http-server
@@ -1626,88 +1597,88 @@ libs_handled:
     origin: https://github.com/mongoose-os-libs/rpc-loopback
     location: https://github.com/mongoose-os-libs/rpc-loopback
     name: rpc-loopback
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-loopback
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-loopback
   init_deps:
   - core
   - rpc-common
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-loopback/src/mg_rpc_channel_loopback.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-loopback/src/mg_rpc_channel_loopback.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/rpc-mqtt
     location: https://github.com/mongoose-os-libs/rpc-mqtt
     name: rpc-mqtt
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-mqtt
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-mqtt
   init_deps:
   - aws
   - core
   - mqtt
   - rpc-common
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-mqtt/src/mgos_rpc_channel_mqtt.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-mqtt/src/mgos_rpc_channel_mqtt.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/rpc-service-config
     location: https://github.com/mongoose-os-libs/rpc-service-config
     name: rpc-service-config
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-service-config
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-service-config
   init_deps:
   - core
   - rpc-common
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-service-config/src/mgos_service_config.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-service-config/src/mgos_service_config.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/rpc-service-fs
     location: https://github.com/mongoose-os-libs/rpc-service-fs
     name: rpc-service-fs
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-service-fs
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-service-fs
   init_deps:
   - core
   - rpc-common
   - vfs-common
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-service-fs/src/mgos_service_fs.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-service-fs/src/mgos_service_fs.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/rpc-service-gpio
     location: https://github.com/mongoose-os-libs/rpc-service-gpio
     name: rpc-service-gpio
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-service-gpio
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-service-gpio
   init_deps:
   - core
   - rpc-common
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-service-gpio/src/mgos_gpio_service.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-service-gpio/src/mgos_gpio_service.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/i2c
     location: https://github.com/mongoose-os-libs/i2c
     name: i2c
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/i2c
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/i2c
   init_deps:
   - core
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/i2c/src/mgos_i2c_master.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/i2c/src/gpio/mgos_i2c_gpio_master.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/i2c/src/mgos_i2c_master.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/i2c/src/gpio/mgos_i2c_gpio_master.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/rpc-service-i2c
     location: https://github.com/mongoose-os-libs/rpc-service-i2c
     name: rpc-service-i2c
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-service-i2c
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-service-i2c
   init_deps:
   - core
   - i2c
   - rpc-common
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-service-i2c/src/mgos_i2c_service.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-service-i2c/src/mgos_i2c_service.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/rpc-service-ota
     location: https://github.com/mongoose-os-libs/rpc-service-ota
     name: rpc-service-ota
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-service-ota
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-service-ota
   init_deps:
   - core
   - ota-http-client
@@ -1717,56 +1688,56 @@ libs_handled:
     origin: https://github.com/mongoose-os-libs/rpc-uart
     location: https://github.com/mongoose-os-libs/rpc-uart
     name: rpc-uart
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-uart
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-uart
   init_deps:
   - core
   - rpc-common
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/rpc-uart/src/mgos_rpc_channel_uart.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/rpc-uart/src/mgos_rpc_channel_uart.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/sntp
     location: https://github.com/mongoose-os-libs/sntp
     name: sntp
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/sntp
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/sntp
   init_deps:
   - core
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/sntp/src/mgos_sntp.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/sntp/src/mgos_sntp.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/spi
     location: https://github.com/mongoose-os-libs/spi
     name: spi
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/spi
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/spi
   init_deps:
   - core
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/spi/src/mgos_spi.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/spi/src/mgos_spi_mjs.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/spi/src/common_gpio/mgos_spi_gpio.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/spi/src/mgos_spi.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/spi/src/mgos_spi_mjs.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/spi/src/common_gpio/mgos_spi_gpio.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/vfs-dev-spi-flash
     location: https://github.com/mongoose-os-libs/vfs-dev-spi-flash
     name: vfs-dev-spi-flash
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-dev-spi-flash
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-dev-spi-flash
   init_deps:
   - vfs-common
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/vfs-dev-spi-flash/src/mgos_vfs_dev_spi_flash.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/vfs-dev-spi-flash/src/mgos_vfs_dev_spi_flash.c
   version: "1.0"
 - lib:
     origin: https://github.com/mongoose-os-libs/wifi
     location: https://github.com/mongoose-os-libs/wifi
     name: wifi
-  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/wifi
+  path: /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/wifi
   init_deps:
   - core
   sources:
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/wifi/src/mgos_wifi.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/wifi/src/mjs_wifi.c
-  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_950263746/deps/wifi/src/esp8266/esp_wifi.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/wifi/src/mgos_wifi.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/wifi/src/mjs_wifi.c
+  - /data/fwbuild-volumes/2.19.0/apps/EDEN_3/esp8266/build_contexts/build_ctx_863855865/deps/wifi/src/esp8266/esp_wifi.c
   version: "1.0"
 init_deps:
 - mongoose

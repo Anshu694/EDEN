@@ -732,6 +732,14 @@
   - b
   - true
   - title: true to scan all channels or false to perform fast scan
+- - debug.level
+  - i
+  - -1
+  - title: Debug Level
+- - file_logger.enable
+  - b
+  - false
+  - title: Enable
 - - wifi.ap
   - o
   - title: WiFi Access Point Config
@@ -856,56 +864,12 @@
   - title: Subscribe topic for extra keys
 - - dash.enable
   - b
-  - true
+  - false
   - title: Enable
 - - dash.send_logs
   - b
-  - true
+  - false
   - title: Send logs
-- - http
-  - o
-  - title: HTTP Server
-- - http.enable
-  - b
-  - true
-  - title: Enable HTTP Server
-- - http.listen_addr
-  - s
-  - "80"
-  - title: Listening port / address
-- - http.document_root
-  - s
-  - /
-  - title: Root for serving files. Setting to empty disables file serving.
-- - http.index_files
-  - s
-  - ""
-  - title: Comma-separated list of index files
-- - http.ssl_cert
-  - s
-  - title: Turn on SSL on the listener, use this cert
-- - http.ssl_key
-  - s
-  - title: SSL key to use
-- - http.ssl_ca_cert
-  - s
-  - title: Verify clients this CA bundle
-- - http.upload_acl
-  - s
-  - '*'
-  - title: Upload file ACL
-- - http.hidden_files
-  - s
-  - title: Hidden file pattern
-- - http.auth_domain
-  - s
-  - title: Enable authentication of all HTTP requests
-- - http.auth_file
-  - s
-  - title: Password file to use for auth
-- - http.extra_headers
-  - s
-  - title: Extra headers to send with every file served
 - - additional
   - o
   - title: additional variable current value
@@ -930,6 +894,10 @@
   - i
   - 0
   - title: alert for output pin 3
+- - additional.alert.out_4
+  - i
+  - 0
+  - title: alert for output pin 4
 - - additional.timer.out_1
   - i
   - 0
@@ -942,6 +910,10 @@
   - i
   - 0
   - title: timer for output pin 3
+- - additional.timer.out_4
+  - i
+  - 0
+  - title: timer for output pin 4
 - - additional.future.out_1
   - i
   - 0
@@ -954,6 +926,10 @@
   - i
   - 0
   - title: future value for output pin 3
+- - additional.future.out_4
+  - i
+  - 0
+  - title: future value for output pin 4
 - - outputPins
   - o
   - title: Output pins current value
@@ -969,6 +945,10 @@
   - i
   - 0
   - title: Value of pin 3
+- - outputPins.out_4
+  - i
+  - 0
+  - title: Value of pin 4
 - - inputPins
   - o
   - title: Input pins current value
@@ -984,10 +964,7 @@
   - i
   - 0
   - title: Value of pin 3
-- - eden
-  - o
-  - title: Eden related config
-- - eden.ap_timer
-  - b
-  - true
-  - title: Set timer to disbale ap mode
+- - inputPins.in_4
+  - i
+  - 0
+  - title: Value of pin 4
