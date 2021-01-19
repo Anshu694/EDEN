@@ -8,16 +8,14 @@
 #include "mgos_app.h"
 
 
-extern bool mgos_freertos_init(void);
 extern bool mgos_mongoose_init(void);
 extern bool mgos_ota_common_init(void);
 extern bool mgos_vfs_common_init(void);
+extern bool mgos_vfs_dev_part_init(void);
 extern bool mgos_vfs_dev_spi_flash_init(void);
 extern bool mgos_vfs_fs_lfs_init(void);
 extern bool mgos_vfs_fs_spiffs_init(void);
 extern bool mgos_core_init(void);
-extern bool mgos_i2c_init(void);
-extern bool mgos_atca_init(void);
 extern bool mgos_mqtt_init(void);
 extern bool mgos_shadow_init(void);
 extern bool mgos_aws_init(void);
@@ -29,6 +27,7 @@ extern bool mgos_rpc_common_init(void);
 extern bool mgos_rpc_ws_init(void);
 extern bool mgos_dash_init(void);
 extern bool mgos_file_logger_init(void);
+extern bool mgos_i2c_init(void);
 extern bool mgos_mbedtls_init(void);
 extern bool mgos_ota_http_server_init(void);
 extern bool mgos_rpc_loopback_init(void);
@@ -52,17 +51,17 @@ struct mgos_lib_info {
 
 const struct mgos_lib_info mgos_libs_info[] = {
 
-    // "freertos". deps: [ ]
-    {.name = "freertos", .version = "10.2.0", .init = mgos_freertos_init},
-
     // "mongoose". deps: [ ]
-    {.name = "mongoose", .version = "6.16", .init = mgos_mongoose_init},
+    {.name = "mongoose", .version = "6.18", .init = mgos_mongoose_init},
 
     // "ota-common". deps: [ ]
     {.name = "ota-common", .version = "1.2.1", .init = mgos_ota_common_init},
 
     // "vfs-common". deps: [ ]
     {.name = "vfs-common", .version = "1.0", .init = mgos_vfs_common_init},
+
+    // "vfs-dev-part". deps: [ "vfs-common" ]
+    {.name = "vfs-dev-part", .version = "1.0", .init = mgos_vfs_dev_part_init},
 
     // "vfs-dev-spi-flash". deps: [ "vfs-common" ]
     {.name = "vfs-dev-spi-flash", .version = "1.0", .init = mgos_vfs_dev_spi_flash_init},
@@ -73,14 +72,8 @@ const struct mgos_lib_info mgos_libs_info[] = {
     // "vfs-fs-spiffs". deps: [ "vfs-common" ]
     {.name = "vfs-fs-spiffs", .version = "1.0", .init = mgos_vfs_fs_spiffs_init},
 
-    // "core". deps: [ "freertos" "mongoose" "ota-common" "vfs-common" "vfs-dev-spi-flash" "vfs-fs-lfs" "vfs-fs-spiffs" ]
+    // "core". deps: [ "mongoose" "ota-common" "vfs-common" "vfs-dev-part" "vfs-dev-spi-flash" "vfs-fs-lfs" "vfs-fs-spiffs" ]
     {.name = "core", .version = "1.0", .init = mgos_core_init},
-
-    // "i2c". deps: [ "core" ]
-    {.name = "i2c", .version = "1.0", .init = mgos_i2c_init},
-
-    // "atca". deps: [ "i2c" ]
-    {.name = "atca", .version = "1.0", .init = mgos_atca_init},
 
     // "mqtt". deps: [ "core" ]
     {.name = "mqtt", .version = "1.0", .init = mgos_mqtt_init},
@@ -100,7 +93,7 @@ const struct mgos_lib_info mgos_libs_info[] = {
     // "wifi". deps: [ "core" ]
     {.name = "wifi", .version = "1.0", .init = mgos_wifi_init},
 
-    // "http-server". deps: [ "atca" "core" "wifi" ]
+    // "http-server". deps: [ "core" "wifi" ]
     {.name = "http-server", .version = "1.0", .init = mgos_http_server_init},
 
     // "rpc-common". deps: [ "core" "http-server" "mongoose" ]
@@ -114,6 +107,9 @@ const struct mgos_lib_info mgos_libs_info[] = {
 
     // "file-logger". deps: [ "core" "rpc-common" ]
     {.name = "file-logger", .version = "1.0", .init = mgos_file_logger_init},
+
+    // "i2c". deps: [ "core" ]
+    {.name = "i2c", .version = "1.0", .init = mgos_i2c_init},
 
     // "mbedtls". deps: [ ]
     {.name = "mbedtls", .version = "2.16.6-cesanta1", .init = mgos_mbedtls_init},
@@ -130,7 +126,7 @@ const struct mgos_lib_info mgos_libs_info[] = {
     // "rpc-service-config". deps: [ "core" "rpc-common" ]
     {.name = "rpc-service-config", .version = "1.0", .init = mgos_rpc_service_config_init},
 
-    // "rpc-service-fs". deps: [ "core" "rpc-common" ]
+    // "rpc-service-fs". deps: [ "core" "rpc-common" "vfs-common" ]
     {.name = "rpc-service-fs", .version = "1.0", .init = mgos_rpc_service_fs_init},
 
     // "rpc-service-gpio". deps: [ "core" "rpc-common" ]

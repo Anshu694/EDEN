@@ -1,4 +1,4 @@
 /* Auto-generated, do not edit. */
-const char *mg_build_id = "20210106-072013/2.18.0-g24c520d";
-const char *mg_build_timestamp = "2021-01-06T07:20:13Z";
-const char *mg_build_version = "2.18.0";
+const char *mg_build_id = "20210114-175002/2.19.0-ge456939";
+const char *mg_build_timestamp = "2021-01-14T17:50:02Z";
+const char *mg_build_version = "2.19.0";

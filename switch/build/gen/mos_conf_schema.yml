@@ -1,60 +1,3 @@
-- - i2c
-  - o
-  - title: I2C settings
-- - i2c.unit_no
-  - i
-  - 0
-  - title: Which hardware unit to use, 0 or 1
-- - i2c.enable
-  - b
-  - false
-  - title: Enable I2C
-- - i2c.freq
-  - i
-  - 100000
-  - title: Clock frequency
-- - i2c.debug
-  - b
-  - false
-  - title: Debug I2C bus activity
-- - i2c.sda_gpio
-  - i
-  - 32
-  - title: GPIO to use for SDA
-- - i2c.scl_gpio
-  - i
-  - 33
-  - title: GPIO to use for SCL
-- - i2c1
-  - i2c
-  - title: I2C settings
-- - i2c1.unit_no
-  - 1
-- - i2c1.enable
-  - false
-- - i2c1.sda_gpio
-  - 22
-- - i2c1.scl_gpio
-  - 23
-- - sys.atca
-  - o
-  - title: CryptoAuthLib configuration
-- - sys.atca.enable
-  - b
-  - false
-  - title: Enable the chip
-- - sys.atca.i2c_bus
-  - i
-  - 0
-  - title: Which I2C bus to use
-- - sys.atca.i2c_addr
-  - i
-  - 96
-  - title: I2C address of the chip
-- - sys.atca.ecdh_slots_mask
-  - i
-  - 12
-  - title: Which slots can be used for ECDH (bitmask)
 - - debug.mbedtls_level
   - i
   - 1
@@ -129,6 +72,8 @@
   - s
   - '*'
   - title: Conf ACL
+- - device.id
+  - esp8266_??????
 - - mqtt
   - o
   - title: MQTT settings
@@ -276,8 +221,6 @@
   - i
   - 60
   - title: Maximum reconnect timeout
-- - mqtt.recv_mbuf_limit
-  - 8192
 - - update
   - o
   - title: Firmware updater
@@ -344,12 +287,15 @@
   - title: Default idle close timeout for outbound channels
 - - rpc.acl_file
   - s
+  - ""
   - title: File with RPC ACL JSON
 - - rpc.auth_domain
   - s
+  - RPC
   - title: Realm to use for digest authentication
 - - rpc.auth_file
   - s
+  - ""
   - title: File with user credentials in the htdigest format
 - - rpc.ws
   - o
@@ -503,6 +449,9 @@
 - - http.auth_file
   - s
   - title: Password file to use for auth
+- - http.extra_headers
+  - s
+  - title: Extra headers to send with every file served
 - - update.enable_post
   - b
   - true
@@ -531,6 +480,40 @@
   - i
   - 1
   - title: QoS for pub and sub
+- - i2c
+  - o
+  - title: I2C settings
+- - i2c.enable
+  - b
+  - false
+  - title: Enable I2C
+- - i2c.freq
+  - i
+  - 100000
+  - title: Clock frequency
+- - i2c.debug
+  - b
+  - false
+  - title: Debug I2C bus activity
+- - i2c.sda_gpio
+  - i
+  - 12
+  - title: GPIO to use for SDA
+- - i2c.scl_gpio
+  - i
+  - 14
+  - title: GPIO to use for SCL
+- - i2c1
+  - i2c
+  - title: I2C settings
+- - i2c1.enable
+  - false
+- - i2c1.freq
+  - 100000
+- - i2c1.sda_gpio
+  - 4
+- - i2c1.scl_gpio
+  - 5
 - - rpc.uart
   - o
   - title: RPC-over-UART settings
@@ -584,25 +567,21 @@
   - b
   - false
   - title: Debug SPI bus activity
-- - spi.unit_no
-  - i
-  - 3
-  - title: Which SPI unit to use, 2 or 3
 - - spi.miso_gpio
   - i
-  - 19
+  - -1
   - title: GPIO to use for MISO
 - - spi.mosi_gpio
   - i
-  - 23
+  - -1
   - title: GPIO to use for MOSI
 - - spi.sclk_gpio
   - i
-  - 18
+  - -1
   - title: GPIO to use for SCLK
 - - spi.cs0_gpio
   - i
-  - 5
+  - -1
   - title: GPIO to use for CS0
 - - spi.cs1_gpio
   - i
@@ -612,6 +591,14 @@
   - i
   - -1
   - title: GPIO to use for CS2
+- - spi.miso_gpio
+  - 12
+- - spi.mosi_gpio
+  - 13
+- - spi.sclk_gpio
+  - 14
+- - spi.cs0_gpio
+  - 15
 - - wifi
   - o
   - hide: true
@@ -741,40 +728,10 @@
   - b
   - true
   - title: Keep AP enabled when station is on
-- - wifi.ap.bandwidth_20mhz
-  - b
-  - false
-  - title: enable 20MHz bandwidth AP operation
-- - wifi.ap.protocol
-  - s
-  - BGN
-  - title: 802.11 Wi-Fi Protocol for AP Mode, defaults to BGN, can be any combination
-      of BGNLR. Note LR only works between 2 ESP32 devices.
-- - wifi.sta_ps_mode
-  - i
-  - 0
-  - title: 'Power save mode for station: 0 - none, 1 - min, 2 - max.'
 - - wifi.sta_all_chan_scan
   - b
-  - false
+  - true
   - title: true to scan all channels or false to perform fast scan
-- - wifi.sta.protocol
-  - s
-  - BGN
-  - title: 802.11 Wi-Fi Protocol for STA Mode, defaults to BGN, can be any combination
-      of BGNLR. Note LR only works between 2 ESP32 devices.
-- - wifi.sta.listen_interval_ms
-  - i
-  - 0
-  - title: DTIM Listen Interval (ms)
-- - debug.level
-  - i
-  - -1
-  - title: Debug Level
-- - file_logger.enable
-  - b
-  - false
-  - title: Enable
 - - wifi.ap
   - o
   - title: WiFi Access Point Config
@@ -784,7 +741,7 @@
   - title: Enable
 - - wifi.ap.ssid
   - s
-  - EDEN_4_??????
+  - EDEN_3_??????
   - title: SSID
 - - wifi.ap.pass
   - s
@@ -899,12 +856,56 @@
   - title: Subscribe topic for extra keys
 - - dash.enable
   - b
-  - false
+  - true
   - title: Enable
 - - dash.send_logs
   - b
-  - false
+  - true
   - title: Send logs
+- - http
+  - o
+  - title: HTTP Server
+- - http.enable
+  - b
+  - true
+  - title: Enable HTTP Server
+- - http.listen_addr
+  - s
+  - "80"
+  - title: Listening port / address
+- - http.document_root
+  - s
+  - /
+  - title: Root for serving files. Setting to empty disables file serving.
+- - http.index_files
+  - s
+  - ""
+  - title: Comma-separated list of index files
+- - http.ssl_cert
+  - s
+  - title: Turn on SSL on the listener, use this cert
+- - http.ssl_key
+  - s
+  - title: SSL key to use
+- - http.ssl_ca_cert
+  - s
+  - title: Verify clients this CA bundle
+- - http.upload_acl
+  - s
+  - '*'
+  - title: Upload file ACL
+- - http.hidden_files
+  - s
+  - title: Hidden file pattern
+- - http.auth_domain
+  - s
+  - title: Enable authentication of all HTTP requests
+- - http.auth_file
+  - s
+  - title: Password file to use for auth
+- - http.extra_headers
+  - s
+  - title: Extra headers to send with every file served
 - - additional
   - o
   - title: additional variable current value
@@ -929,10 +930,6 @@
   - i
   - 0
   - title: alert for output pin 3
-- - additional.alert.out_4
-  - i
-  - 0
-  - title: alert for output pin 4
 - - additional.timer.out_1
   - i
   - 0
@@ -945,10 +942,6 @@
   - i
   - 0
   - title: timer for output pin 3
-- - additional.timer.out_4
-  - i
-  - 0
-  - title: timer for output pin 4
 - - additional.future.out_1
   - i
   - 0
@@ -961,10 +954,6 @@
   - i
   - 0
   - title: future value for output pin 3
-- - additional.future.out_4
-  - i
-  - 0
-  - title: future value for output pin 4
 - - outputPins
   - o
   - title: Output pins current value
@@ -980,10 +969,6 @@
   - i
   - 0
   - title: Value of pin 3
-- - outputPins.out_4
-  - i
-  - 0
-  - title: Value of pin 4
 - - inputPins
   - o
   - title: Input pins current value
@@ -999,7 +984,10 @@
   - i
   - 0
   - title: Value of pin 3
-- - inputPins.in_4
-  - i
-  - 0
-  - title: Value of pin 4
+- - eden
+  - o
+  - title: Eden related config
+- - eden.ap_timer
+  - b
+  - true
+  - title: Set timer to disbale ap mode
